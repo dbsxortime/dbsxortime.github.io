@@ -3,26 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Taek's profile</title>
+<script type="text/javascript">
+
+</script>
 </head>
-  
-<!-- Header -->
 <body>
-	<h1>This is Header!</h1>
-</body>
-  
-<!-- Body -->
-<body>
+	<div data-include-path="../include/header.html"></div>
+	<script>
+		window.addEventListener('load', function() {
+			var allElements = document.getElementsByTagName('*');
+			Array.prototype.forEach.call(allElements, function(el) {
+				var includePath = el.dataset.includePath;
+				if (includePath) {
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							el.outerHTML = this.responseText;
+						}
+					};
+					xhttp.open('GET', includePath, true);
+					xhttp.send();
+				}
+			});
+		});
+	</script>
+	
+	
+	
+	
+	
+	
 	<br/>
 	<h1>Taek's profile page!</h1>
 	<h1>This is body!</h1>
 	<br/>
+	
+	
+	
 </body>
   
-<!-- Footer -->
-<body>
-	<h1>Taek's profile page!</h1>
-	<h1>This is Footer!</h1>
-</body>
 
 
 </html>
