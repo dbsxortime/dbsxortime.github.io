@@ -4,7 +4,17 @@
 <meta charset="UTF-8">
 <title>Taek's profile</title>
 
-<!-- footer css -->
+<!-- body css -->
+<style type="text/css">
+.font-white{
+	color:#ddd;
+}
+.font-black{
+	color:#333;
+}
+</style>
+
+<!-- header css -->
 <style type="text/css">
 *{
 	padding:0;
@@ -87,7 +97,7 @@
 	margin:0;
 }
 .footer-text{
-	width:94vw;
+	width:calc(100% - 5.5rem);
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -133,23 +143,25 @@
 </style>
 </head>
 <body>
-	<div class="header-blank-left"></div>
-	<div class="header-blank-right"></div>
-
-	<h2 class="header-logo position-top">YT's</h2>
-
-	<div class="header-right position-top">
-		<img class="header-icon menu" src="images/logo/menu-w.png">
-		<ul class="header-icon sns">
-			<li><img class="header-icon icon icon-youtube" src="images/logo/youtube_w.png"></li>
-			<li><img class="header-icon icon" src="images/logo/instagram_w.png"></li>
-			<li><img class="header-icon icon" src="images/logo/github_w.png"></li>
-		</ul>
+	<div class="header font-white">
+		<div class="header-blank-left"></div>
+		<div class="header-blank-right"></div>
+	
+		<h2 class="header-logo position-top">YT's</h2>
+	
+		<div class="header-right position-top">
+			<img class="header-icon menu" src="images/logo/menu-w.png">
+			<ul class="header-icon sns">
+				<li><img class="header-icon icon icon-youtube" src="images/logo/youtube_w.png"></li>
+				<li><img class="header-icon icon" src="images/logo/instagram_w.png"></li>
+				<li><img class="header-icon icon" src="images/logo/github_w.png"></li>
+			</ul>
+		</div>
 	</div>
 
 
 
-	<div class="footer">
+	<div class="footer font-white">
 		<a class="footer-box">
 			<img class="go-down" src="images/logo/↓_w.png">
 		</a>
