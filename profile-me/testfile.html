@@ -20,21 +20,6 @@
 	top:0;
 	background-color:#333;
 }
-
-
-.hover-area{
-	width:25%;
-	height:70%;
-	
-	position: absolute;
-	right:7%;
-	bottom:0;
-}
-
-.hover-area:hover .background-img2{
-	opacity:1;
-}
-
 </style>
 
 <!-- header css -->
@@ -99,12 +84,19 @@
 
 .menu{
 	width:1.5rem;
-	height:1.5rem;
+	height:1.2rem;
 }
 
 .icon{
 	padding-top:2rem;
 	padding-bottom:2rem;
+}
+
+.menu:hover{
+	width:1.3rem;
+}
+.icon:hover{
+	width:105%;
 }
 
 </style>
@@ -170,24 +162,29 @@
 	background-position:right center;
 	object-fit: cover;
 }
+
 .background-img2{
-	width:50vw;
-	height:100vh;
+	width: 27%;
+	height: 71%;
 	position: absolute;
-	right:-28%;
-	top:-43%;
-	background-position:right center;
+	right: 6%;
+	bottom: 0;
 	opacity: 0;
-	object-fit: cover;
+	object-fit:contain;
+	background-image: url("images/photo/me_hover.png");
+	background-position: 73% 83%;
+	background-size: 88vh;
+}
+.background-img2:hover{
+	opacity:1;
 }
 </style>
 </head>
 <body>
 	<div class="background-left"></div>
-		<img class="background-img" src="images/photo/me.png">
-	<div class="hover-area">
-		<img class="background-img2" src="images/photo/me_hover.png">
-	</div>
+	<img class="background-img" src="images/photo/me.png">
+	<div class="background-img2"></div>
+<!-- 	<img class="background-img2" src="images/photo/me_hover.png"> -->
 	
 	
 	
@@ -200,9 +197,9 @@
 		<div class="header-right position-top">
 			<img class="header-icon menu" src="images/logo/menu-b.png">
 			<ul class="header-icon sns">
-				<li><img class="header-icon icon icon-youtube" src="images/logo/youtube_b.png"></li>
-				<li><img class="header-icon icon" src="images/logo/instagram_b.png"></li>
-				<li><img class="header-icon icon" src="images/logo/github_b.png"></li>
+				<li><a href="https://www.youtube.com/"><img class="header-icon icon icon-youtube" src="images/logo/youtube_b.png"></a></li>
+				<li><a href="https://www.instagram.com/yun_taketaek/"><img class="header-icon icon" src="images/logo/instagram_b.png"></a></li>
+				<li><a href="https://github.com/dbsxortime"><img class="header-icon icon" src="images/logo/github_b.png"></a></li>
 			</ul>
 		</div>
 	</div>
