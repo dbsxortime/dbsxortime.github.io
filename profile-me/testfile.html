@@ -12,6 +12,46 @@
 .font-black{
 	color:#333;
 }
+.background-left{
+	width:50%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+	background-color:#333;
+}
+.background-img{
+	width:50%;
+	height:100%;
+	position: absolute;
+	right:0;
+	top:0;
+	background-position:right center;
+}
+.background-img2{
+	width:50vw;
+	height:100vh;
+	position: absolute;
+	right:-28%;
+	top:-43%;
+	background-position:right center;
+/* 	background-image:url("images/photo/me_hover.png"); */
+	opacity: 0;
+}
+
+.hover-area{
+	width:25%;
+	height:70%;
+	
+	position: absolute;
+	right:7%;
+	bottom:0;
+}
+
+.hover-area:hover .background-img2{
+	opacity:1;
+}
+
 </style>
 
 <!-- header css -->
@@ -135,14 +175,16 @@
 }
 </style>
 
-
-<style type="text/css">
-*{
-	background-color:#b69f8f;
-}
-</style>
 </head>
 <body>
+	<div class="background-left"></div>
+	<img class="background-img" src="images/photo/me.png">
+	<div class="hover-area">
+		<img class="background-img2" src="images/photo/me_hover.png">
+	</div>
+	
+	
+	
 	<div class="header font-white">
 		<div class="header-blank-left"></div>
 		<div class="header-blank-right"></div>
@@ -150,11 +192,11 @@
 		<h2 class="header-logo position-top">YT's</h2>
 	
 		<div class="header-right position-top">
-			<img class="header-icon menu" src="images/logo/menu-w.png">
+			<img class="header-icon menu" src="images/logo/menu-b.png">
 			<ul class="header-icon sns">
-				<li><img class="header-icon icon icon-youtube" src="images/logo/youtube_w.png"></li>
-				<li><img class="header-icon icon" src="images/logo/instagram_w.png"></li>
-				<li><img class="header-icon icon" src="images/logo/github_w.png"></li>
+				<li><img class="header-icon icon icon-youtube" src="images/logo/youtube_b.png"></li>
+				<li><img class="header-icon icon" src="images/logo/instagram_b.png"></li>
+				<li><img class="header-icon icon" src="images/logo/github_b.png"></li>
 			</ul>
 		</div>
 	</div>
@@ -166,7 +208,6 @@
 			<img class="go-down" src="images/logo/↓_w.png">
 		</a>
 		<div class="footer-text">
-<!-- 			<h3 class="footer-left">Footer left!!</h3> -->
 			<p class="footer-left footer-margin-bottom-2rem">
 				© 2021 Park Yun Taek<br/>
 				ALL RIGHTS RESERVED.
