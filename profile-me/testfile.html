@@ -20,24 +20,7 @@
 	top:0;
 	background-color:#333;
 }
-.background-img{
-	width:50%;
-	height:100%;
-	position: absolute;
-	right:0;
-	top:0;
-	background-position:right center;
-}
-.background-img2{
-	width:50vw;
-	height:100vh;
-	position: absolute;
-	right:-28%;
-	top:-43%;
-	background-position:right center;
-/* 	background-image:url("images/photo/me_hover.png"); */
-	opacity: 0;
-}
+
 
 .hover-area{
 	width:25%;
@@ -175,10 +158,33 @@
 }
 </style>
 
+
+
+<style type="text/css">
+.background-img{
+	width:50%;
+	height:100%;
+	position: absolute;
+	right:0;
+	top:0;
+	background-position:right center;
+	object-fit: cover;
+}
+.background-img2{
+	width:50vw;
+	height:100vh;
+	position: absolute;
+	right:-28%;
+	top:-43%;
+	background-position:right center;
+	opacity: 0;
+	object-fit: cover;
+}
+</style>
 </head>
 <body>
 	<div class="background-left"></div>
-	<img class="background-img" src="images/photo/me.png">
+		<img class="background-img" src="images/photo/me.png">
 	<div class="hover-area">
 		<img class="background-img2" src="images/photo/me_hover.png">
 	</div>
