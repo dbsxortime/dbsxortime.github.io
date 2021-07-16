@@ -3,9 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <title>Taek's profile</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+
+<script type="text/javascript">
+	var $html = $("html");
+	var page = 1;
+	var lastPage = 2;
+	 
+	$html.animate({scrollTop:0},300);
+	
+	$(window).on("wheel", function(e){
+		if($html.is(":animated")) return;
+		if(e.originalEvent.deltaY > 0){
+			if(page== lastPage) return;
+			page++;
+		}else if(e.originalEvent.deltaY < 0){
+			if(page == 1) return;
+			page--;
+		}
+		var posTop = (page-1) * $(window).height();
+		$html.animate({scrollTop : posTop}, 300);
+	});
+	
+	$(function(){
+		$(".footer-box").on("click", function(){
+			if(page== lastPage) return;
+			
+			var height= $(window).height();
+			$("html,body").animate({
+				scrollTop: height
+			}, 300);
+			page++;
+		});
+		
+		$(".go-aboutus").on("click", function(){
+			var height= $(window).height();
+			$("html,body").animate({
+				scrollTop: height
+			}, 300);
+			page++;
+		});
+		
+		$(".header-logo").on("click", function(){
+			$("html,body").animate({
+				scrollTop: 0
+			},0);
+			page=1;
+		});
+		
+	});
+	
+</script>
+
 
 <!-- header css -->
 <style type="text/css">
+body {
+	overflow:hidden;
+} 
+
 *{
 	padding:0;
 	margin:0;
@@ -154,17 +210,75 @@
 	top:0;
 	background-color:#333;
 }
-
-.background-img{
+.frame{
 	width:50%;
 	height:100%;
 	position: absolute;
 	right:0;
 	top:0;
+	overflow: hidden;
+}
+
+.background-img{
+	position: absolute;
+	right:-40%;
+	top:0%;
+	width:100vw;
+	height:100vh;
 	background-position:right center;
 	object-fit: cover;
 }
 
+.main-contents{
+	position:absolute;
+	left:0;
+	top:17%;
+	width:50vw;
+	height:70vh;
+	font-weight: bold;
+}
+.main-contents-name{
+	position:absolute;
+	top:0;
+	left:6.5rem;
+	font-size: 1.1rem;
+}
+.main-contents-title1{
+	position:absolute;
+	top:2.5rem;
+	left:6.5rem;
+	font-size: 2.5rem;
+}
+.main-contents-title2{
+	position:absolute;
+	top:5rem;
+	left:6.5rem;
+	font-size: 2.5rem;
+}
+.main-contents-title3{
+	position:absolute;
+	top:7.5rem;
+	left:6.5rem;
+	font-size: 3.2rem;
+}
+.main-contents-title4{
+	position:absolute;
+	top:15rem;
+	left:6.5rem;
+	font-size: 1.8rem;
+}
+.main-contents-title5{
+	position:absolute;
+	top:17rem;
+	left:6.5rem;
+	font-size: 1.8rem;
+}
+.main-contents-title6{
+	position:absolute;
+	top:28rem;
+	left:6.5rem;
+	font-size: 1rem;
+}
 </style>
 
 </head>
@@ -172,7 +286,21 @@
 <body>
 	<div class="page main">
 		<div class="background-left"></div>
-		<img class="background-img" src="../images/photo/me.png">
+		<div class="frame">
+			<img class="background-img" src="../images/photo/me.png">
+		</div>
+		
+		<div class="main-contents font-white">
+			<span class="main-contents-name">Park Yun Taek</span>
+			<span class="main-contents-title1">Being</span>
+			<span class="main-contents-title2">Web/Server</span>
+			<span class="main-contents-title3">Developer</span>
+			
+			<a class="go-aboutus main-contents-title4">About us</a>
+			<a class="go-aboutus main-contents-title5">Projects</a>
+			
+			<span class="main-contents-title6">welcome..!</span>
+		</div>
 		
 		<div class="header font-white">
 			<div class="header-blank-left"></div>
@@ -205,6 +333,8 @@
 				</p>
 			</div>
 		</div>
+		
+		
 	</div>
 </body>
 
@@ -323,6 +453,7 @@
 
 <body>
 	<div class="page aboutme">
+		<a id="aboutme"></a>
 		<div class="aboutme-background">
 			<span class="aboutme-background-font">
 				Brand new <br/>
@@ -397,6 +528,7 @@
 			</div>
 		</div>
 		
+		
 		<div class="footer font-black">
 			<a class="footer-box">
 				<img class="go-down" src="../images/logo/↓_w.png">
@@ -412,6 +544,7 @@
 				</p>
 			</div>
 		</div>
+		
 	</div>
 </body>
 
