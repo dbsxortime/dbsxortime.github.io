@@ -23,14 +23,62 @@
 		});
 	});
 </script>
-
+<!-- scroll.js -->
+<script type="text/javascript">
+	var $html = $("html");
+	var page = 1;
+	var lastPage = 2;
+	 
+	$html.animate({scrollTop:0},300);
+	
+	$(window).on("wheel", function(e){
+		if($html.is(":animated")) return;
+		if(e.originalEvent.deltaY > 0){
+			if(page== lastPage) return;
+			page++;
+		}else if(e.originalEvent.deltaY < 0){
+			if(page == 1) return;
+			page--;
+		}
+		var posTop = (page-1) * $(window).height();
+		$html.animate({scrollTop : posTop}, 300);
+	});
+	
+	$(function(){
+		$(".footer-box").on("click", function(){
+			if(page== lastPage) return;
+			var height= $(window).height();
+			$("html,body").animate({
+				scrollTop: height
+			}, 300);
+			page++;
+		});
+		
+		$(".go-aboutus").on("click", function(){		
+			var height= $(window).height();
+			$("html,body").animate({
+				scrollTop: height
+			}, 300);
+			page++;
+		});
+		
+		$(".header-logo").on("click", function(){		
+			$("html,body").animate({
+				scrollTop: 0
+			},0);
+			page=1;
+		});
+		
+	});
+	
+</script>
 </head>
 
 <div data-include-path="../css/paging.html"></div>
 <div data-include-path="../css/header+footer.html"></div>
 <div data-include-path="../css/1_main.html"></div>
 <div data-include-path="../css/2_aboutme.html"></div>
-<div data-include-path="../javascript/scroll.html"></div>
+<!-- <div data-include-path="../javascript/scroll.html"></div> -->
 
 <body>
 	
