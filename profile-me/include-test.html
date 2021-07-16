@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Taek's profile</title>
+	
+	<!-- script for include -->
 	<script>
 		window.addEventListener('load', function() {
 			var allElements = document.getElementsByTagName('*');
@@ -21,29 +23,47 @@
 			});
 		});
 	</script>
+
+<!-- body css -->
+<style type="text/css">
+.font-white{
+	color:#ddd;
+}
+.font-black{
+	color:#333;
+}
+.background-left{
+	width:50%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+	background-color:#333;
+}
+
+.background-img{
+	width:50%;
+	height:100%;
+	position: absolute;
+	right:0;
+	top:0;
+	background-position:right center;
+	object-fit: cover;
+}
+</style>
+
+
 </head>
-
-
 <body>
-<!-- Header -->
-<!-- 	<div data-include-path="../include/header.html"></div> -->
-<!-- 	<div data-include-path="../css/header.css"></div> -->
-</body>
+	<div class="background-left"></div>
+	<img class="background-img" src="images/photo/me.png">
 	
-<!-- Body -->
-<body>
-	<br/>
-	<h1>Taek's profile page!</h1>
-	<h1>This is body!</h1>
-	<br/>
-	<a href="/">move to index</a>
-	<br/>
-	<a href="../testfile.html">super secrit page</a>
+	<div data-include-path="include/header-test.html"></div>
+	<div data-include-path="include/footer-test.html"></div>
+	
+	
 </body>
-  
-<!-- Footer -->
-<body>
-<!-- 	<div data-include-path="../include/footer.html"></div> -->
-</body>
+
+
 
 </html>
