@@ -4,33 +4,24 @@
 <meta charset="UTF-8">
 <title>Taek's profile</title>
 
-<!-- body css -->
-<style type="text/css">
-.font-white{
-	color:#ddd;
-}
-.font-black{
-	color:#333;
-}
-.background-left{
-	width:50%;
-	height:100%;
-	position: absolute;
-	left:0;
-	top:0;
-	background-color:#333;
-}
-
-.background-img{
-	width:50%;
-	height:100%;
-	position: absolute;
-	right:0;
-	top:0;
-	background-position:right center;
-	object-fit: cover;
-}
-</style>
+<script>
+	window.addEventListener('load', function() {
+		var allElements = document.getElementsByTagName('*');
+		Array.prototype.forEach.call(allElements, function(el) {
+			var includePath = el.dataset.includePath;
+			if (includePath) {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						el.outerHTML = this.responseText;
+					}
+				};
+				xhttp.open('GET', includePath, true);
+				xhttp.send();
+			}
+		});
+	});
+</script>
 
 <!-- header css -->
 <style type="text/css">
@@ -160,19 +151,47 @@
 }
 </style>
 
-
+<!-- body css -->
 <style type="text/css">
 .page{
 	width:100vw;
 	height:100vh;
 	float:left;
 }
+
+.font-white{
+	color:#ddd;
+}
+.font-black{
+	color:#333;
+}
+.background-left{
+	width:50%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+	background-color:#333;
+}
+
+.background-img{
+	width:50%;
+	height:100%;
+	position: absolute;
+	right:0;
+	top:0;
+	background-position:right center;
+	object-fit: cover;
+}
+
 </style>
+
 </head>
+
 <body>
 	<div class="page main">
 		<div class="background-left"></div>
-		<img class="background-img" src="images/photo/me.png">
+		<img class="background-img" src="../images/photo/me.png">
 		
 		<div class="header font-white">
 			<div class="header-blank-left"></div>
@@ -181,18 +200,18 @@
 			<h2 class="header-logo position-top">YT's</h2>
 		
 			<div class="header-right position-top">
-				<img class="header-icon menu" src="images/logo/menu-b.png">
+				<img class="header-icon menu" src="../images/logo/menu-b.png">
 				<ul class="header-icon sns">
-					<li><a href="https://www.youtube.com/"><img class="header-icon icon icon-youtube" src="images/logo/youtube_b.png"></a></li>
-					<li><a href="https://www.instagram.com/yun_taketaek/"><img class="header-icon icon" src="images/logo/instagram_b.png"></a></li>
-					<li><a href="https://github.com/dbsxortime"><img class="header-icon icon" src="images/logo/github_b.png"></a></li>
+					<li><a href="https://www.youtube.com/"><img class="header-icon icon icon-youtube" src="../images/logo/youtube_b.png"></a></li>
+					<li><a href="https://www.instagram.com/yun_taketaek/"><img class="header-icon icon" src="../images/logo/instagram_b.png"></a></li>
+					<li><a href="https://github.com/dbsxortime"><img class="header-icon icon" src="../images/logo/github_b.png"></a></li>
 				</ul>
 			</div>
 		</div>
 	
 		<div class="footer font-white">
 			<a class="footer-box">
-				<img class="go-down" src="images/logo/↓_w.png">
+				<img class="go-down" src="../images/logo/↓_w.png">
 			</a>
 			<div class="footer-text">
 				<p class="footer-left footer-margin-bottom-2rem">
@@ -211,11 +230,7 @@
 
 
 
-
 <!-- ----------------------------- 2page / about me ------------------------------ -->
-
-
-
 
 
 <!-- body css -->
@@ -253,6 +268,7 @@
 	left:15vw;
 	font-size: 1.4rem;
 	font-weight: bold;
+	width:85vw;
 }
 
 .body-title-emphasized{
@@ -391,18 +407,18 @@
 			<h2 class="header-logo position-top">YT's</h2>
 		
 			<div class="header-right position-top">
-				<img class="header-icon menu" src="images/logo/menu-b.png">
+				<img class="header-icon menu" src="../images/logo/menu-b.png">
 				<ul class="header-icon sns">
-					<li><a href="https://www.youtube.com/"><img class="header-icon icon icon-youtube" src="images/logo/youtube_b.png"></a></li>
-					<li><a href="https://www.instagram.com/yun_taketaek/"><img class="header-icon icon" src="images/logo/instagram_b.png"></a></li>
-					<li><a href="https://github.com/dbsxortime"><img class="header-icon icon" src="images/logo/github_b.png"></a></li>
+					<li><a href="https://www.youtube.com/"><img class="header-icon icon icon-youtube" src="../images/logo/youtube_b.png"></a></li>
+					<li><a href="https://www.instagram.com/yun_taketaek/"><img class="header-icon icon" src="../images/logo/instagram_b.png"></a></li>
+					<li><a href="https://github.com/dbsxortime"><img class="header-icon icon" src="../images/logo/github_b.png"></a></li>
 				</ul>
 			</div>
 		</div>
 		
 		<div class="footer font-black">
 			<a class="footer-box">
-				<img class="go-down" src="images/logo/↓_w.png">
+				<img class="go-down" src="../images/logo/↓_w.png">
 			</a>
 			<div class="footer-text">
 				<p class="footer-left footer-margin-bottom-2rem">
@@ -417,4 +433,5 @@
 		</div>
 	</div>
 </body>
+
 </html>
