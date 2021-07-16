@@ -4,25 +4,6 @@
 <meta charset="UTF-8">
 <title>Taek's profile</title>
 
-<script>
-	window.addEventListener('load', function() {
-		var allElements = document.getElementsByTagName('*');
-		Array.prototype.forEach.call(allElements, function(el) {
-			var includePath = el.dataset.includePath;
-			if (includePath) {
-				var xhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) {
-						el.outerHTML = this.responseText;
-					}
-				};
-				xhttp.open('GET', includePath, true);
-				xhttp.send();
-			}
-		});
-	});
-</script>
-
 <!-- header css -->
 <style type="text/css">
 *{
@@ -331,7 +312,7 @@
 	text-align: left;
 }
 
-.page-position{
+.aboutme{
 	position:absolute;
 	top:calc(100vh * 1);
 	width:100vw;
@@ -349,7 +330,7 @@
 			</span>
 		</div>
 		
-		<div class="page-position">
+		<div class="">
 			<div class="body-title">
 				<span>안녕하세요. </span>
 				<span class="body-title-emphasized"> Java Fullstack </span> 
@@ -399,7 +380,7 @@
 	
 	
 	
-	<div class="page-position">
+	<div class="aboutme">
 		<div class="header font-black">
 			<div class="header-blank-left"></div>
 			<div class="header-blank-right"></div>
