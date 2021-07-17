@@ -97,13 +97,13 @@
 			
 			<script type="text/javascript">
 				$(function(){
-					$("#listButton").click(function(){
+					$(".listButton").click(function(){
 						$.ajax({
 							type: 'get' ,
 							url: '../test/ajaxtest.html' ,
 							dataType : 'html' ,
 							success: function(data) {
-								$("#tester").html(data)
+								$(".tester").html(data)
 							} 
 						}); 
 						
