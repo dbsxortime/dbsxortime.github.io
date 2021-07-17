@@ -93,27 +93,6 @@
 			<span class="main-contents-title1">Being</span>
 			<span class="main-contents-title2">Web/Server</span>
 			<span class="main-contents-title3">Developer</span>
-			<input type="button" class="listButton" value="click!"/>
-			
-			<script type="text/javascript">
-				$(function(){
-					$(".listButton").click(function(){
-						$.ajax({
-							type: 'get' ,
-							url: '../test/ajaxtest.html' ,
-							dataType : 'html' ,
-							success: function(data) {
-								$(".tester").html(data)
-							} 
-						}); 
-						
-					}) 
-				})
-	
-			</script>
-			
-			
-			<div class="tester"></div>
 			
 			<a class="go-aboutus main-contents-title4">About us</a>
 			<a class="go-aboutus main-contents-title5">Projects</a>
