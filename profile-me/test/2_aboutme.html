@@ -1,371 +1,111 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Taek's profile</title>
-
-<!-- header css -->
 <style type="text/css">
+@font-face{
+	src:url('../fonts/LEMONMILK-MEDIUM.OTF');
+	font-family: 'LEMONMILK';
+} 
+@font-face{
+	src:url('../fonts/MONTSERRAT-MEDIUM.TTF');
+	font-family: 'Montserrat';
+}
+@font-face{
+	src:url('../fonts/NANUMSQUARE_ACR.TTF');
+	font-family: 'Nanumsquare';
+}
+
 *{
-	padding:0;
 	margin:0;
-}
-
-.header-blank-top{
-	height:1.125rem;
-}
-
-.header-blank-left{
-	float:left;
-	height:2.5rem;
-	width:2.5rem;
-}
-
-.header-blank-right{
-	float:right;
-	height:100vh;
-	width:2.5rem;
-}
-
-.header-logo{
-	float:left;
-	margin:auto;
-}
-
-.header-right{
-	float:right;
-	text-align:center;
-	height:2rem; 
-	width:2rem;
-}
-
-.header-right ul {
-	list-style-type : none;
 	padding:0;
-	margin:auto;
+	font-size: 9px;
+	color:#29453c;
 }
-
-.header-icon{
-	width:2rem;
-	height:2rem;
-}
-
-.sns{
-	position:relative;
-	top:25vh;
-}
-
-.position-top{
-	position: relative;
-	top:2.5rem;
-}
-
-.icon-youtube{
-	height:1.55rem;
-}
-
-.menu{
-	width:1.5rem;
-	height:1.2rem;
-}
-
-.icon{
-	padding-top:2rem;
-	padding-bottom:2rem;
-}
-
-.menu:hover{
-	width:1.3rem;
-}
-.icon:hover{
-	width:105%;
-}
-
-</style>
-
-<!-- footer css -->
-<style type="text/css">
-.footer{
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	text-align: center;
-	margin:0;
-}
-.footer-text{
-	width:calc(100% - 5.5rem);
-	position: absolute;
-	left: 0;
-	bottom: 0;
-}
-
-.footer-left{
-	float:left;
-	margin-left:2.5rem;
-	font-size: 0.5rem;
-	text-align: left;
-}
-
-.footer-right{
-	float:right;
-	font-size: 0.5rem;
-	text-align: right;
-}
-
-.footer-margin-bottom-2rem{
-	margin-bottom: 2rem;
-}
-
-.footer-box{
-	float:right;
-	width:5rem;
-	height:5rem;
-	text-align:center;
-	background-color:#333;
-}
-.go-down{
-	position: relative;
-	top: 33%;
-	width: 1.5rem;
-	background-color:#333;
-}
-</style>
-<!-- body css -->
-<style type="text/css">
-.page{
+.aboutme{
 	width:100vw;
 	height:100vh;
+}
+.font-LEMONMILK{
+	font-family: LEMONMILK;
+}
+.font-Montserrat{
+	font-family: Montserrat;
+}
+
+.aboutme-title{
+	text-align:center;
+  	position:relative;  
+  	top:15vh; 
+	margin : auto;
+}
+
+.aboutme-row1{
+	font-size:3rem;
+	margin:0;
+	height:3.3rem;
+}
+
+.aboutme-row2{
+	font-size:3.5rem;
+	font-weight: 500;
+	margin:0;
+}
+
+.aboutme-contents{
+	text-align:center;
+  	position:relative;  
+  	top:30vh;  
+	margin : auto;
+}
+.contents-nanaum{
+	font-size: 2rem;
+	font-family: Nanumsquare;
+}
+
+.aboutme-goott{
+	width:35rem;
+	margin:auto;
+	position:relative;  
+  	top:15vh;  
+}
+.aboutme-goott-left{
 	float:left;
 }
-
-.font-white{
-	color:#ddd;
+.aboutme-goott-right{
+	margin-top:0.5rem;
+	margin-right:0.8rem;
+	float:right;
+	font-size: 1.4rem;
 }
-.font-black{
-	color:#333;
+.aboutme-goott-clean{
+	clear: both;
+	letter-spacing: 0.3rem;
 }
-.background-left{
-	width:50%;
-	height:100%;
-	position: absolute;
-	left:0;
-	top:0;
-	background-color:#333;
-}
-
-.background-img{
-	width:50%;
-	height:100%;
-	position: absolute;
-	right:0;
-	top:0;
-	background-position:right center;
-	object-fit: cover;
-}
-
 </style>
+
 
 </head>
 
-<!-- body css -->
-<style type="text/css">
-.font-white{
-	color:#ddd;
-}
-.font-black{
-	color:#333;
-}
-
-.aboutme-background{
-	width:100vw;
-	height:70vh;
-	color:#f7f7f7;
-	text-align:left;
-	font-size: 23vw;
-	font-weight: 900;
-	letter-spacing:-0.1em;
-	line-height: 0.8em;
- 	position:absolute; 
-	margin-top:10%;
-	overflow: hidden;
-}
-
-.aboutme-background-font{
-	position:relative;
-	top:-7%;
-	left:-2%
-}
-
-.body-title{
-	position: relative;
-	top:20vh;
-	left:15vw;
-	font-size: 1.4rem;
-	font-weight: bold;
-	width:85vw;
-}
-
-.body-title-emphasized{
-	color:#de0c0c;
-	font-size:1.7rem;
-}
-
-.contents{
-	width:76vw;
-	height:60vh;
-	position: absolute;
-	top:30vh;
-	left:15vw;
-}
-.contents-box{
-	width:50%;
-	height:50%;
-	float:left;
-}
-.contents-title{
-	position:relative;
-	top:1rem;
-	font-size:1.8rem;
-}
-.contents-in{
-	position:relative;
-	top:2.5rem;
-	font-size:1rem;
-}
-
-.contents-in-en{
-	position:relative;
-	top:2.5rem;
-	font-size:1.1rem;
-	letter-spacing:0.05em;
-	line-height: 1.5em;
-}
-
-.contents-in-skill{
-	word-spacing:1em;
-}
-
-.contents-in-box{
-	width:100%;
-}
-.contents-in-left{
-	float:left;
-	font-size:1rem;
-}
-.contents-in-right{
-	float:left;
-	font-size:0.8rem;
-	margin-left:5rem
-}
-.contents-in-bottom{
-	clear: both;
-	position:relative;
-	top:2.5rem;
-	font-size:1.1rem;
-	text-align: left;
-}
-
-.aboutme{
-	position:absolute;
-	top:calc(100vh * 1);
-	width:100vw;
-	height:100vh;
-}
-</style>
-
-
 <body>
-	<div class="page aboutme">
-		<div class="aboutme-background">
-			<span class="aboutme-background-font">
-				Brand new <br/>
-				Developer
-			</span>
+	<div class=".aboutme">
+		<div class="aboutme-title">
+			<p class="aboutme-row1 font-Montserrat">Hi I'm new developer</p>
+			<p class="aboutme-row2 font-LEMONMILK">Introduce</p>
 		</div>
-		
-		<div class="">
-			<div class="body-title">
-				<span>안녕하세요. </span>
-				<span class="body-title-emphasized"> Java Fullstack </span> 
-				<span>신입 개발자 박윤택입니다.</span>
-			</div>
+		<div class="aboutme-contents">
+			<p class="contents-nanaum">
+				FullStack 신입 개발자 박윤택입니다. 항상 스스로 디버깅하며<br/>
+				생길 수 있는 문제를 먼저 찾아내어<br/>
+				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
+			</p>
+		<div class="aboutme-goott">
+			<p class="contents-nanaum aboutme-goott-left">구트 아카데미학원	</p>
+			<p class="contents-nanaum aboutme-goott-right">2021.01~2021.07</p>
+			<p class="contents-nanaum aboutme-goott-clean">자바 기반 빅데이터 개발자 양성 과정</p>
+		</div>
 			
-			<div class="contents">
-				<div class="contents-box">
-					<strong class="contents-title">Introduce</strong>	
-					<br/>
-					<p class="contents-in">
-						항상 스스로 디버깅하고있는 신입개발자 				<br/>
-						박윤택입니다. 생길 수 있는 문제를 먼저 찾아 			<br/>
-						컴파일 전에 버그 찾는 개발자가 되겠습니다.				<br/>
-					</p>
-				</div>
-				<div class="contents-box">
-					<strong class="contents-title">Skills</strong>	
-					<br/>
-					<p class="contents-in-en contents-in-skill">
-						Java Javascript HTML CSS				<br/>
-						JSP Spring Python Mybatis				<br/>
-						OracleSQL								<br/>
-					</p>
-				</div>
-				<div class="contents-box">
-					<strong class="contents-title">Learned</strong>	
-					<br/>
-					<div class="contents-in-box contents-in">
-						<p class="contents-in-left">구트아카데미학원</p>
-						<p class="contents-in-right">2021.01~2021.07</p>
-					</div>
-					<p class="contents-in-bottom">자바 기반 빅데이터 개발자 양성과정</p>
-				</div>
-				<div class="contents-box">
-					<strong class="contents-title">Interested in</strong>	
-					<br/>
-					<p class="contents-in-en">
-						Web publishing,					<br/>
-						Server Implementation,			<br/>
-						Database Implementation.		<br/>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-	
-	<div class="aboutme">
-		<div class="header font-black">
-			<div class="header-blank-left"></div>
-			<div class="header-blank-right"></div>
-		
-			<h2 class="header-logo position-top">YT's</h2>
-		
-			<div class="header-right position-top">
-				<img class="header-icon menu" src="../images/logo/menu-b.png">
-				<ul class="header-icon sns">
-					<li><a href="https://www.youtube.com/"><img class="header-icon icon icon-youtube" src="../images/logo/youtube_b.png"></a></li>
-					<li><a href="https://www.instagram.com/yun_taketaek/"><img class="header-icon icon" src="../images/logo/instagram_b.png"></a></li>
-					<li><a href="https://github.com/dbsxortime"><img class="header-icon icon" src="../images/logo/github_b.png"></a></li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="footer font-black">
-			<a class="footer-box">
-				<img class="go-down" src="../images/logo/↓_w.png">
-			</a>
-			<div class="footer-text">
-				<p class="footer-left footer-margin-bottom-2rem">
-					© 2021 Park Yun Taek<br/>
-					ALL RIGHTS RESERVED.
-				</p>
-				<p class="footer-right footer-margin-bottom-2rem">
-					+82 10-8998-0372<br/>
-	 				dbsxortime@naver.com
-				</p>
-			</div>
 		</div>
 	</div>
 </body>
