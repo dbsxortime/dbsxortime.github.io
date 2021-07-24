@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Taek's profile</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<style>
+@font-face{
+	src:url('../fonts/LEMONMILK-MEDIUM.OTF');
+	font-family: 'LEMONMILK';
+} 
+@font-face{
+	src:url('../fonts/LEMONMILK-BOLD.OTF');
+	font-family: 'LEMONMILK-BOLD';
+} 
+@font-face{
+	src:url('../fonts/MONTSERRAT-MEDIUM.TTF');
+	font-family: 'Montserrat';
+}
+@font-face{
+	src:url('../fonts/NANUMSQUARE_ACR.TTF');
+	font-family: 'Nanumsquare';
+}
+@font-face{
+	src:url('../fonts/ROBOTO-REGULAR.TTF');
+	font-family: 'Roboto';
+}
+@font-face{
+	src:url('../fonts/ROBOTO-BOLD.TTF');
+	font-family: 'Roboto-bold';
+}
+:root{
+	--my-green: #29453c;
+}
+*{
+	margin:0;
+	padding:0;
+	font-size: 12px;
+	color:#29453c;
+	overflow: hidden;
+}
+
+a{
+	text-decoration: none;
+}
+
+.font-LEMONMILK{
+	font-family: LEMONMILK;
+}
+.font-LEMONMILK-BOLD{
+	font-family: LEMONMILK-BOLD;
+}
+.font-Montserrat{
+	font-family: Montserrat;
+}
+.font-Roboto{
+	font-family: Roboto;
+}
+.font-Roboto-bold{
+	font-family: Roboto-bold;
+}
+.font-Nanumsquare{
+	font-family: Nanumsquare;
+}
+</style>
+
+<script type="text/javascript">
+	var $html = $("html");
+	var page = 1;
+	var lastPage = 4;
+	 
+	$html.animate({scrollTop:0},300);
+	
+	$(window).on("wheel", function(e){
+		if($html.is(":animated")) return;
+		if(e.originalEvent.deltaY > 0){
+			if(page== lastPage) return;
+			page++;
+		}else if(e.originalEvent.deltaY < 0){
+			if(page == 1) return;
+			page--;
+		}
+		var posTop = (page-1) * $(window).height();
+		$html.animate({scrollTop : posTop}, 300);
+	});
+	
+	$(function(){
+		$(".footer-box").on("click", function(){
+			if(page== lastPage) return;
+			
+			var height= $(window).height();
+			$("html,body").animate({
+				scrollTop: height
+			}, 300);
+			page++;
+		});
+		
+		$(".go-aboutus").on("click", function(){
+			var height= $(window).height();
+			$("html,body").animate({
+				scrollTop: height
+			}, 300);
+			page++;
+		});
+		
+		$(".header-logo").on("click", function(){
+			$("html,body").animate({
+				scrollTop: 0
+			},0);
+			page=1;
+		});
+		
+	});
+	
+</script>
+
+
+<!-- header css -->
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+	font-size: 14px;
+}
+
+</style>
+
+
+<!-- footer css -->
+<style type="text/css">
+</style>
+
+
+<!-- body css -->
+<style type="text/css">
+.main{
+	width:100vw;
+	height:100vh;
+}
+.font-Montserrat{
+	font-family: 'Montserrat',sans-serif;
+	color:#29453c;
+}
+
+.main-title{
+	text-align:center;
+ 	position:relative; 
+ 	top:42vh; 
+	margin : auto;
+}
+
+.main-row1{
+	font-size:3.5rem;
+	letter-spacing: 6.22px;
+	margin:0;
+	height:3.3rem;
+}
+
+.main-row2{
+	height:6rem;
+	font-size:6.4rem;
+	font-weight: 500;
+	margin:0;
+}
+</style>
+
+</head>
+
+<body>
+	<div class="page main">
+		<div class="background-left"></div>
+		<div class="frame">
+			<img class="background-img" src="../images/photo/me.png">
+		</div>
+		
+		<div class="main-contents font-white">
+			<span class="main-contents-name">Park Yun Taek</span>
+			<span class="main-contents-title1 font-Montserrat">Being</span>
+			<span class="main-contents-title2 font-Montserrat">Web/Server</span>
+			<span class="main-contents-title3 font-Montserrat">Developer</span>
+			
+			<a class="go-aboutus main-contents-title4">About us</a>
+			<a class="go-aboutus main-contents-title5">Projects</a>
+			
+			<span class="main-contents-title6">welcome..!</span>
+		</div>
+		
+		<div class="header font-white">
+			<div class="header-blank-left"></div>
+			<div class="header-blank-right"></div>
+		
+			<h2 class="header-logo position-top font-Montserrat">YT's</h2>
+		
+			<div class="header-right position-top">
+				<img class="header-icon menu" src="../images/logo/menu-b.png">
+				<ul class="header-icon sns">
+					<li><a href="https://www.youtube.com/"><img class="header-icon icon icon-youtube" src="../images/logo/youtube_b.png"></a></li>
+					<li><a href="https://www.instagram.com/yun_taketaek/"><img class="header-icon icon" src="../images/logo/instagram_b.png"></a></li>
+					<li><a href="https://github.com/dbsxortime"><img class="header-icon icon" src="../images/logo/github_b.png"></a></li>
+				</ul>
+			</div>
+		</div>
+	
+		<div class="footer font-white">
+			<a class="footer-box">
+				<img class="go-down" src="../images/logo/↓_w.png">
+			</a>
+			<div class="footer-text">
+				<p class="footer-left footer-margin-bottom-2rem">
+					© 2021 Park Yun Taek<br/>
+					ALL RIGHTS RESERVED.
+				</p>
+				<p class="footer-right footer-margin-bottom-2rem">
+					+82 10-8998-0372<br/>
+	 				dbsxortime@naver.com
+				</p>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+
+
+
+
+<!-- ----------------------------- 2page / about me ------------------------------ -->
+
+
+<!-- body css -->
+<style type="text/css">
+.font-white{
+	color:#ddd;
+}
+.font-black{
+	color:#333;
+}
+
+.aboutme-background{
+	width:100vw;
+	height:70vh;
+	color:#f7f7f7;
+	text-align:left;
+	font-size: 23vw;
+	font-weight: 900;
+	letter-spacing:-0.1em;
+	line-height: 0.8em;
+ 	position:absolute; 
+	margin-top:10%;
+	overflow: hidden;
+}
+
+.aboutme-background-font{
+	position:relative;
+	top:-7%;
+	left:-2%
+}
+
+.body-title{
+	position: relative;
+	top:20vh;
+	left:15vw;
+	font-size: 1.4rem;
+	font-weight: bold;
+	width:85vw;
+}
+
+.body-title-emphasized{
+	color:#de0c0c;
+	font-size:1.7rem;
+}
+
+.contents{
+	width:76vw;
+	height:60vh;
+	position: absolute;
+	top:30vh;
+	left:15vw;
+}
+.contents-box{
+	width:50%;
+	height:50%;
+	float:left;
+}
+.contents-title{
+	position:relative;
+	top:1rem;
+	font-size:1.8rem;
+}
+.contents-in{
+	position:relative;
+	top:2.5rem;
+	font-size:1rem;
+}
+
+.contents-in-en{
+	position:relative;
+	top:2.5rem;
+	font-size:1.1rem;
+	letter-spacing:0.05em;
+	line-height: 1.5em;
+}
+
+.contents-in-skill{
+	word-spacing:1em;
+}
+
+.contents-in-box{
+	width:100%;
+}
+.contents-in-left{
+	float:left;
+	font-size:1rem;
+}
+.contents-in-right{
+	float:left;
+	font-size:0.8rem;
+	margin-left:5rem
+}
+.contents-in-bottom{
+	clear: both;
+	position:relative;
+	top:2.5rem;
+	font-size:1.1rem;
+	text-align: left;
+}
+
+.aboutme{
+	position:absolute;
+	top:calc(100vh * 1);
+	width:100vw;
+	height:100vh;
+}
+</style>
+
+
+<body>
+	<div class="page aboutme">
+		<a id="aboutme"></a>
+		<div class="aboutme-background">
+			<span class="aboutme-background-font">
+				Brand new <br/>
+				Developer
+			</span>
+		</div>
+		
+		<div class="">
+			<div class="body-title">
+				<span>안녕하세요. </span>
+				<span class="body-title-emphasized"> Java Fullstack </span> 
+				<span>신입 개발자 박윤택입니다.</span>
+			</div>
+			
+			<div class="contents">
+				<div class="contents-box">
+					<strong class="contents-title font-Montserrat">Introduce</strong>	
+					<br/>
+					<p class="contents-in">
+						항상 스스로 디버깅하고있는 신입개발자 				<br/>
+						박윤택입니다. 생길 수 있는 문제를 먼저 찾아 			<br/>
+						컴파일 전에 버그 찾는 개발자가 되겠습니다.				<br/>
+					</p>
+				</div>
+				<div class="contents-box">
+					<strong class="contents-title font-Montserrat" >Skills</strong>	
+					<br/>
+					<p class="contents-in-en contents-in-skill">
+						Java Javascript HTML CSS				<br/>
+						JSP Spring Python Mybatis				<br/>
+						OracleSQL								<br/>
+					</p>
+				</div>
+				<div class="contents-box">
+					<strong class="contents-title font-Montserrat">Learned</strong>	
+					<br/>
+					<div class="contents-in-box contents-in">
+						<p class="contents-in-left">구트아카데미학원</p>
+						<p class="contents-in-right">2021.01~2021.07</p>
+					</div>
+					<p class="contents-in-bottom">자바 기반 빅데이터 개발자 양성과정</p>
+				</div>
+				<div class="contents-box">
+					<strong class="contents-title font-Montserrat">Interested in</strong>	
+					<br/>
+					<p class="contents-in-en">
+						Web publishing,					<br/>
+						Server Implementation,			<br/>
+						Database Implementation.		<br/>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="aboutme">
+		<div class="header font-black">
+			<div class="header-blank-left"></div>
+			<div class="header-blank-right"></div>
+		
+			<h2 class="header-logo position-top">YT's</h2>
+		
+			<div class="header-right position-top">
+				<img class="header-icon menu" src="../images/logo/menu-b.png">
+				<ul class="header-icon sns">
+					<li><a href="https://www.youtube.com/"><img class="header-icon icon icon-youtube" src="../images/logo/youtube_b.png"></a></li>
+					<li><a href="https://www.instagram.com/yun_taketaek/"><img class="header-icon icon" src="../images/logo/instagram_b.png"></a></li>
+					<li><a href="https://github.com/dbsxortime"><img class="header-icon icon" src="../images/logo/github_b.png"></a></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<div class="footer font-black">
+			<a class="footer-box">
+				<img class="go-down" src="../images/logo/↓_w.png">
+			</a>
+			<div class="footer-text">
+				<p class="footer-left footer-margin-bottom-2rem">
+					© 2021 Park Yun Taek<br/>
+					ALL RIGHTS RESERVED.
+				</p>
+				<p class="footer-right footer-margin-bottom-2rem">
+					+82 10-8998-0372<br/>
+	 				dbsxortime@naver.com
+				</p>
+			</div>
+		</div>
+		
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Taek's profile</title>
+<style type="text/css">
+@font-face{
+	src:url('../fonts/LEMONMILK-MEDIUM.OTF');
+	font-family: 'LEMONMILK';
+} 
+@font-face{
+	src:url('../fonts/LEMONMILK-BOLD.OTF');
+	font-family: 'LEMONMILK-BOLD';
+} 
+@font-face{
+	src:url('../fonts/MONTSERRAT-MEDIUM.TTF');
+	font-family: 'Montserrat';
+}
+@font-face{
+	src:url('../fonts/NANUMSQUARE_ACR.TTF');
+	font-family: 'Nanumsquare';
+}
+@font-face{
+	src:url('../fonts/ROBOTO-REGULAR.TTF');
+	font-family: 'Roboto';
+}
+@font-face{
+	src:url('../fonts/ROBOTO-BOLD.TTF');
+	font-family: 'Roboto-bold';
+}
+:root{
+	--my-green: #29453c;
+}
+*{
+	margin:0;
+	padding:0;
+	font-size: 0.9rem;
+	color:#29453c;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.font-LEMONMILK{
+	font-family: LEMONMILK;
+}
+.font-LEMONMILK-BOLD{
+	font-family: LEMONMILK-BOLD;
+}
+.font-Montserrat{
+	font-family: Montserrat;
+}
+.font-Roboto{
+	font-family: Roboto;
+}
+.font-Roboto-bold{
+	font-family: Roboto-bold;
+}
+.font-Nanumsquare{
+	font-family: Nanumsquare;
+}
+
+.projects{
+	width:100%;
+	height:100%;
+}
+
+.projects-title{
+	position: relative;
+	top: 8rem;
+	left: 40rem;
+}
+
+.projects-row1{
+	font-size: 5.75rem;
+	margin:0;
+	padding-right:1.5rem;
+}
+
+.projects-subtitle{
+	font-size:2.2rem;
+	font-weight: 500;
+	margin:0;
+	margin-top:4.68rem;
+}
+
+.contents-nanaum{
+	font-size: 2rem;
+	font-family: Nanumsquare;
+}
+
+.projects-box{
+	width:33.18rem;
+	height:100vh;
+	background-color: var(--my-green);
+	position:absolute;
+	top:0;
+	left:0;
+	
+	font-style: none;
+}
+
+.projects-box-contents{
+	margin-top:26.8rem;
+	margin-left:9rem;
+}
+
+.projects-box-contents-title{
+	width:100%;
+	text-align: center;
+	color:#fff;
+	opacity: 0.4;
+	font-size: 3.375rem;
+}
+.projects-box-contents-box{
+	margin-top:4.6rem;
+}
+
+.projects-box-contents-box-contents-select{
+	margin-top:1.625rem;
+	font-size:1.56rem;
+	color:#fff;
+	opacity: 1;
+}
+.projects-box-contents-box-contents-select-no{
+	margin-top:1.625rem;
+	height:100px;
+	font-size:1.56rem;
+	color:#fff;
+	opacity: 0.4;
+}
+
+.projects-title-float{
+	float:left;
+	width:100%;
+	height:8rem;
+}
+
+.projects-title-button{
+	font-size:1.344rem;
+	padding:0.5rem 0;
+	padding-left:0.958rem;
+	padding-right:0.688rem;
+	border:2px solid black;
+	border-radius: 1rem;
+	position: relative;
+	top:-1.2rem;
+}
+
+.button-icon{
+	width:1rem;
+	height:0.85rem;
+}
+
+.projects-title-detail{
+	color:#000000;
+	opacity: 0.5;
+	font-size: 1.156rem;
+	position: relative;
+	top: -4.2rem;
+	left: 31rem;
+	width:17.5rem;
+	height:2.6rem;
+	}
+
+.projects-title-contents{
+	color:#000000;
+	opacity: 0.5;
+	font-size: 1.56rem;
+}
+
+.projects-contents1{
+	margin:0;
+	margin-top:2.5rem;
+	overflow: hidden;
+	width:55rem;
+	height:56rem;
+	position: relative;
+	left:40rem;
+	top:7.25rem;
+}
+.projects-contents2{
+	margin:0;
+	overflow: hidden;
+	width:55rem;
+	height:56rem;
+	position: relative;
+	left:64rem;
+	top:-42.75rem;
+}
+
+.projects-contents-img{
+	width:100%;
+	height:100%;
+}
+</style>
+
+
+</head>
+
+<body>
+	<div class="projects">
+		<!-- left box -->
+		<div class="projects-box">
+			<div class="projects-box-contents">
+				<a class="projects-box-contents-title font-Roboto-bold" href="#">PROJECT</a>
+				<div class="projects-box-contents-box">
+					<a class="projects-box-contents-box-contents-select font-Roboto" href="#">01 Shopping Mall Web </a>
+					<div style="height:1.625rem;"></div>
+					<a class="projects-box-contents-box-contents-select-no font-Roboto" href="#">02 Profile Web </a>
+					<div style="height:1.625rem;"></div>
+					<a class="projects-box-contents-box-contents-select-no font-Roboto" href="#">03 Java Mini Game </a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="projects-title">
+			<div class="projects-title-float">
+				<span class="projects-row1 font-LEMONMILK-BOLD">ROGO</span>
+				<a class="projects-title-button font-Nanumsquare" href="#">보러가기
+					<img class="button-icon" src="../images/icon/↓_g.png"></a>
+				<p class="projects-title-detail font-Nanumsquare">
+					2021. 06~ 2021.07 [2명, 4주]<br/>
+					파트 : 화면구현, 기능 및 DB (서버)설계
+				</p>
+			</div>
+			<br style="clear:both"/>
+			<span class="projects-title-contents font-Nanumsquare">
+				ROGO프로젝트는 기존 쇼핑몰 ‘RUSKO’를 개선하기위한 가상 의뢰 프로젝트로 전반적인 디자인 변경, 기능의 개선이 이루어졌다.<br/>
+				요즘 트렌드에 맞는 미니멀한 컨셉으로의 변경, 세부적인 기능의 개선으로 더 직관적이고 편리한 웹으로 개선되었다.
+			</span>
+		</div>
+		<div class="projects-contents1">
+			<img class="projects-contents-img" src="../images/project/ROGO.jpg">
+		</div>
+		<div class="projects-contents2">
+			<img class="projects-contents-img" src="../images/project/ROGO2.jpg">
+		</div>
+	</div>
+</body>
+
+</html>
