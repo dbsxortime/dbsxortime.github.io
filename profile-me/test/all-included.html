@@ -118,11 +118,11 @@ a{
 	});
 	
 	var ts;
-	$(".pages").bind('touchstart', function(e) {
+	$(window).bind('touchstart', function(e) {
 		ts = e.originalEvent.touches[0].clientY;
 	});
 
-	$(".pages").bind('touchend', function(e) {
+	$(window).bind('touchend', function(e) {
 		var te = e.originalEvent.changedTouches[0].clientY;
 		if (ts > te + 5) {
 			if (page == lastPage) return;
