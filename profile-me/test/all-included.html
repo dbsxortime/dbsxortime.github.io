@@ -438,6 +438,7 @@ a{
 
 
 <!-- body css -->
+
 <style type="text/css">
 
 .projects{
@@ -523,10 +524,24 @@ a{
 	padding:0.5rem 0;
 	padding-left:0.958rem;
 	padding-right:0.688rem;
-	border:2px solid black;
+	border:2px solid var(--my-green);
 	border-radius: 1rem;
 	position: relative;
 	top:-1.2rem;
+}
+
+.button-icon-hover{
+	display:none;
+}
+.projects-title-button:hover{
+	background-color:var(--my-green);
+	color:#ffffff;
+}
+.projects-title-button:hover .button-icon{
+	display:none;
+}
+.projects-title-button:hover .button-icon-hover{
+	display:inline-block;
 }
 
 .button-icon{
@@ -599,7 +614,8 @@ a{
 			<div class="projects-title-float">
 				<span class="projects-row1 font-LEMONMILK-BOLD">ROGO</span>
 				<a class="projects-title-button font-Nanumsquare" href="#">보러가기
-					<img class="button-icon" src="../images/icon/↓_g.png"></a>
+				<img class="button-icon" src="../images/icon/↓_g.png">
+				<img class="button-icon-hover" src="../images/icon/↓_w_right.png"></a>
 				<p class="projects-title-detail font-Nanumsquare">
 					2021. 06~ 2021.07 [2명, 4주]<br/>
 					파트 : 화면구현, 기능 및 DB (서버)설계
