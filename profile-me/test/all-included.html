@@ -70,10 +70,11 @@ a{
 </style>
 
 <script type="text/javascript">
+	
 	var $html = $("html");
 	var page = 1;
-	var lastPage = 4;
-	 
+	var lastPage = 5;
+	
 	$html.animate({scrollTop:0},300);
 	
 	$(window).on("wheel", function(e){
@@ -132,11 +133,11 @@ a{
 			page--;
 		}
 		var posTop = (page - 1) * $(window).height();
-		$html.animate({
-			scrollTop : posTop
-		}, 300);
+		$html.animate({scrollTop : posTop}, 300);
 	});
 </script>
+
+
 
 
 <!-- header css -->
@@ -144,10 +145,6 @@ a{
 .pages{
 	width:100vw;
 	height:100vh;
-}
-
-.header{
-	z-index: 1;
 }
 
 .header{
@@ -161,6 +158,7 @@ a{
 	left:50%;
 	transform:translate(-50%,0%);
 	font-size: 2.25rem;
+	z-index: 9999;
 }
 .header-bot{
 	position:fixed;
@@ -168,6 +166,7 @@ a{
 	left:50%;
 	transform:translate(-50%,0%);
 	font-size: 1.9rem;
+	z-index: 9999;
 }
 
 .header-menu{
@@ -211,7 +210,8 @@ a{
 .main-title{
 	text-align:center;
  	position:relative; 
- 	top:38vh; 
+ 	top:50%;
+ 	transform:translate(0,-50%); 
 	margin : auto;
 }
 
@@ -247,12 +247,6 @@ a{
 
 <!-- body css -->
 <style type="text/css">
-.aboutme{
-	position:absolute;
-	top:calc(100vh * 1);
-	width:100%;
-	height:100%;
-}
 .font-LEMONMILK{
 	font-family: LEMONMILK;
 }
@@ -263,7 +257,8 @@ a{
 .aboutme-title{
 	text-align:center;
   	position:relative;  
-  	top:15%;
+  	top:25%;
+	transform:translate(0,-25%);
 	margin : auto;
 }
 
@@ -282,7 +277,8 @@ a{
 .aboutme-contents{
 	text-align:center;
   	position:relative;  
-  	top:30vh;  
+  	top:50%;
+	transform:translate(0,-50%);
 	margin : auto;
 }
 
@@ -309,7 +305,7 @@ a{
 
 <body>
 	<div class="pages">
-		<div class="aboutme-title">
+		<div class="aboutme-title page2-child">
 			<p class="aboutme-row1 font-Montserrat">Hi I'm new developer</p>
 			<p class="aboutme-row2 font-LEMONMILK">Introduce</p>
 		</div>
@@ -481,7 +477,9 @@ a{
 }
 
 .projects-box-contents{
-	margin-top:26.8rem;
+	position:relative;
+	top:50%;
+	transform:translate(0,-50%);
 	margin-left:9rem;
 }
 
@@ -489,7 +487,217 @@ a{
 	width:100%;
 	text-align: center;
 	color:#fff;
+	opacity: 0.4;	
+	font-size: 3.375rem;
+}
+.projects-box-contents-box{
+	margin-top:4.6rem;
+}
+
+.projects-box-contents-box-contents-select{
+	margin-top:1.625rem;
+	font-size:1.56rem;
+	color:#fff;
+	opacity: 1;
+}
+.projects-box-contents-box-contents-select-no{
+	margin-top:1.625rem;
+	height:100px;
+	font-size:1.56rem;
+	color:#fff;
 	opacity: 0.4;
+}
+
+.projects-title-float{
+	float:left;
+	width:100%;
+	height:8rem;
+}
+
+.projects-title-button{
+	font-size:1.344rem;
+	padding:0.5rem 0;
+	padding-left:0.958rem;
+	padding-right:0.688rem;
+	border:2px solid var(--my-green);
+	border-radius: 1rem;
+	position: relative;
+	top:-1.2rem;
+}
+
+.projects-title-button:hover{
+	background-color:var(--my-green);
+	color:#fff;
+}
+
+.button-icon-hover{
+	display: none;
+}
+.projects-title-button:hover .button-icon{
+	display:none;
+}
+.projects-title-button:hover .button-icon-hover{
+	display:inline;
+}
+
+.button-icon{
+	width:1rem;
+	height:0.85rem;
+}
+.button-icon-hover{
+	width:1rem;
+	height:0.85rem;
+}
+
+.projects-title-detail{
+	color:#000000;
+	opacity: 0.5;
+	font-size: 1.156rem;
+	position: relative;
+	top: -4.2rem;
+	left: 31rem;
+	width:17.5rem;
+	height:2.6rem;
+	}
+
+.projects-title-contents{
+	color:#000000;
+	opacity: 0.5;
+	font-size: 1.56rem;
+}
+
+.projects-contents1{
+	margin:0;
+	margin-top:2.5rem;
+	overflow: hidden;
+	width:55rem;
+	height:56rem;
+	position: relative;
+	left:40rem;
+	top:7.25rem;
+}
+.projects-contents2{
+	margin:0;
+	overflow: hidden;
+	width:55rem;
+	height:56rem;
+	position: relative;
+	left:64rem;
+	top:-42.75rem;
+}
+
+.projects-contents-img{
+	width:100%;
+	height:100%;
+}
+</style>
+
+
+<body>
+	<div class="pages">
+		<!-- left box -->
+		<div class="projects-box">
+			<div class="projects-box-contents">
+				<a class="projects-box-contents-title font-Roboto-bold" href="#">PROJECT</a>
+				<div class="projects-box-contents-box">
+					<a class="projects-box-contents-box-contents-select font-Roboto" href="#">01 Shopping Mall Web </a>
+					<div style="height:1.625rem;"></div>
+					<a class="projects-box-contents-box-contents-select-no font-Roboto" href="#">02 Profile Web </a>
+					<div style="height:1.625rem;"></div>
+					<a class="projects-box-contents-box-contents-select-no font-Roboto" href="#">03 Java Mini Game </a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="projects-title">
+			<div class="projects-title-float">
+				<span class="projects-row1 font-LEMONMILK-BOLD">ROGO</span>
+				<a class="projects-title-button font-Nanumsquare" href="#">보러가기
+					<img class="button-icon" src="../images/icon/↓_g.png">
+					<img class="button-icon-hover" src="../images/icon/↓_w_right.png">
+				</a>
+				<p class="projects-title-detail font-Nanumsquare">
+					2021. 06~ 2021.07 [2명, 4주]<br/>
+					파트 : 화면구현, 기능 및 DB (서버)설계
+				</p>
+			</div>
+			<br style="clear:both"/>
+			<span class="projects-title-contents font-Nanumsquare">
+				ROGO프로젝트는 기존 쇼핑몰 ‘RUSKO’를 개선하기위한 가상 의뢰 프로젝트로 전반적인 디자인 변경, 기능의 개선이 이루어졌다.<br/>
+				요즘 트렌드에 맞는 미니멀한 컨셉으로의 변경, 세부적인 기능의 개선으로 더 직관적이고 편리한 웹으로 개선되었다.
+			</span>
+		</div>
+		<div class="projects-contents1">
+			<img class="projects-contents-img" src="../images/project/ROGO.jpg">
+		</div>
+		<div class="projects-contents2">
+			<img class="projects-contents-img" src="../images/project/ROGO2.jpg">
+		</div>
+	</div>
+</body>
+
+<!-- ----------------------------- 5page / projects-2 ------------------------------ -->
+
+
+<!-- body css -->
+
+<style type="text/css">
+
+.projects-2{
+	position:absolute;
+	top:calc(100vh * 4);
+	width:100%;
+	height:100%;
+}
+
+.projects-title{
+	position: relative;
+	top: 8rem;
+	left: 40rem;
+}
+
+.projects-row1{
+	font-size: 5.75rem;
+	margin:0;
+	padding-right:1.5rem;
+}
+
+.projects-subtitle{
+	font-size:2.2rem;
+	font-weight: 500;
+	margin:0;
+	margin-top:4.68rem;
+}
+
+.contents-nanaum{
+	font-size: 2rem;
+	font-family: Nanumsquare;
+}
+
+.projects-box{
+	width:33.18rem;
+	height:100vh;
+	background-color: var(--my-green);
+	position:absolute;
+	top:300%;
+	left:0;
+	
+	font-style: none;
+}
+
+.projects-box-contents{
+	position:relative;
+	top:50%;
+	transform:translate(0,-50%);
+	margin-left:9rem;
+}
+
+.projects-box-contents-title{
+	width:100%;
+	text-align: center;
+	color:#fff;
+	opacity: 0.4;	
 	font-size: 3.375rem;
 }
 .projects-box-contents-box{
