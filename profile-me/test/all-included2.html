@@ -135,6 +135,15 @@ a{
 		var posTop = (page - 1) * $(window).height();
 		$html.animate({scrollTop : posTop}, 300);
 	});
+	
+	
+	
+	let vh = 0;
+
+	useEffect(() => {
+	  vh = window.innerHeight * 0.01;
+	  document.documentElement.style.setProperty('--vh', `${vh}px`);
+	}, []);
 </script>
 
 
@@ -144,7 +153,7 @@ a{
 <style type="text/css">
 	.pages{
 		width:100vw;
-		height:100vh;
+		height:calc(var(--vh, 1vh) * 100);;
 	}
 
 	.header{
