@@ -226,7 +226,11 @@ a{
 </style>
 	
 <script>
-	
+$(document).ready(function () {
+	$(document).on("click", ".header_menu", function () {
+		alert("clicked!");
+	});
+});
 </script>
 
 <body>
