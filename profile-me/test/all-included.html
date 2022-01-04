@@ -176,9 +176,6 @@ a{
 		transform:translate(0%,-50%);
 	}
 	
-	.header_menu :hover .header_menu_opened{
-		display:block;
-	}
 	
 	.header_menu_handler{
 		width:6rem;
@@ -212,7 +209,11 @@ a{
 		right:30vw;
 	}
 	
-	.header_menu_closer :hover .header_menu_opened{
+	.header_menu :active .header_menu_opened{
+		display:block;
+	}
+	
+	.header_menu_closer :active .header_menu_opened{
 		display:none;
 	}
 	
@@ -220,6 +221,7 @@ a{
 		position:fixed;
 		left:0;
 		width:70vw;
+		height:100vh;
 	}
 </style>
 	
