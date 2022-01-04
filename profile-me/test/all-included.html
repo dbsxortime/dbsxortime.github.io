@@ -175,7 +175,11 @@ a{
 		right:0;
 		transform:translate(0%,-50%);
 	}
-
+	
+	.header_menu :hover .header_menu_opened{
+		display:block;
+	}
+	
 	.header_menu_handler{
 		width:6rem;
 		height:6rem;
@@ -207,6 +211,16 @@ a{
 		transform:translate(0%,-50%);
 		right:30vw;
 	}
+	
+	.header_menu_closer :hover .header_menu_opened{
+		display:none;
+	}
+	
+	.header_menu_closer{
+		position:fixed;
+		left:0;
+		width:70vw;
+	}
 </style>
 	
 <script>
@@ -229,6 +243,9 @@ a{
 			<a>
 				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
+			<div class="header_menu_closer">
+				
+			</div>
 		</div>
 	</div>
 </body>
