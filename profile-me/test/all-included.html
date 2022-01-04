@@ -142,9 +142,13 @@ a{
 
 <!-- header css -->
 <style type="text/css">
+	body{
+		width:100%;
+		height:100%;
+	}
 	.pages{
-		width:100vw;
-		height:100vh;
+		width:100%;
+		height:100%;
 	}
 
 	.header{
@@ -233,21 +237,22 @@ a{
 	<div class="header">
 		<span class="header_top">FrontBack</span>
 		<span class="header_bot">Park YunTaek</span>
-		<div class="header_menu" onclick="menu_open()">
-			<a>
-				<img class="header_menu_handler" src="../images/icon/handler.png">
-			</a>
-		</div>
-		<div class="header_menu_opened">
+		<div class="header_menu_opened" id="menu_tab">
+			<div class="header_menu_closer" onclick="menu_close();">
+				
+			</div>
 			<div class="header_menu_box">
 				
 			</div>
 			<a>
 				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
-			<div class="header_menu_closer" onclick="menu_close()">
-				
-			</div>
+			
+		</div>
+		<div class="header_menu" id="menu_bar" onclick="menu_open();">
+			<a>
+				<img class="header_menu_handler" src="../images/icon/handler.png">
+			</a>
 		</div>
 	</div>
 </body>
