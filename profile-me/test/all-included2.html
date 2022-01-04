@@ -48,23 +48,23 @@ a{
 	text-decoration: none;
 }
 
-.font-LEMONMILK{
+.font_LEMONMILK{
 	font-family: LEMONMILK;
 }
-.font-LEMONMILK-BOLD{
+.font_LEMONMILK_BOLD{
 	font-family: LEMONMILK-BOLD;
 }
-.font-Montserrat{
+.font_Montserrat{
 	font-family: Montserrat;
 }
 
-.font-Roboto{
+.font_Roboto{
 	font-family: Roboto;
 }
-.font-Roboto-bold{
+.font_Roboto_bold{
 	font-family: Roboto-bold;
 }
-.font-Nanumsquare{
+.font_Nanumsquare{
 	font-family: Nanumsquare;
 }
 </style>
@@ -73,7 +73,7 @@ a{
 	
 	var $html = $("html");
 	var page = 1;
-	var lastPage = 5;
+	var lastPage = 4;
 	
 	$html.animate({scrollTop:0},300);
 	
@@ -91,7 +91,7 @@ a{
 	});
 	
 	$(function(){
-		$(".footer-box").on("click", function(){
+		$(".footer_box").on("click", function(){
 			if(page== lastPage) return;
 			
 			var height= $(window).height();
@@ -101,7 +101,7 @@ a{
 			page++;
 		});
 		
-		$(".go-aboutus").on("click", function(){
+		$(".go_aboutus").on("click", function(){
 			var height= $(window).height();
 			$("html,body").animate({
 				scrollTop: height
@@ -109,7 +109,7 @@ a{
 			page++;
 		});
 		
-		$(".header-logo").on("click", function(){
+		$(".header_logo").on("click", function(){
 			$("html,body").animate({
 				scrollTop: 0
 			},0);
@@ -142,54 +142,112 @@ a{
 
 <!-- header css -->
 <style type="text/css">
-.pages{
-	width:100vw;
-	height:100vh;
-}
+	.pages{
+		width:100vw;
+		height:100vh;
+	}
 
-.header{
-	font-family: Montserrat-light;
-	text-align: center;
-}
+	.header{
+		font-family: Montserrat-light;
+		text-align: center;
+	}
 
-.header-top{
-	position:fixed;
-	top:5rem;
-	left:50%;
-	transform:translate(-50%,0%);
-	font-size: 2.25rem;
-	z-index: 9999;
-}
-.header-bot{
-	position:fixed;
-	bottom:3.375rem;
-	left:50%;
-	transform:translate(-50%,0%);
-	font-size: 1.9rem;
-	z-index: 9999;
-}
+	.header_top{
+		position:fixed;
+		top:5rem;
+		left:50%;
+		transform:translate(-50%,0%);
+		font-size: 2.25rem;
+		z-index: 9999;
+	}
+	.header_bot{
+		position:fixed;
+		bottom:3.375rem;
+		left:50%;
+		transform:translate(-50%,0%);
+		font-size: 1.9rem;
+		z-index: 9999;
+	}
 
-.header-menu{
-	position:absolute;
-	top:50%;
-	right:0;
-	transform:translate(0%,-50%);
-}
+	.header_menu{
+		position:fixed;
+		top:50%;
+		right:0;
+		transform:translate(0%,-50%);
+	}
+	
+	
+	.header_menu_handler{
+		width:6rem;
+		height:6rem;
+	}
 
-.header-menu-handler{
-	width:6rem;
-	height:6rem;
-}
+	.header_menu_opened{
+		position:fixed;
+		top:50%;
+		transform:translate(0%,-50%);
+		right:0;
+		width:100%;
+		height:100%;
+		display:none;
+	}
+	
+	.header_menu_box{
+		position:fixed;
+		right:0;
+		width:30vw;
+		height:100%;
+		background-color:#000;
+		opacity:0.5;
+	}
+	
+	.header_menu_opened .header_menu_handler{
+		width:6rem;
+		height:6rem;
+		position:fixed;
+		top:50%;
+		transform:translate(0%,-50%);
+		right:30vw;
+	}
+	
+	.header_menu_closer{
+		position:fixed;
+		left:0;
+		width:70vw;
+		height:100vh;
+	}
 </style>
-
+	
+<script>
+	function menu_open(){
+		// document.getElementsByClassName('header_menu_opened')[0].style.display="block";
+		alert('test');
+	}
+	function menu_close(){
+		document.getElementsByClassName('header_menu_opened')[0].style.display="none";
+	}
+	
+</script>
 
 <body>
 	<div class="header">
-		<span class="header-top">FrontBack</span>
-		<span class="header-bot">Park YunTaek</span>
-		<div class="header-menu">
+		<span class="header_top">FrontBack</span>
+		<span class="header_bot">Park YunTaek</span>
+		<div class="header_menu_opened" id="menu_tab">
+			<div class="header_menu_closer" onclick="menu_close();">
+				
+			</div>
+			<div class="header_menu_box">
+				
+			</div>
 			<a>
-				<img class="header-menu-handler" src="../images/icon/handler.png">
+				<img class="header_menu_handler" src="../images/icon/handler.png">
+			</a>
+			
+		</div>
+		<div class="header_menu" id="menu_bar" onclick="menu_open();">
+			<a>
+				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
 		</div>
 	</div>
@@ -197,44 +255,39 @@ a{
 
 <!-- body css -->
 <style type="text/css">
-.main{
-	width:100%;
-	height:100%;
-}
+	.font_Montserrat{
+		font-family: 'Montserrat',sans-serif;
+		color:#29453c;
+	}
 
-.font-Montserrat{
-	font-family: 'Montserrat',sans-serif;
-	color:#29453c;
-}
+	.main_title{
+		text-align:center;
+		position:relative; 
+		top:48%;
+		transform:translate(0,-50%); 
+		margin : auto;
+	}
 
-.main-title{
-	text-align:center;
- 	position:relative; 
- 	top:50%;
- 	transform:translate(0,-50%); 
-	margin : auto;
-}
+	.main_row1{
+		font-size:3.5rem;
+		letter-spacing: 6.22px;
+		margin:0;
+	}
 
-.main-row1{
-	font-size:3.5rem;
-	letter-spacing: 6.22px;
-	margin:0;
-}
-
-.main-row2{
-	font-size:6.4rem;
-	font-weight: 500;
-	margin:0;
-	position:relative;
-	top:-1rem;
-}
+	.main_row2{
+		font-size:6.4rem;
+		font-weight: 500;
+		margin:0;
+		position:relative;
+		top:-1rem;
+	}
 </style>
 </head>
 <body>
 	<div class="pages">
-		<div class="main-title font-Montserrat">
-			<p class="main-row1">I'm Web / Server</p>
-			<p class="main-row2">Developer</p>
+		<div class="main_title font_Montserrat">
+			<p class="main_row1">I'm Web / Server</p>
+			<p class="main_row2">Developer</p>
 		</div>
 	</div>
 </body>
@@ -247,78 +300,71 @@ a{
 
 <!-- body css -->
 <style type="text/css">
-.font-LEMONMILK{
-	font-family: LEMONMILK;
-}
-.font-Montserrat{
-	font-family: Montserrat;
-}
+	.aboutme_title{
+		text-align:center;
+		position:relative;  
+		top:25%;
+		transform:translate(0,-25%);
+		margin : auto;
+	}
 
-.aboutme-title{
-	text-align:center;
-  	position:relative;  
-  	top:25%;
-	transform:translate(0,-25%);
-	margin : auto;
-}
+	.aboutme_row1{
+		font-size:3rem;
+		margin:0;
+		height:3.3rem;
+	}
 
-.aboutme-row1{
-	font-size:3rem;
-	margin:0;
-	height:3.3rem;
-}
+	.aboutme_row2{
+		font-size:3.5rem;
+		font-weight: 500;
+		margin:0;
+	}
 
-.aboutme-row2{
-	font-size:3.5rem;
-	font-weight: 500;
-	margin:0;
-}
+	.aboutme_contents{
+		text-align:center;
+		position:relative;  
+		top:50%;
+		transform:translate(0,-50%);
+		margin : auto;
+	}
 
-.aboutme-contents{
-	text-align:center;
-  	position:relative;  
-  	top:50%;
-	transform:translate(0,-50%);
-	margin : auto;
-}
+	.aboutme_goott{
+		width:35rem;
+		margin:auto;
+		margin-top:10rem;
+	}
+	.aboutme_goott_left{
+		float:left;
+	}
+	.aboutme_goott_right{
+		margin-top:0.5rem;
+		margin-right:0.8rem;
+		float:right;
+	}
 
-.aboutme-goott{
-	width:35rem;
-	margin:auto;
-	margin-top:10rem;
-}
-.aboutme-goott-left{
-	float:left;
-}
-.aboutme-goott-right{
-	margin-top:0.5rem;
-	margin-right:0.8rem;
-	float:right;
-}
-
-.aboutme-goott-clean{
-	clear: both;
-	letter-spacing: 0.3rem;
-}
+	.aboutme_goott_clean{
+		clear: both;
+		letter-spacing: 0.3rem;
+	}
 </style>
 
 
 <body>
-	<div class="pages">
-		<div class="aboutme-title page2-child">
-			<p class="aboutme-row1 font-Montserrat">Hi I'm new developer</p>
-			<p class="aboutme-row2 font-LEMONMILK">Introduce</p>
+	<div class="pages" style="background-color:#ccc;">
+		<div class="aboutme_title page2_child">
+			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
+			<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
 		</div>
-		<div class="aboutme-contents">
-			<p class="contents-nanaum">
+		<div class="aboutme_contents">
+			<p class="contents_nanaum">
 				FullStack 신입 개발자 박윤택입니다. 항상 스스로 디버깅하며<br/>
 				생길 수 있는 문제를 먼저 찾아내어<br/>
 				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
 			</p>
-		<div class="aboutme-goott">
-			<p class="contents-nanaum aboutme-goott-left">구트 아카데미학원	</p>
-			<p class="contents-nanaum aboutme-goott-right" style="font-size:1.4rem;">2021.01~2021.07</p>
-			<p class="contents-nanaum aboutme-goott-clean">자바 기반 빅데이터 개발자 양성 과정</p>
+		<div class="aboutme_goott">
+			<p class="contents_nanaum aboutme_goott_left">구트 아카데미학원	</p>
+			<p class="contents_nanaum aboutme_goott_right" style="font-size:1.4rem;">2021.01~2021.07</p>
+			<p class="contents_nanaum aboutme_goott_clean">자바 기반 빅데이터 개발자 양성 과정</p>
 		</div>
 			
 		</div>
@@ -332,95 +378,81 @@ a{
 
 <!-- body css -->
 <style type="text/css">
-.introduce{
-	position:absolute;
-	top:calc(100vh * 2);
-	width:100%;
-	height:100%;
-}
-.font-LEMONMILK{
-	font-family: LEMONMILK;
-}
-.font-Montserrat{
-	font-family: Montserrat;
-}
+	.introduce_title{
+		text-align:center;
+		margin : auto;
+		position:relative;
+		top:9rem;
+	}
 
-.introduce-title{
-	text-align:center;
-	margin : auto;
-	position:relative;
-	top:9rem;
-}
+	.introduce_row1{
+		font-size:3.5rem;
+		font-weight:500;
+		margin:0;
+	}
 
-.introduce-row1{
-	font-size:3.5rem;
-	font-weight:500;
-	margin:0;
-}
+	.introduce_subtitle{
+		font-size:2.2rem;
+		font-weight: 500;
+		margin:0;
+		margin-top:1rem;
+	}
 
-.introduce-subtitle{
-	font-size:2.2rem;
-	font-weight: 500;
-	margin:0;
-	margin-top:1rem;
-}
+	.skills{
+		width:67rem;
+		position:relative;
+		top:50%;
+		transform:translate(0,-70%);
+		margin:auto;
+	}
 
-.skills{
-	width:72rem;
-	position:relative;
-	top:45%;
-	transform:translate(0,-50%);
-	margin:auto;
-}
-.skills-left{
-	float:left;
-	line-height: 1.65;
-}
-.skills-right{
-	float:left;
-	line-height: 1.69;
-	margin-left:2rem;
-}
-.skills-clean{
-	clear: both;
-	letter-spacing: 0.3rem;
-}
+	.skills_left{
+		line-height: 1.65;
+		float:left;
+	}
+
+	.skills_right{
+		line-height: 1.65;
+		float:left;
+		margin-left:3rem;
+	}
+
+	.skills_clean{
+		clear: both;
+		letter-spacing: 0.3rem;
+	}
 </style>
 
 
 <body>
 	<div class="pages">
-		<div class="introduce-title">
-			<p class="introduce-row1 font-LEMONMILK">Introduce</p>
-			<p class="introduce-subtitle font-LEMONMILK">Skills</p>
+		<div class="introduce_title">
+			<p class="introduce_row1 font_LEMONMILK">Introduce</p>
+			<p class="introduce_subtitle font_LEMONMILK">Skills</p>
 		</div>
 		<div class="skills">
-			<p class="contents-nanaum skills-left">
+			<p class="contents_nanaum skills_left" style="font-size:1.8rem;">
 				Java <br/>
-				HTML<br/>
-				JSP<br/>
-				Javascript<br/>
-				Jquery<br/>
+				HTML / JSP<br/>
+				Javascript / Jquery<br/>
 				CSS<br/>
 				Spring<br/>
-				Mybatis<br/>
-				OracleSQL<br/>
+				Mybatis / ibatis<br/>
+				OracleSQL / MySql<br/>
 				Python<br/>
-				Github<br/>
+				Github / SVN<br/>
 				Zeplin	
 			</p>
-			<p class="contents-nanaum skills-right">
-				주어진 문제를 이해하고 필요 시 적절한 라이브러리를 활용하여 문제 해결<br/>
+			<p class="contents_nanaum skills_right" style="font-size:1.8rem;">
+				주어진 문제를 이해하고 적절한 라이브러리를 활용하여 문제 해결<br/>
 				DOM의 이해와 적절한 태그 사용으로 원하는 화면 구현<br/>
-				자바 서버와 서블릿의 이해와 Model2방식을 활용한 효율적인 MVC패턴 구축<br/>
-				필요한 동작의 원리를 이해하고 DOM을 활용한 효율적인 문제 해결<br/>
-				jquery를 활용한 다양하고 간결한 동작 해결<br/>
+				정확하고 다양하며 간결한 동작 해결<br/>
 				원하는 디자인의 정확한 표현과 애니메이션 구현<br/>
 				Spring Framework의 이해와 효율적인 활용<br/>
 				유동적 SQL 작성을 통한 조건에 맞는 문구 작성 및 활용<br/>
 				DataBase 구조설계 작성 및 구현<br/>
 				간단한 연산, 라이브러리 활용을 통한 기능 생성<br/>
-				프로젝트의 공유, Github pages를 활용한 웹 구현<br/>
+				프로젝트의 공유, 브런치등 활용으로 효율적인 협업<br/>
 				디자이너 의도에 맞는 정확한 구현과 Style Guide의 활용<br/>
 			</p>
 		</div>
@@ -434,415 +466,205 @@ a{
 
 <style type="text/css">
 
-.projects{
-	position:absolute;
-	top:calc(100vh * 3);
-	width:100%;
-	height:100%;
-}
-
-.projects-title{
-	position: relative;
-	top: 8rem;
-	left: 40rem;
-}
-
-.projects-row1{
-	font-size: 5.75rem;
-	margin:0;
-	padding-right:1.5rem;
-}
-
-.projects-subtitle{
-	font-size:2.2rem;
-	font-weight: 500;
-	margin:0;
-	margin-top:4.68rem;
-}
-
-.contents-nanaum{
-	font-size: 2rem;
-	font-family: Nanumsquare;
-}
-
-.projects-box{
-	width:33.18rem;
-	height:100vh;
-	background-color: var(--my-green);
-	position:absolute;
-	top:300%;
-	left:0;
-	
-	font-style: none;
-}
-
-.projects-box-contents{
-	position:relative;
-	top:50%;
-	transform:translate(0,-50%);
-	margin-left:9rem;
-}
-
-.projects-box-contents-title{
-	width:100%;
-	text-align: center;
-	color:#fff;
-	opacity: 0.4;	
-	font-size: 3.375rem;
-}
-.projects-box-contents-box{
-	margin-top:4.6rem;
-}
-
-.projects-box-contents-box-contents-select{
-	margin-top:1.625rem;
-	font-size:1.56rem;
-	color:#fff;
-	opacity: 1;
-}
-.projects-box-contents-box-contents-select-no{
-	margin-top:1.625rem;
-	height:100px;
-	font-size:1.56rem;
-	color:#fff;
-	opacity: 0.4;
-}
-
-.projects-title-float{
-	float:left;
-	width:100%;
-	height:8rem;
-}
-
-.projects-title-button{
-	font-size:1.344rem;
-	padding:0.5rem 0;
-	padding-left:0.958rem;
-	padding-right:0.688rem;
-	border:2px solid var(--my-green);
-	border-radius: 1rem;
-	position: relative;
-	top:-1.2rem;
-}
-
-.projects-title-button:hover{
-	background-color:var(--my-green);
-	color:#fff;
-}
-
-.button-icon-hover{
-	display: none;
-}
-.projects-title-button:hover .button-icon{
-	display:none;
-}
-.projects-title-button:hover .button-icon-hover{
-	display:inline;
-}
-
-.button-icon{
-	width:1rem;
-	height:0.85rem;
-}
-.button-icon-hover{
-	width:1rem;
-	height:0.85rem;
-}
-
-.projects-title-detail{
-	color:#000000;
-	opacity: 0.5;
-	font-size: 1.156rem;
-	position: relative;
-	top: -4.2rem;
-	left: 31rem;
-	width:17.5rem;
-	height:2.6rem;
+	.projects{
+		position:absolute;
+		top:calc(100vh * 3);
+		width:100%;
+		height:100%;
 	}
 
-.projects-title-contents{
-	color:#000000;
-	opacity: 0.5;
-	font-size: 1.56rem;
-}
+	.projects_title{
+		position: relative;
+		top: 8rem;
+		left: 40rem;
+	}
 
-.projects-contents1{
-	margin:0;
-	margin-top:2.5rem;
-	overflow: hidden;
-	width:55rem;
-	height:56rem;
-	position: relative;
-	left:40rem;
-	top:7.25rem;
-}
-.projects-contents2{
-	margin:0;
-	overflow: hidden;
-	width:55rem;
-	height:56rem;
-	position: relative;
-	left:64rem;
-	top:-42.75rem;
-}
+	.projects_row1{
+		font-size: 5.75rem;
+		margin:0;
+		padding-right:1.5rem;
+	}
 
-.projects-contents-img{
-	width:100%;
-	height:100%;
-}
+	.projects_subtitle{
+		font-size:2.2rem;
+		font-weight: 500;
+		margin:0;
+		margin-top:4.68rem;
+	}
+
+	.contents_nanaum{
+		font-size: 2rem;
+		font-family: Nanumsquare;
+	}
+
+	.projects_box{
+		width:33.18rem;
+		height:100vh;
+		background-color: var(--my-green);
+		position:absolute;
+		top:300%;
+		left:0;
+
+		font-style: none;
+	}
+
+	.projects_box_contents{
+		position:relative;
+		top:50%;
+		transform:translate(0,-50%);
+		margin-left:9rem;
+	}
+
+	.projects_box_contents_title{
+		width:100%;
+		text-align: center;
+		color:#fff;
+		opacity: 0.4;	
+		font-size: 3.375rem;
+	}
+	.projects_box_contents_box{
+		margin-top:4.6rem;
+	}
+
+	.projects_box_contents_box_contents_select{
+		margin-top:1.625rem;
+		font-size:1.56rem;
+		color:#fff;
+		opacity: 1;
+	}
+	.projects_box_contents_box_contents_select_no{
+		margin-top:1.625rem;
+		height:100px;
+		font-size:1.56rem;
+		color:#fff;
+		opacity: 0.4;
+	}
+
+	.projects_title_float{
+		float:left;
+		width:100%;
+		height:8rem;
+	}
+
+	.projects_title_button{
+		font-size:1.344rem;
+		padding:0.5rem 0;
+		padding-left:0.958rem;
+		padding-right:0.688rem;
+		border:2px solid var(--my-green);
+		border-radius: 1rem;
+		position: relative;
+		top:-1.2rem;
+	}
+
+	.projects_title_button:hover{
+		background-color:var(--my-green);
+		color:#fff;
+	}
+
+	.button_icon_hover{
+		display: none;
+	}
+	.projects_title_button:hover .button_icon{
+		display:none;
+	}
+	.projects_title_button:hover .button_icon_hover{
+		display:inline;
+	}
+
+	.button_icon{
+		width:1rem;
+		height:0.85rem;
+	}
+	.button_icon_hover{
+		width:1rem;
+		height:0.85rem;
+	}
+
+	.projects_title_detail{
+		color:#000000;
+		opacity: 0.5;
+		font-size: 1.156rem;
+		position: relative;
+		top: -4.2rem;
+		left: 31rem;
+		width:17.5rem;
+		height:2.6rem;
+	}
+
+	.projects_title_contents{
+		color:#000000;
+		opacity: 0.5;
+		font-size: 1.56rem;
+	}
+
+	.projects_contents1{
+		margin:0;
+		margin-top:2.5rem;
+		overflow: hidden;
+		width:55rem;
+		height:56rem;
+		position: relative;
+		left:40rem;
+		top:7.25rem;
+	}
+	.projects_contents2{
+		margin:0;
+		overflow: hidden;
+		width:55rem;
+		height:56rem;
+		position: relative;
+		left:64rem;
+		top:-42.75rem;
+	}
+
+	.projects_contents_img{
+		width:100%;
+		height:100%;
+	}
 </style>
 
 
 <body>
 	<div class="pages">
 		<!-- left box -->
-		<div class="projects-box">
-			<div class="projects-box-contents">
-				<a class="projects-box-contents-title font-Roboto-bold" href="#">PROJECT</a>
-				<div class="projects-box-contents-box">
-					<a class="projects-box-contents-box-contents-select font-Roboto" href="#">01 Shopping Mall Web </a>
+		<div class="projects_box" style="background-color:#ccc;">
+			<div class="projects_box_contents">
+				<a class="projects_box_contents_title font_Roboto_bold" href="#">PROJECT</a>
+				<div class="projects_box_contents_box">
+					<a class="projects_box_contents_box_contents_select font_Roboto" href="#">01 Shopping Mall Web </a>
 					<div style="height:1.625rem;"></div>
-					<a class="projects-box-contents-box-contents-select-no font-Roboto" href="#">02 Profile Web </a>
+					<a class="projects_box_contents_box_contents_select_no font_Roboto" href="#">02 Profile Web </a>
 					<div style="height:1.625rem;"></div>
-					<a class="projects-box-contents-box-contents-select-no font-Roboto" href="#">03 Java Mini Game </a>
+					<a class="projects_box_contents_box_contents_select_no font_Roboto" href="#">03 Java Mini Game </a>
 				</div>
 			</div>
 		</div>
 		
 		
-		<div class="projects-title">
-			<div class="projects-title-float">
-				<span class="projects-row1 font-LEMONMILK-BOLD">ROGO</span>
-				<a class="projects-title-button font-Nanumsquare" href="#">보러가기
-					<img class="button-icon" src="../images/icon/↓_g.png">
-					<img class="button-icon-hover" src="../images/icon/↓_w_right.png">
+		<div class="projects_title">
+			<div class="projects_title_float">
+				<span class="projects_row1 font_LEMONMILK_BOLD">ROGO</span>
+				<a class="projects_title_button font_Nanumsquare" href="#">보러가기
+					<img class="button_icon" src="../images/icon/↓_g.png">
+					<img class="button_icon-hover" src="../images/icon/↓_w_right.png">
 				</a>
-				<p class="projects-title-detail font-Nanumsquare">
+				<p class="projects_title_detail font_Nanumsquare">
 					2021. 06~ 2021.07 [2명, 4주]<br/>
 					파트 : 화면구현, 기능 및 DB (서버)설계
 				</p>
 			</div>
 			<br style="clear:both"/>
-			<span class="projects-title-contents font-Nanumsquare">
+			<span class="projects_title_contents font_Nanumsquare">
 				ROGO프로젝트는 기존 쇼핑몰 ‘RUSKO’를 개선하기위한 가상 의뢰 프로젝트로 전반적인 디자인 변경, 기능의 개선이 이루어졌다.<br/>
 				요즘 트렌드에 맞는 미니멀한 컨셉으로의 변경, 세부적인 기능의 개선으로 더 직관적이고 편리한 웹으로 개선되었다.
 			</span>
 		</div>
-		<div class="projects-contents1">
-			<img class="projects-contents-img" src="../images/project/ROGO.jpg">
+		<div class="projects_contents1">
+			<img class="projects_contents_img" src="../images/project/ROGO.jpg">
 		</div>
-		<div class="projects-contents2">
-			<img class="projects-contents-img" src="../images/project/ROGO2.jpg">
-		</div>
-	</div>
-</body>
-
-<!-- ----------------------------- 5page / projects-2 ------------------------------ -->
-
-
-<!-- body css -->
-
-<style type="text/css">
-
-.projects-2{
-	position:absolute;
-	top:calc(100vh * 4);
-	width:100%;
-	height:100%;
-}
-
-.projects-title{
-	position: relative;
-	top: 8rem;
-	left: 40rem;
-}
-
-.projects-row1{
-	font-size: 5.75rem;
-	margin:0;
-	padding-right:1.5rem;
-}
-
-.projects-subtitle{
-	font-size:2.2rem;
-	font-weight: 500;
-	margin:0;
-	margin-top:4.68rem;
-}
-
-.contents-nanaum{
-	font-size: 2rem;
-	font-family: Nanumsquare;
-}
-
-.projects-box{
-	width:33.18rem;
-	height:100vh;
-	background-color: var(--my-green);
-	position:absolute;
-	top:300%;
-	left:0;
-	
-	font-style: none;
-}
-
-.projects-box-contents{
-	position:relative;
-	top:50%;
-	transform:translate(0,-50%);
-	margin-left:9rem;
-}
-
-.projects-box-contents-title{
-	width:100%;
-	text-align: center;
-	color:#fff;
-	opacity: 0.4;	
-	font-size: 3.375rem;
-}
-.projects-box-contents-box{
-	margin-top:4.6rem;
-}
-
-.projects-box-contents-box-contents-select{
-	margin-top:1.625rem;
-	font-size:1.56rem;
-	color:#fff;
-	opacity: 1;
-}
-.projects-box-contents-box-contents-select-no{
-	margin-top:1.625rem;
-	height:100px;
-	font-size:1.56rem;
-	color:#fff;
-	opacity: 0.4;
-}
-
-.projects-title-float{
-	float:left;
-	width:100%;
-	height:8rem;
-}
-
-.projects-title-button{
-	font-size:1.344rem;
-	padding:0.5rem 0;
-	padding-left:0.958rem;
-	padding-right:0.688rem;
-	border:2px solid var(--my-green);
-	border-radius: 1rem;
-	position: relative;
-	top:-1.2rem;
-}
-
-.projects-title-button:hover{
-	background-color:var(--my-green);
-	color:#fff;
-}
-
-.button-icon-hover{
-	display: none;
-}
-.projects-title-button:hover .button-icon{
-	display:none;
-}
-.projects-title-button:hover .button-icon-hover{
-	display:inline;
-}
-
-.button-icon{
-	width:1rem;
-	height:0.85rem;
-}
-.button-icon-hover{
-	width:1rem;
-	height:0.85rem;
-}
-
-.projects-title-detail{
-	color:#000000;
-	opacity: 0.5;
-	font-size: 1.156rem;
-	position: relative;
-	top: -4.2rem;
-	left: 31rem;
-	width:17.5rem;
-	height:2.6rem;
-	}
-
-.projects-title-contents{
-	color:#000000;
-	opacity: 0.5;
-	font-size: 1.56rem;
-}
-
-.projects-contents1{
-	margin:0;
-	margin-top:2.5rem;
-	overflow: hidden;
-	width:55rem;
-	height:56rem;
-	position: relative;
-	left:40rem;
-	top:7.25rem;
-}
-.projects-contents2{
-	margin:0;
-	overflow: hidden;
-	width:55rem;
-	height:56rem;
-	position: relative;
-	left:64rem;
-	top:-42.75rem;
-}
-
-.projects-contents-img{
-	width:100%;
-	height:100%;
-}
-</style>
-
-
-<body>
-	<div class="pages">
-		<!-- left box -->
-		<div class="projects-box">
-			<div class="projects-box-contents">
-				<a class="projects-box-contents-title font-Roboto-bold" href="#">PROJECT</a>
-				<div class="projects-box-contents-box">
-					<a class="projects-box-contents-box-contents-select font-Roboto" href="#">01 Shopping Mall Web </a>
-					<div style="height:1.625rem;"></div>
-					<a class="projects-box-contents-box-contents-select-no font-Roboto" href="#">02 Profile Web </a>
-					<div style="height:1.625rem;"></div>
-					<a class="projects-box-contents-box-contents-select-no font-Roboto" href="#">03 Java Mini Game </a>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div class="projects-title">
-			<div class="projects-title-float">
-				<span class="projects-row1 font-LEMONMILK-BOLD">ROGO</span>
-				<a class="projects-title-button font-Nanumsquare" href="#">보러가기
-					<img class="button-icon" src="../images/icon/↓_g.png">
-					<img class="button-icon-hover" src="../images/icon/↓_w_right.png">
-				</a>
-				<p class="projects-title-detail font-Nanumsquare">
-					2021. 06~ 2021.07 [2명, 4주]<br/>
-					파트 : 화면구현, 기능 및 DB (서버)설계
-				</p>
-			</div>
-			<br style="clear:both"/>
-			<span class="projects-title-contents font-Nanumsquare">
-				ROGO프로젝트는 기존 쇼핑몰 ‘RUSKO’를 개선하기위한 가상 의뢰 프로젝트로 전반적인 디자인 변경, 기능의 개선이 이루어졌다.<br/>
-				요즘 트렌드에 맞는 미니멀한 컨셉으로의 변경, 세부적인 기능의 개선으로 더 직관적이고 편리한 웹으로 개선되었다.
-			</span>
-		</div>
-		<div class="projects-contents1">
-			<img class="projects-contents-img" src="../images/project/ROGO.jpg">
-		</div>
-		<div class="projects-contents2">
-			<img class="projects-contents-img" src="../images/project/ROGO2.jpg">
+		<div class="projects_contents2">
+			<img class="projects_contents_img" src="../images/project/ROGO2.jpg">
 		</div>
 	</div>
 </body>
