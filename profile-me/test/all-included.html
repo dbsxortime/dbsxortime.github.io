@@ -189,6 +189,7 @@ a{
 		right:0;
 		width:100%;
 		height:100%;
+		display:none;
 	}
 	
 	.header_menu_box{
@@ -209,14 +210,6 @@ a{
 		right:30vw;
 	}
 	
-	.header_menu:active .header_menu_opened{
-		display:block;
-	}
-	
-	.header_menu_closer:active .header_menu_opened{
-		display:none;
-	}
-	
 	.header_menu_closer{
 		position:fixed;
 		left:0;
@@ -226,18 +219,20 @@ a{
 </style>
 	
 <script>
-$(document).ready(function () {
-	$(document).on("click", ".header_menu", function () {
-		alert("clicked!");
-	});
-});
+	function menu_open(){
+		document.getElementsByClassName('header_menu_opened')[0].style.display="block";
+	}
+	function menu_close(){
+		document.getElementsByClassName('header_menu_opened')[0].style.display="none";
+	}
+	
 </script>
 
 <body>
 	<div class="header">
 		<span class="header_top">FrontBack</span>
 		<span class="header_bot">Park YunTaek</span>
-		<div class="header_menu" onclick="header_menu_open">
+		<div class="header_menu" onclick="menu_open()">
 			<a>
 				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
@@ -249,7 +244,7 @@ $(document).ready(function () {
 			<a>
 				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
-			<div class="header_menu_closer">
+			<div class="header_menu_closer" onclick="menu_close()">
 				
 			</div>
 		</div>
