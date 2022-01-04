@@ -41,7 +41,6 @@
 	padding:0;
 	font-size: 10px;
 	color:#29453c;
-	overflow: hidden;
 }
 
 a{
@@ -69,18 +68,12 @@ a{
 }
 </style>
 
-<script type="text/javascript">
-	
-</script>
-
-
-
 
 <!-- header css -->
 <style type="text/css">
 	.pages{
 		width:100vw;
-		height: 100vh;
+		height:100vh;
 	}
 
 	.header{
@@ -286,7 +279,7 @@ a{
 
 
 <body>
-	<div class="pages" style="background-color:#ccc;">
+	<div class="pages">
 		<div class="aboutme_title page2_child">
 			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
 			<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
@@ -438,7 +431,7 @@ a{
 		height:100vh;
 		background-color: var(--my-green);
 		position:absolute;
-		top:300%;
+		top:300vh;
 		left:0;
 
 		font-style: none;
@@ -499,6 +492,8 @@ a{
 	}
 
 	.button_icon_hover{
+		width:1rem;
+		height:0.85rem;
 		display: none;
 	}
 	.projects_title_button:hover .button_icon{
@@ -509,10 +504,6 @@ a{
 	}
 
 	.button_icon{
-		width:1rem;
-		height:0.85rem;
-	}
-	.button_icon_hover{
 		width:1rem;
 		height:0.85rem;
 	}
@@ -533,7 +524,6 @@ a{
 		opacity: 0.5;
 		font-size: 1.56rem;
 	}
-
 	.projects_contents1{
 		margin:0;
 		margin-top:2.5rem;
@@ -564,7 +554,7 @@ a{
 <body>
 	<div class="pages">
 		<!-- left box -->
-		<div class="projects_box" style="background-color:#ccc;">
+		<div class="projects_box">
 			<div class="projects_box_contents">
 				<a class="projects_box_contents_title font_Roboto_bold" href="#">PROJECT</a>
 				<div class="projects_box_contents_box">
@@ -583,7 +573,7 @@ a{
 				<span class="projects_row1 font_LEMONMILK_BOLD">ROGO</span>
 				<a class="projects_title_button font_Nanumsquare" href="#">보러가기
 					<img class="button_icon" src="../images/icon/↓_g.png">
-					<img class="button_icon-hover" src="../images/icon/↓_w_right.png">
+					<img class="button_icon_hover" src="../images/icon/↓_w_right.png">
 				</a>
 				<p class="projects_title_detail font_Nanumsquare">
 					2021. 06~ 2021.07 [2명, 4주]<br/>
@@ -602,6 +592,8 @@ a{
 		<div class="projects_contents2">
 			<img class="projects_contents_img" src="../images/project/ROGO2.jpg">
 		</div>
+		
+		
 	</div>
 </body>
 
