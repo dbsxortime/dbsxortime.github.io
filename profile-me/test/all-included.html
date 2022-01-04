@@ -184,11 +184,16 @@ a{
 	.header_menu_opened{
 		position:fixed;
 		top:50%;
+		transform:translate(0%,-50%);
 		right:0;
 		width:30%;
-		background-color:#fff;
-		opacity:0.3;
-		transform:translate(0%,-50%);
+	}
+	
+	.header_menu_box{
+		width:20%;
+		height:100%;
+		background-color:#000;
+		opacity:0.5;
 	}
 	
 	.header_menu_opened .header_menu_handler{
@@ -196,7 +201,9 @@ a{
 		height:6rem;
 		position:fixed;
 		top:50%;
+		transform:translate(0%,-50%);
 		right:30%;
+		display:none;
 	}
 </style>
 	
@@ -214,6 +221,9 @@ a{
 			</a>
 		</div>
 		<div class="header_menu_opened">
+			<div class="header_menu_box">
+				
+			</div>
 			<a>
 				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
