@@ -105,80 +105,87 @@
 		transform:translate(0%,-50%);
 	}
 	
-	
 	.header_menu_handler{
 		width:6rem;
 		height:6rem;
 	}
 
-	.header_menu_opened{
+	.header_menu_div{
 		position:fixed;
+		right:-20vw;
 		top:50%;
 		transform:translate(0%,-50%);
-		right:0;
 		width:100%;
 		height:100%;
-		display:none;
+		z-index:9999;
 	}
 	
 	.header_menu_box{
 		position:fixed;
 		right:0;
-		width:30vw;
+		width:20vw;
 		height:100%;
 		background-color:#000;
 		opacity:0.5;
 	}
 	
-	.header_menu_opened .header_menu_handler{
+	.header_menu_btn{
 		width:6rem;
 		height:6rem;
 		position:fixed;
 		top:50%;
 		transform:translate(0%,-50%);
-		right:30vw;
+		right:20vw;
 	}
 	
 	.header_menu_closer{
 		position:fixed;
 		left:0;
-		width:70vw;
+		width:80vw;
 		height:100vh;
+		display:none;
 	}
 </style>
 	
 <script>
+	function menu(){
+		if($(this).hasClass("div-close")){
+			menu_open();
+			$(this).find(".div-close").attr("class", "div-open");
+		}else{
+			menu_open();
+			$(this).find(".div-open").attr("class", "div-close");
+		}
+	}
 	function menu_open(){
-		document.getElementsByClassName('header_menu_opened')[0].style.display="block";
-		// alert('test');
+		$('.header_menu_closer').css('display','block');
+		$(".header_menu_div").animate({right: "0"}, 300);
 	}
 	function menu_close(){
-		document.getElementsByClassName('header_menu_opened')[0].style.display="none";
+		$('.header_menu_closer').css('display','none');
+		$(".header_menu_div").animate({right: "-20vw"}, 300);
 	}
-	
 </script>
 
 <body>
 	<div class="header">
 		<span class="header_top">FrontBack</span>
 		<span class="header_bot">Park YunTaek</span>
-		<div class="header_menu_opened" id="menu_tab">
-			<div class="header_menu_closer" onclick="menu_close();">
-				
-			</div>
-			<div class="header_menu_box">
-				
-			</div>
-			<a>
+		<div class="header_menu_div" id="menu_tab">
+			<a class="header_menu_btn div-close" onclick="menu();">
 				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
+			<div class="header_menu_box">
+			</div>
+			<div class="header_menu_closer" onclick="menu_close();">
+			</div>
 			
 		</div>
-		<div class="header_menu" id="menu_bar" onclick="menu_open();">
+		<!-- <div class="header_menu" id="menu_bar" onclick="menu_open();">
 			<a>
 				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
-		</div>
+		</div> -->
 	</div>
 </body>
 
