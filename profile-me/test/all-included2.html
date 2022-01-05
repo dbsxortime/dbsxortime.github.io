@@ -67,16 +67,15 @@
 	.font_Nanumsquare{
 		font-family: Nanumsquare;
 	}
-</style>
-
-
-<!-- header css -->
-<style type="text/css">
+	
 	.pages{
 		width:100vw;
 		height:100vh;
 	}
-
+</style>
+</head>
+<!-- header css -->
+<style type="text/css">
 	.header{
 		font-family: Montserrat-light;
 		text-align: center;
@@ -150,8 +149,8 @@
 	
 <script>
 	function menu_open(){
-		// document.getElementsByClassName('header_menu_opened')[0].style.display="block";
-		alert('test');
+		document.getElementsByClassName('header_menu_opened')[0].style.display="block";
+		// alert('test');
 	}
 	function menu_close(){
 		document.getElementsByClassName('header_menu_opened')[0].style.display="none";
@@ -212,7 +211,7 @@
 		top:-1rem;
 	}
 </style>
-</head>
+
 <body>
 	<div class="pages">
 		<div class="main_title font_Montserrat">
@@ -222,12 +221,7 @@
 	</div>
 </body>
 
-
-
-
 <!-- ----------------------------- 2page / about me ------------------------------ -->
-
-
 <!-- body css -->
 <style type="text/css">
 	.aboutme_title{
