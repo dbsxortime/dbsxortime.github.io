@@ -294,10 +294,31 @@
 		margin-right:0.8rem;
 		float:right;
 	}
-
+	.contents_nanaum{
+		font-size: 2rem;
+		font-family: Nanumsquare;
+	}
 	.aboutme_goott_clean{
 		clear: both;
 		letter-spacing: 0.3rem;
+	}
+	.aboutme_contents_table1{
+		margin:auto;
+		max-width:80%;
+		margin-top:4rem;
+	}
+	.aboutme_contents_table1 .title{
+		width:20rem;
+		text-align:left;
+	}
+	.aboutme_contents_table1 .date{
+		width:20rem;
+		font-size:1.6rem;
+		text-align:right;
+	}
+	.aboutme_contents_table1 .contents{
+		text-align:center;
+		font-size:2.4rem;
 	}
 </style>
 
@@ -314,12 +335,15 @@
 				생길 수 있는 문제를 먼저 찾아내어<br/>
 				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
 			</p>
-		<div class="aboutme_goott">
-			<p class="contents_nanaum aboutme_goott_left">구트 아카데미학원	</p>
-			<p class="contents_nanaum aboutme_goott_right" style="font-size:1.4rem;">2021.01~2021.07</p>
-			<p class="contents_nanaum aboutme_goott_clean">자바 기반 빅데이터 개발자 양성 과정</p>
-		</div>
-			
+			<table class="aboutme_contents_table1">
+				<tr>
+					<td class="title contents_nanaum">구트 아카데미학원</td>
+					<td class="date contents_nanaum">2021.01~2021.07</td>
+				</tr>
+				<tr>
+					<td class="contents contents_nanaum" colspan="2">자바 기반 빅데이터 개발자 양성 과정</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </body>
