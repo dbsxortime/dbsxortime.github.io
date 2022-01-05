@@ -303,22 +303,30 @@
 		letter-spacing: 0.3rem;
 	}
 	.aboutme_contents_table1{
+		/* border-collapse:collapse;
+		border:1px solid var(--my-green); */
 		margin:auto;
 		max-width:80%;
 		margin-top:4rem;
 	}
+	.aboutme_contents_table1 td{
+		/* border:1px solid var(--my-green); */
+	}
 	.aboutme_contents_table1 .title{
 		width:20rem;
-		text-align:left;
+		/* height:3rem; */
+		text-align:center;
 	}
 	.aboutme_contents_table1 .date{
 		width:20rem;
 		font-size:1.6rem;
-		text-align:right;
+		text-align:center;
 	}
 	.aboutme_contents_table1 .contents{
+		/* height:5rem; */
 		text-align:center;
 		font-size:2.4rem;
+		word-spacing:0.3rem;
 	}
 </style>
 
@@ -326,22 +334,28 @@
 <body>
 	<div class="pages" id="2p">
 		<div class="aboutme_title page2_child">
-			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
 			<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
+			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
 		</div>
 		<div class="aboutme_contents">
 			<p class="contents_nanaum">
-				FullStack 신입 개발자 박윤택입니다. 항상 스스로 디버깅하며<br/>
+				FullStack 신입 개발자 박윤택입니다.<br/> 항상 스스로 디버깅하며
 				생길 수 있는 문제를 먼저 찾아내어<br/>
 				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
 			</p>
 			<table class="aboutme_contents_table1">
 				<tr>
-					<td class="title contents_nanaum">구트 아카데미학원</td>
-					<td class="date contents_nanaum">2021.01~2021.07</td>
+					<td>
+						<span class="title contents_nanaum">
+							구트 아카데미학원
+						</span>
+						<span class="date contents_nanaum">
+							2021.01~2021.07
+						</span>
+					</td>
 				</tr>
 				<tr>
-					<td class="contents contents_nanaum" colspan="2">자바 기반 빅데이터 개발자 양성 과정</td>
+					<td class="contents contents_nanaum" >자바 기반 빅데이터 개발자 양성 과정</td>
 				</tr>
 			</table>
 		</div>
