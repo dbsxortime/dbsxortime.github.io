@@ -42,6 +42,7 @@
 		padding:0;
 		font-size: 10px;
 		color:#29453c;
+		scroll-behavior:smooth;
 	}
 
 	a{
@@ -145,16 +146,30 @@
 		height:100vh;
 		display:none;
 	}
+	.header_menu_box_textbox{
+		width:120px;
+		position:fixed;
+		right:50px;
+		top:50%;
+		transform:translate(0%,-50%);
+		text-align:left;
+	}
+	.header_menu_box_textbox a{
+		font-family: Nanumsquare;
+		color:#fff;
+		font-size:16px;
+		padding:10px;
+	}
 </style>
 	
 <script>
 	function menu_open(){
 		$('.header_menu_closer').css('display','block');
-		$(".header_menu_div").animate({right: "0"}, 300);
+		$(".header_menu_div").animate({right: "0"}, 250);
 	}
 	function menu_close(){
 		$('.header_menu_closer').css('display','none');
-		$(".header_menu_div").animate({right: "-200px"}, 300);
+		$(".header_menu_div").animate({right: "-200px"}, 250);
 	}
 </script>
 
@@ -167,6 +182,12 @@
 				<img class="header_menu_handler" src="../images/icon/handler.png">
 			</a>
 			<div class="header_menu_box">
+				<div class="header_menu_box_textbox">
+					<a href="#1p">1p!!</a><br/><br/>
+					<a href="#2p">2p!!</a><br/><br/>
+					<a href="#3p">3p!!</a><br/><br/>
+					<a href="#4p">4p!!</a>
+				</div>	
 			</div>
 			<div class="header_menu_closer" onclick="menu_close();" onmousedown="menu_close();">
 			</div>
@@ -205,7 +226,7 @@
 </style>
 
 <body>
-	<div class="pages">
+	<div class="pages" id="1p">
 		<div class="main_title font_Montserrat">
 			<p class="main_row1">I'm Web / Server</p>
 			<p class="main_row2">Developer</p>
@@ -266,7 +287,7 @@
 
 
 <body>
-	<div class="pages">
+	<div class="pages" id="2p">
 		<div class="aboutme_title page2_child">
 			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
 			<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
@@ -341,7 +362,7 @@
 
 
 <body>
-	<div class="pages">
+	<div class="pages" id="3p">
 		<div class="introduce_title">
 			<p class="introduce_row1 font_LEMONMILK">Introduce</p>
 			<p class="introduce_subtitle font_LEMONMILK">Skills</p>
@@ -546,7 +567,7 @@
 
 
 <body>
-	<div class="pages">
+	<div class="pages" id="4p">
 		<!-- left box -->
 		<div class="projects_box">
 			<div class="projects_box_contents">
