@@ -5,334 +5,325 @@
 <title>Taek's profile</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 <style>
-@font-face{
-	src:url('../fonts/LEMONMILK-MEDIUM.OTF');
-	font-family: 'LEMONMILK';
-} 
-@font-face{
-	src:url('../fonts/LEMONMILK-BOLD.OTF');
-	font-family: 'LEMONMILK-BOLD';
-} 
-@font-face{
-	src:url('../fonts/MONTSERRAT-MEDIUM.TTF');
-	font-family: 'Montserrat';
-}
-@font-face{
-	src:url('../fonts/NANUMSQUARE_ACR.TTF');
-	font-family: 'Nanumsquare';
-}
-@font-face{
-	src:url('../fonts/ROBOTO-REGULAR.TTF');
-	font-family: 'Roboto';
-}
-@font-face{
-	src:url('../fonts/ROBOTO-BOLD.TTF');
-	font-family: 'Roboto-bold';
-}
-@font-face{
-	src:url('../fonts/MONTSERRAT-LIGHT.TTF');
-	font-family: 'Montserrat-light';
-}
-:root{
-	--my-green: #29453c;
-}
-*{
-	margin:0;
-	padding:0;
-	font-size: 10px;
-	color:var(--my-green);
-	overflow: hidden;
-}
+	@font-face{
+		src:url('../fonts/LEMONMILK-MEDIUM.OTF');
+		font-family: 'LEMONMILK';
+	} 
+	@font-face{
+		src:url('../fonts/LEMONMILK-BOLD.OTF');
+		font-family: 'LEMONMILK-BOLD';
+	} 
+	@font-face{
+		src:url('../fonts/MONTSERRAT-MEDIUM.TTF');
+		font-family: 'Montserrat';
+	}
+	@font-face{
+		src:url('../fonts/NANUMSQUARE_ACR.TTF');
+		font-family: 'Nanumsquare';
+	}
+	@font-face{
+		src:url('../fonts/ROBOTO-REGULAR.TTF');
+		font-family: 'Roboto';
+	}
+	@font-face{
+		src:url('../fonts/ROBOTO-BOLD.TTF');
+		font-family: 'Roboto-bold';
+	}
+	@font-face{
+		src:url('../fonts/MONTSERRAT-LIGHT.TTF');
+		font-family: 'Montserrat-light';
+	}
+	:root{
+		--my-green: #29453c;
+	}
+	::-webkit-scrollbar { display: none; }
+	*{
+		margin:0;
+		padding:0;
+		font-size: 10px;
+		color:#29453c;
+		scroll-behavior:smooth;
+	}
 
-a{
-	text-decoration: none;
-}
+	a{
+		text-decoration: none;
+	}
 
-.font-LEMONMILK{
-	font-family: LEMONMILK;
-}
-.font-LEMONMILK-BOLD{
-	font-family: LEMONMILK-BOLD;
-}
-.font-Montserrat{
-	font-family: Montserrat;
-}
+	.font_LEMONMILK{
+		font-family: LEMONMILK;
+	}
+	.font_LEMONMILK_BOLD{
+		font-family: LEMONMILK-BOLD;
+	}
+	.font_Montserrat{
+		font-family: Montserrat;
+	}
 
-.font-Roboto{
-	font-family: Roboto;
-}
-.font-Roboto-bold{
-	font-family: Roboto-bold;
-}
-.font-Nanumsquare{
-	font-family: Nanumsquare;
-}
-
-.contents-nanaum{
-	font-size: 2rem;
-	font-family: Nanumsquare;
-}
+	.font_Roboto{
+		font-family: Roboto;
+	}
+	.font_Roboto_bold{
+		font-family: Roboto-bold;
+	}
+	.font_Nanumsquare{
+		font-family: Nanumsquare;
+	}
+	
+	.pages{
+		width:100vw;
+		height:100vh;
+	}
 </style>
-
-<script type="text/javascript">
-	
-	var $html = $("html");
-	var page = 1;
-	var lastPage = 3;
-	
-	$html.animate({scrollTop:0},300);
-	
-	$(window).on("wheel", function(e){
-		if($html.is(":animated")) return;
-		if(e.originalEvent.deltaY > 0){
-			if(page== lastPage) return;
-			page++;
-		}else if(e.originalEvent.deltaY < 0){
-			if(page == 1) return;
-			page--;
-		}
-		var posTop = (page-1) * $(window).height();
-		$html.animate({scrollTop : posTop}, 300);
-	});
-	
-	$(function(){
-		$(".footer-box").on("click", function(){
-			if(page== lastPage) return;
-			
-			var height= $(window).height();
-			$("html,body").animate({
-				scrollTop: height
-			}, 300);
-			page++;
-		});
-		
-		$(".go-aboutus").on("click", function(){
-			var height= $(window).height();
-			$("html,body").animate({
-				scrollTop: height
-			}, 300);
-			page++;
-		});
-		
-		$(".header-logo").on("click", function(){
-			$("html,body").animate({
-				scrollTop: 0
-			},0);
-			page=1;
-		});
-		
-	});
-	
-	var ts;
-	$(window).bind('touchstart', function(e) {
-		ts = e.originalEvent.touches[0].clientY;
-	});
-
-	$(window).bind('touchend', function(e) {
-		var te = e.originalEvent.changedTouches[0].clientY;
-		if (ts > te + 5) {
-			if (page == lastPage) return;
-			page++;
-		} else if (ts < te - 5) {
-			if (page == 1) return;
-			page--;
-		}
-		var posTop = (page - 1) * $(window).height();
-		$html.animate({scrollTop : posTop}, 300);
-	});
+<script>
+	window.onload=function(){
+		displayProject(1);
+	};
 </script>
-
-
-
-
-<!-- header css -->
-<style type="text/css">
-.pages{
-	width:100vw;
-	height:100vh;
-}
-
-.header{
-	font-family: Montserrat-light;
-	text-align: center;
-}
-
-.header-top{
-	position:fixed;
-	top:5rem;
-	left:50%;
-	transform:translate(-50%,0%);
-	font-size: 2.25rem;
-	z-index: 9999;
-}
-.header-bot{
-	position:fixed;
-	bottom:3.375rem;
-	left:50%;
-	transform:translate(-50%,0%);
-	font-size: 1.9rem;
-	z-index: 9999;
-}
-
-.header-menu{
-	position:absolute;
-	top:50%;
-	right:0;
-	transform:translate(0%,-50%);
-}
-
-.header-menu-handler{
-	width:6rem;
-	height:6rem;
-}
-</style>
-
-
-<body>
-	<div class="header">
-		<span class="header-top">FrontBack</span>
-		<span class="header-bot">Park YunTaek</span>
-		<div class="header-menu">
-			<a>
-				<img class="header-menu-handler" src="../images/icon/handler.png">
-			</a>
-		</div>
-	</div>
-</body>
-
-<!-- body css -->
-<style type="text/css">
-.main{
-	width:100%;
-	height:100%;
-}
-
-.font-Montserrat{
-	font-family: 'Montserrat',sans-serif;
-	color:var(--my-green);
-}
-
-.main-title{
-	text-align:center;
- 	position:relative; 
- 	top:50%;
- 	transform:translate(0,-50%); 
-	margin : auto;
-}
-
-.main-row1{
-	font-size:3.5rem;
-	letter-spacing: 6.22px;
-	margin:0;
-}
-
-.main-row2{
-	font-size:6.4rem;
-	font-weight: 500;
-	margin:0;
-	position:relative;
-	top:-1rem;
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@media ( max-width: 1023px ) {
+	*{
+		font-size: 5px;
+	}
+	.pages{
+		height:70vh;
+	}
 }
 </style>
 </head>
+<!-- header css -->
+<style type="text/css">
+	.header{
+		font-family: Montserrat-light;
+		text-align: center;
+	}
+
+	.header_top{
+		position:fixed;
+		top:5rem;
+		left:50%;
+		transform:translate(-50%,0%);
+		font-size: 2.25rem;
+		z-index: 9999;
+	}
+	.header_bot{
+		position:fixed;
+		bottom:3.375rem;
+		left:50%;
+		transform:translate(-50%,0%);
+		font-size: 1.9rem;
+		z-index: 9999;
+	}
+
+	.header_menu{
+		position:fixed;
+		top:50%;
+		right:0;
+		transform:translate(0%,-50%);
+	}
+	
+	.header_menu_handler{
+		width:6rem;
+		height:6rem;
+	}
+
+	.header_menu_div{
+		position:fixed;
+		right:-200px;
+		top:50%;
+		transform:translate(0%,-50%);
+		width:200px;
+		height:100%;
+		z-index:9999;
+	}
+	
+	.header_menu_box{
+		position:fixed;
+		right:0;
+		width:100%;
+		height:100%;
+		background-color:#000;
+		opacity:0.5;
+	}
+	
+	.header_menu_btn{
+		width:6rem;
+		height:6rem;
+		position:fixed;
+		top:50%;
+		transform:translate(0%,-50%);
+		right:200px;
+	}
+	
+	.header_menu_closer{
+		position:fixed;
+		right:200px;
+		width:500px;
+		height:100vh;
+		display:none;
+	}
+	.header_menu_box_textbox{
+		width:120px;
+		position:fixed;
+		right:50px;
+		top:50%;
+		transform:translate(0%,-50%);
+		text-align:left;
+	}
+	.header_menu_box_textbox a{
+		font-family: Nanumsquare;
+		color:#fff;
+		font-size:16px;
+		padding:10px;
+	}
+</style>
+	
+<script>
+	function menu_open(){
+		$('.header_menu_closer').css('display','block');
+		$(".header_menu_div").animate({right: "0"}, 250);
+	}
+	function menu_close(){
+		$('.header_menu_closer').css('display','none');
+		$(".header_menu_div").animate({right: "-200px"}, 250);
+	}
+</script>
+
 <body>
-	<div class="pages">
-		<div class="main-title font-Montserrat">
-			<p class="main-row1">I'm Web / Server</p>
-			<p class="main-row2">Developer</p>
+	<div class="header">
+		<span class="header_top">FrontBack</span>
+		<span class="header_bot">Park YunTaek</span>
+		<div class="header_menu_div" id="menu_tab">
+			<a class="header_menu_btn div-close" onclick="menu_open();" onmousedown="menu_open();">
+				<img class="header_menu_handler" src="../images/icon/handler.png">
+			</a>
+			<div class="header_menu_box">
+				<div class="header_menu_box_textbox">
+					<a href="#1p">1p!!</a><br/><br/>
+					<a href="#2p">2p!!</a><br/><br/>
+					<a href="#3p">3p!!</a><br/><br/>
+					<a href="#4p">4p!!</a>
+				</div>	
+			</div>
+			<div class="header_menu_closer" onclick="menu_close();" onmousedown="menu_close();">
+			</div>
 		</div>
 	</div>
 </body>
 
-
-
-
-<!-- ----------------------------- 2page / about me ------------------------------ -->
-
-
 <!-- body css -->
 <style type="text/css">
-.font-LEMONMILK{
-	font-family: LEMONMILK;
-}
-.font-Montserrat{
-	font-family: Montserrat;
-}
+	.font_Montserrat{
+		font-family: 'Montserrat',sans-serif;
+		color:#29453c;
+	}
 
-.aboutme-title{
-	text-align:center;
-  	position:relative;  
-  	top:25%;
-	transform:translate(0,-25%);
-	margin : auto;
-}
+	.main_title{
+		text-align:center;
+		position:relative; 
+		top:48%;
+		transform:translate(0,-50%); 
+		margin : auto;
+	}
 
-.aboutme-row1{
-	font-size:3rem;
-	margin:0;
-	height:3.3rem;
-}
+	.main_row1{
+		font-size:3.5rem;
+		letter-spacing: 6.22px;
+		margin:0;
+	}
 
-.aboutme-row2{
-	font-size:3.5rem;
-	font-weight: 500;
-	margin:0;
-}
+	.main_row2{
+		font-size:6.4rem;
+		font-weight: 500;
+		margin:0;
+		position:relative;
+		top:-1rem;
+	}
+</style>
 
-.aboutme-contents{
-	text-align:center;
-  	position:relative;  
-  	top:50%;
-	transform:translate(0,-50%);
-	margin : auto;
-}
+<body>
+	<div class="pages" id="1p">
+		<div class="main_title font_Montserrat">
+			<p class="main_row1">I'm Web / Server</p>
+			<p class="main_row2">Developer</p>
+		</div>
+	</div>
+</body>
 
-.aboutme-goott{
-	width:35rem;
-	margin:auto;
-	margin-top:10rem;
-}
-.aboutme-goott-left{
-	float:left;
-}
-.aboutme-goott-right{
-	margin-top:0.5rem;
-	margin-right:0.8rem;
-	float:right;
-}
+<!-- ----------------------------- 2page / about me ------------------------------ -->
+<!-- body css -->
+<style type="text/css">
+	.aboutme_title{
+		text-align:center;
+		position:relative;  
+		top:25%;
+		transform:translate(0,-25%);
+		margin : auto;
+	}
 
-.aboutme-goott-clean{
-	clear: both;
-	letter-spacing: 0.3rem;
-}
+	.aboutme_row1{
+		font-size:3rem;
+		margin:0;
+		height:3.3rem;
+	}
+
+	.aboutme_row2{
+		font-size:3.5rem;
+		font-weight: 500;
+		margin:0;
+	}
+
+	.aboutme_contents{
+		text-align:center;
+		position:relative;  
+		top:28%;
+		/* transform:translate(0,-50%); */
+		margin : auto;
+	}
+
+	.aboutme_goott{
+		width:35rem;
+		margin:auto;
+		margin-top:5rem;
+	}
+	.aboutme_goott_left{
+		float:left;
+	}
+	.aboutme_goott_right{
+		margin-top:0.5rem;
+		margin-right:0.8rem;
+		float:right;
+	}
+
+	.aboutme_goott_clean{
+		clear: both;
+		letter-spacing: 0.3rem;
+	}
 </style>
 
 
 <body>
-	<div class="pages">
-		<div class="aboutme-title">
-			<p class="aboutme-row1 font-Montserrat">Hi I'm new developer</p>
-			<p class="aboutme-row2 font-LEMONMILK">Introduce</p>
+	<div class="pages" id="2p">
+		<div class="aboutme_title page2_child">
+			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
+			<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
 		</div>
-		<div class="aboutme-contents">
-			<p class="contents-nanaum">
+		<div class="aboutme_contents">
+			<p class="contents_nanaum">
 				FullStack 신입 개발자 박윤택입니다. 항상 스스로 디버깅하며<br/>
 				생길 수 있는 문제를 먼저 찾아내어<br/>
 				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
 			</p>
-		<div class="aboutme-goott">
-			<p class="contents-nanaum aboutme-goott-left">구트 아카데미학원	</p>
-			<p class="contents-nanaum aboutme-goott-right" style="font-size:1.4rem;">2021.01~2021.07</p>
-			<p class="contents-nanaum aboutme-goott-clean">자바 기반 빅데이터 개발자 양성 과정</p>
+		<div class="aboutme_goott">
+			<p class="contents_nanaum aboutme_goott_left">구트 아카데미학원	</p>
+			<p class="contents_nanaum aboutme_goott_right" style="font-size:1.4rem;">2021.01~2021.07</p>
+			<p class="contents_nanaum aboutme_goott_clean">자바 기반 빅데이터 개발자 양성 과정</p>
 		</div>
 			
 		</div>
 	</div>
 </body>
 
-<script type="text/javascript">
-	
-</script>
 
 
 <!-- ----------------------------- 3page / introduce ------------------------------ -->
@@ -340,101 +331,224 @@ a{
 
 <!-- body css -->
 <style type="text/css">
-.introduce{
-	position:absolute;
-	top:calc(100vh * 2);
-	width:100%;
-	height:100%;
-}
-.font-LEMONMILK{
-	font-family: LEMONMILK;
-}
-.font-Montserrat{
-	font-family: Montserrat;
-}
+	.introduce_title{
+		text-align:center;
+		margin : auto;
+		position:relative;
+		top:9rem;
+	}
 
-.introduce-title{
-	text-align:center;
-	margin : auto;
-	position:relative;
-	top:9rem;
-}
+	.introduce_row1{
+		font-size:3.5rem;
+		font-weight:500;
+		margin:0;
+	}
 
-.introduce-row1{
-	font-size:3.5rem;
-	font-weight:500;
-	margin:0;
-}
+	.introduce_subtitle{
+		font-size:2.2rem;
+		font-weight: 500;
+		margin:0;
+		margin-top:1rem;
+	}
 
-.introduce-subtitle{
-	font-size:2.2rem;
-	font-weight: 500;
-	margin:0;
-	margin-top:1rem;
-}
+	.skills{
+		width:67rem;
+		margin:auto;
+		margin-top:3vw;
+		text-align:left;
+	}
 
-.skills{
-	width:72rem;
-	position:relative;
-	top:45%;
-	transform:translate(0,-50%);
-	margin:auto;
-}
-.skills-left{
-	float:left;
-	line-height: 1.65;
-}
-.skills-right{
-	float:left;
-	line-height: 1.69;
-	margin-left:2rem;
-}
-.skills-clean{
-	clear: both;
-	letter-spacing: 0.3rem;
-}
+	.skills_left{
+		line-height: 1.65;
+		float:left;
+		font-size:1.8rem;
+	}
+
+	.skills_right{
+		line-height: 1.65;
+		float:left;
+		margin-left:3rem;
+		font-size:1.8rem;
+	}
+
+	.skills_clean{
+		clear: both;
+		letter-spacing: 0.3rem;
+	}
+</style>
+<style>
+	@media ( max-width: 1023px ) {
+		.introduce_title{
+			margin : auto;
+			position:relative;
+			top:9rem;
+		}
+
+		.introduce_row1{
+			font-size:3.5rem;
+			font-weight:500;
+			margin:0;
+		}
+
+		.introduce_subtitle{
+			font-size:2.2rem;
+			font-weight: 500;
+			margin:0;
+			margin-top:1rem;
+		}
+
+		.skills{
+			max-width:80%;
+			height:35rem;
+		}
+		.skills_left{
+			line-height: 1.65;
+			float:left;
+			font-size:1.3rem;
+		}
+
+		.skills_right{
+			line-height: 1.65;
+			float:left;
+			margin-left:2rem;
+			font-size:1.3rem;
+		}
+		.skills_clean{
+			clear: both;
+			letter-spacing: 0.3rem;
+		}
+	}
 </style>
 
-
 <body>
-	<div class="pages">
-		<div class="introduce-title">
-			<p class="introduce-row1 font-LEMONMILK">Introduce</p>
-			<p class="introduce-subtitle font-LEMONMILK">Skills</p>
-		</div>
-		<div class="skills">
-			<p class="contents-nanaum skills-left">
-				Java <br/>
-				HTML<br/>
-				JSP<br/>
-				Javascript<br/>
-				Jquery<br/>
-				CSS<br/>
-				Spring<br/>
-				Mybatis<br/>
-				OracleSQL<br/>
-				Python<br/>
-				Github<br/>
-				Zeplin	
-			</p>
-			<p class="contents-nanaum skills-right">
-				주어진 문제를 이해하고 필요 시 적절한 라이브러리를 활용하여 문제 해결<br/>
-				DOM의 이해와 적절한 태그 사용으로 원하는 화면 구현<br/>
-				자바 서버와 서블릿의 이해와 Model2방식을 활용한 효율적인 MVC패턴 구축<br/>
-				필요한 동작의 원리를 이해하고 DOM을 활용한 효율적인 문제 해결<br/>
-				jquery를 활용한 다양하고 간결한 동작 해결<br/>
-				원하는 디자인의 정확한 표현과 애니메이션 구현<br/>
-				Spring Framework의 이해와 효율적인 활용<br/>
-				유동적 SQL 작성을 통한 조건에 맞는 문구 작성 및 활용<br/>
-				DataBase 구조설계 작성 및 구현<br/>
-				간단한 연산, 라이브러리 활용을 통한 기능 생성<br/>
-				프로젝트의 공유, Github pages를 활용한 웹 구현<br/>
-				디자이너 의도에 맞는 정확한 구현과 Style Guide의 활용<br/>
-			</p>
+	<div class="pages" id="3p">
+		<div class="introduce_title">
+			<p class="introduce_row1 font_LEMONMILK">Introduce</p>
+			<p class="introduce_subtitle font_LEMONMILK">Skills</p>
+			<div class="skills">
+				<p class="font_Nanumsquare skills_left">
+					Java <br/>
+					HTML / JSP<br/>
+					Javascript / Jquery<br/>
+					CSS<br/>
+					Spring<br/>
+					Mybatis / ibatis<br/>
+					OracleSQL / MySql<br/>
+					Python<br/>
+					Github / SVN<br/>
+					Zeplin	
+				</p>
+				<p class="font_Nanumsquare skills_right">
+					주어진 문제를 이해하고 적절한 라이브러리를 활용하여 문제 해결<br/>
+					DOM의 이해와 적절한 태그 사용으로 원하는 화면 구현<br/>
+					정확하고 다양하며 간결한 동작 해결<br/>
+					원하는 디자인의 정확한 표현과 애니메이션 구현<br/>
+					Spring Framework의 이해와 효율적인 활용<br/>
+					유동적 SQL 작성을 통한 조건에 맞는 문구 작성 및 활용<br/>
+					DataBase 구조설계 작성 및 구현<br/>
+					간단한 연산, 라이브러리 활용을 통한 기능 생성<br/>
+					프로젝트의 공유, 브런치등 활용으로 효율적인 협업<br/>
+					디자이너 의도에 맞는 정확한 구현과 Style Guide의 활용<br/>
+				</p>
+			</div>
 		</div>
 	</div>
 </body>
 
+<!-- ----------------------------- 4page / projects-1 ------------------------------ -->
 
+
+<!-- body css -->
+
+<style type="text/css">
+	.projects_title{
+		text-align:center;
+		margin : auto;
+		position:relative;
+		top:9rem;
+	}
+	.projects_row1{
+		font-size:3.5rem;
+		font-weight:500;
+		margin:0;
+	}
+	.projects_subtitle_row{
+		width:90%;
+		margin:auto;
+		margin-top:2rem;
+	}
+	.projects_subtitle{
+		font-size:1.8rem;
+		font-weight: 300;
+		width:9rem;
+		margin:0 2rem;
+		padding:1rem 0;
+		border:2px solid var(--my-green);
+		border-radius: 1rem;
+		background-color:#fff;
+	}
+	.projects_subtitle:hover{
+		background-color:var(--my-green);
+		color:#fff;
+	}
+	.projects_contents_box{
+		position:relative;
+		top:11%;
+		margin:auto;
+		max-width:90%;
+		height:70vh;
+	}
+	.projects_contents_table{
+		width:100%;
+		border-collapse:collapse;
+		/* border:1px solid var(--my-green); */
+	}
+</style>
+<style>
+	@media ( max-width: 1023px ) {
+		
+	}
+</style>
+<script>
+	function displayProject(page){
+		$('.projects_contents_table').css('display','none');
+		$('#p_'+page).css('display','block');
+	}
+</script>
+<body>
+	<div class="pages" id="4p">
+		<div class="projects_title">
+			<p class="projects_row1 font_LEMONMILK">Projects</p>
+			<div class="projects_subtitle_row">
+				<button onclick="displayProject(1);" class="projects_subtitle font_LEMONMILK">first</button>
+				<button onclick="displayProject(2);" class="projects_subtitle font_LEMONMILK">second</button>
+				<button onclick="displayProject(3);" class="projects_subtitle font_LEMONMILK">third</button>
+				<button onclick="displayProject(4);" class="projects_subtitle font_LEMONMILK">last</button>
+			</div>
+		</div>
+		<div class="projects_contents_box">
+			<table class="projects_contents_table" id="p_1">
+				<tr>
+					<td>page1</td>
+				</tr>
+			</table>
+			<table class="projects_contents_table" id="p_2">
+				<tr>
+					<td>page2</td>
+				</tr>
+			</table>
+			<table class="projects_contents_table" id="p_3">
+				<tr>
+					<td>page3</td>
+				</tr>
+			</table>
+			<table class="projects_contents_table" id="p_4">
+				<tr>
+					<td>page4</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
 
 </html>
