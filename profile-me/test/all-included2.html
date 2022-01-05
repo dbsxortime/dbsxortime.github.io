@@ -79,7 +79,10 @@
 <style>
 @media ( max-width: 1023px ) {
 	*{
-		font-size: 6px;
+		font-size: 5px;
+	}
+	.pages{
+		height:70vh;
 	}
 }
 </style>
@@ -372,7 +375,6 @@
 <style>
 	@media ( max-width: 1023px ) {
 		.introduce_title{
-			transform:translate(-50%,0%);
 			margin : auto;
 			position:relative;
 			top:9rem;
@@ -392,7 +394,10 @@
 		}
 
 		.skills{
-			width:67rem;
+			position:relative;
+			left:50%;
+			transform:translate(-50%,0);
+			width:72rem;
 			margin:auto;
 			margin-top:3vw;
 			text-align:left;
@@ -549,7 +554,8 @@
 		border:2px solid var(--my-green);
 		border-radius: 1rem;
 		position: relative;
-		top:-1.2rem;
+		top: -5.2rem;
+		left: 50rem;
 	}
 
 	.projects_title_button:hover{
@@ -577,11 +583,11 @@
 	.projects_title_detail{
 		color:#000000;
 		opacity: 0.5;
-		font-size: 1.156rem;
+		font-size: 1.656rem;
 		position: relative;
 		top: -4.2rem;
-		left: 31rem;
-		width:17.5rem;
+		left: 22rem;
+		width:25.5rem;
 		height:2.6rem;
 	}
 
@@ -620,28 +626,47 @@
 </style>
 <style>
 	@media ( max-width: 1023px ) {
+		.projects_cont{
+			width:95%;
+			left:3%;
+		}
 		.projects_title{
 			width:90%;
+		}
+		.projects_row1{
+			font-size: 8.75rem;
+			position:relative;
+			top:2rem;
+		}
+		.projects_title_float {
+			position:relative;
+			top:-5rem;
+			margin-bottom: 2rem;
 		}
 		.projects_title_contents{
 			opacity: 0.8;
 			width:70%;
 		}
-		.projects_box_contents_title{
+		.projects_box{
 			display:none;
 		}
-		.projects_cont{
-			width:90%;
+		.projects_title_button{
+			top: -3.5rem;
+    		left: 53.5rem;
+			padding-left:0.5rem;
+			padding-right:0.3rem;
+;
 		}
 		.projects_title_detail {
-			
-		}
-		.projects_title_detail{
-			left:13rem;
+			top: -7.5rem;
+			left: 33rem;
+			width: 31rem;
+			font-size: 0.5rem;
+			opacity:0.8;
 		}
 		.projects_contents1{
-			width:5.5rem;
-			height:5.6rem;
+			width: 68.5rem;
+    		height: 77.6rem;
 		}
 		.projects_contents2{
 			width:5.5rem;
@@ -670,14 +695,14 @@
 			<div class="projects_title">
 				<div class="projects_title_float">
 					<span class="projects_row1 font_LEMONMILK_BOLD">ROGO</span>
-					<a class="projects_title_button font_Nanumsquare" href="https://github.com/dbsxortime/ROGO-shoppingmall">보러가기
-						<img class="button_icon" src="../images/icon/↓_g.png">
-						<img class="button_icon_hover" src="../images/icon/↓_w_right.png">
-					</a>
 					<p class="projects_title_detail font_Nanumsquare">
 						2021. 06~ 2021.07 [2명, 4주]<br/>
 						파트 : 화면구현, 기능 및 DB (서버)설계
 					</p>
+					<a class="projects_title_button font_Nanumsquare" href="https://github.com/dbsxortime/ROGO-shoppingmall">보러가기
+						<img class="button_icon" src="../images/icon/↓_g.png">
+						<img class="button_icon_hover" src="../images/icon/↓_w_right.png">
+					</a>
 				</div>
 				<br style="clear:both"/>
 				<span class="projects_title_contents font_Nanumsquare">
@@ -688,9 +713,9 @@
 			<div class="projects_contents1">
 				<img class="projects_contents_img" src="../images/project/ROGO.jpg">
 			</div>
-			<div class="projects_contents2">
+			<!-- <div class="projects_contents2">
 				<img class="projects_contents_img" src="../images/project/ROGO2.jpg">
-			</div>
+			</div> -->
 		</div>
 	</div>
 </body>
