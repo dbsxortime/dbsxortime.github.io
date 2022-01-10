@@ -214,21 +214,36 @@
 		font-size:1.2rem;
 		color:#fff;
 	}
-	.header_menu_instagram{
+	.header_menu_my{
 		width:150px;
+		height:1.8rem;
 		text-align:left;
+		margin-top:0.5rem;
 	}
 	.header_menu_instagram:hover{
 		cursor:pointer
 	}
-	.header_menu_instagram_img{
+	.menu_footer_img_instagram{
 		width:1.8rem;
 		height:1.8rem;
 	}
-	.header_menu_instagram_span{
+	.menu_footer_img_email{
+		width:1.8rem;
+		height:1.3rem;
+	}
+	.menu_footer_img_github{
+		width:1.8rem;
+		height:1.8rem;
+	}
+	.menu_footer_span{
 		position:relative;
-		bottom:0.7rem;
+		bottom:0.2rem;
 		color:#fff;
+	}
+	.linked:hover{
+		cursor:pointer;
+		transform: scale(1.05);
+		/* color: var(--my-green); */
 	}
 </style>
 	
@@ -265,12 +280,48 @@
 			</div>
 			<div class="header_menu_closer" onclick="menu_close();" onmousedown="menu_close();">
 			</div>
-			<div class="menu_footer">
-				<div class="header_menu_instagram" onclick="location.href='http://www.instagram.com/yun_taketaek'">
-					<img class="header_menu_instagram_img" src="../images/icon/instagram_w.png">
-					<span class="header_menu_instagram_span">&nbsp;@yun_taketaek</span>
+			<table class="menu_footer">
+				<tr class="header_menu_my linked" onclick="location.href='http://www.instagram.com/yun_taketaek'">
+					<td>
+						<img class="menu_footer_img_instagram" src="../images/icon/instagram_w.png">
+					</td>
+					<td>
+						<span class="menu_footer_span linked">&nbsp;@yun_taketaek</span>
+					</td>
+				</tr>
+				<tr class="header_menu_my linked" onclick="https://github.com/dbsxortime">
+					<td>
+						<img class="menu_footer_img_github" src="../images/icon/github_w.png">
+					</td>
+					<td>
+						<span class="menu_footer_span linked">&nbsp;github.com/dbsxortime</span>
+					</td>
+				</tr>
+				<tr class="header_menu_my">
+					<td>
+						<img class="menu_footer_img_email" src="../images/icon/email_w.png">
+					</td>
+					<td>
+						<span class="menu_footer_span">&nbsp;dbsxortime@naver.com</span>
+					</td>
+				</tr>
+			</table>
+			
+			
+			<!-- <div class="menu_footer">
+				<div class="header_menu_instagram header_menu_my" onclick="location.href='http://www.instagram.com/yun_taketaek'">
+					<img class="menu_footer_img_instagram" src="../images/icon/instagram_w.png">
+					<span class="menu_footer_span">&nbsp;@yun_taketaek</span>
 				</div>
-			</div>
+				<div class="header_menu_github header_menu_my" onclick="https://github.com/dbsxortime">
+					<img class="menu_footer_img_github" src="../images/icon/github_w.png">
+					<span class="menu_footer_span">&nbsp;github.com/dbsxortime</span>
+				</div>
+				<div class="header_menu_email header_menu_my">
+					<img class="menu_footer_img_email" src="../images/icon/email_w.png">
+					<span class="menu_footer_span">&nbsp;dbsxortime@naver.com</span>
+				</div>
+			</div> -->
 		</div>
 	</div>
 </body>
@@ -379,9 +430,8 @@
 		/* border:1px solid var(--my-green); */
 		margin:auto;
 		max-width:80%;
-		margin-top:4rem;
+		margin-top:3rem;
 	}
-	
 	.aboutme_contents_table1{
 		transition: all .1s ease-in-out;
 	}
@@ -435,7 +485,7 @@
 				항상 스스로 디버깅하며 생길 수 있는 문제를 먼저 찾아내어<br/>
 				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
 			</p>
-			<table class="aboutme_contents_table1">
+			<table class="aboutme_contents_table1" onclick="displayProject(1)">
 				<tr>
 					<td>
 						<span class="category contents_nanaum">
@@ -453,7 +503,7 @@
 					<td class="contents contents_nanaum" >자바 기반 빅데이터 개발자 양성 과정</td>
 				</tr>
 			</table>
-			<table class="aboutme_contents_table1">
+			<table class="aboutme_contents_table1" onclick="displayProject(2)">
 				<tr>
 					<td>
 						<span class="category contents_nanaum">
@@ -668,6 +718,7 @@
 	function displayProject(page){
 		$('.projects_contents_table').css('display','none');
 		$('#p_'+page).css('display','block');
+		location.href="#4p";
 	}
 </script>
 <body>
@@ -684,12 +735,12 @@
 		<div class="projects_contents_box">
 			<table class="projects_contents_table" id="p_1">
 				<tr>
-					<td>page1</td>
+					<td>page1 구트아카데미학원 내용 작성</td>
 				</tr>
 			</table>
 			<table class="projects_contents_table" id="p_2">
 				<tr>
-					<td>page2</td>
+					<td>page2 스마트로pg 내용 작성</td>
 				</tr>
 			</table>
 			<table class="projects_contents_table" id="p_3">
