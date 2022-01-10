@@ -117,7 +117,6 @@
 		font-family: Montserrat-light;
 		text-align: center;
 	}
-
 	.header_top{
 		position:fixed;
 		top:5rem;
@@ -141,7 +140,14 @@
 		right:0;
 		transform:translate(0%,-50%);
 	}
-	
+	.menu_header{
+		position:relative;
+		top:5rem;
+	}
+	.menu_header span{
+		color:#fff;
+		font-size:1.5rem;
+	}
 	.header_menu_handler{
 		width:6rem;
 		height:6rem;
@@ -174,7 +180,9 @@
 		transform:translate(0%,-50%);
 		right:200px;
 	}
-	
+	.header_menu_handler:hover{
+		cursor:pointer;
+	}
 	.header_menu_closer{
 		position:fixed;
 		right:200px;
@@ -195,6 +203,30 @@
 		color:#fff;
 		font-size:16px;
 		padding:10px;
+	}
+	.header_menu_box_textbox a:hover{
+		font-size:16.5px;
+	}
+	.menu_footer{
+		position:absolute;
+		left:2rem;
+		bottom:2rem;
+		font-size:1.2rem;
+		color:#fff;
+	}
+	.header_menu_instagram{
+		width:150px;
+		text-align:left;
+	}
+	
+	.header_menu_instagram_img{
+		width:1.8rem;
+		height:1.8rem;
+	}
+	.header_menu_instagram_span{
+		position:relative;
+		bottom:0.7rem;
+		color:#fff;
 	}
 </style>
 	
@@ -219,13 +251,23 @@
 			</a>
 			<div class="header_menu_box">
 				<div class="header_menu_box_textbox">
-					<a href="#1p">1p!!</a><br/><br/>
-					<a href="#2p">2p!!</a><br/><br/>
-					<a href="#3p">3p!!</a><br/><br/>
-					<a href="#4p">4p!!</a>
+					<a href="#1p">ㆍ Top</a><br/><br/>
+					<a href="#2p">ㆍ Introduce</a><br/><br/>
+					<a href="#3p">ㆍ skills</a><br/><br/>
+					
+					<a href="#4p">ㆍ projects</a>
 				</div>	
+				<div class="menu_header">
+					<span>FrontBack</span>
+				</div>
 			</div>
 			<div class="header_menu_closer" onclick="menu_close();" onmousedown="menu_close();">
+			</div>
+			<div class="menu_footer">
+				<div class="header_menu_instagram">
+					<img class="header_menu_instagram_img" src="../images/icon/instagram_w.png">
+					<span class="header_menu_instagram_span">&nbsp;@yun_taketaek</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -245,11 +287,17 @@
 		transform:translate(0,-50%); 
 		margin : auto;
 	}
-
+	.main_title p{
+		transition: all .2s ease-in-out;
+	}
+	.main_title p:hover{
+		transform: scale(1.05);
+	}
 	.main_row1{
 		font-size:3.5rem;
 		letter-spacing: 6.22px;
 		margin:0;
+		z-index:3;
 	}
 
 	.main_row2{
@@ -258,6 +306,7 @@
 		margin:0;
 		position:relative;
 		top:-1rem;
+		z-index:2;
 	}
 </style>
 
@@ -276,8 +325,8 @@
 	.aboutme_title{
 		text-align:center;
 		position:relative;  
-		top:25%;
-		transform:translate(0,-25%);
+		top:9rem;
+		/* transform:translate(0,-12%); */
 		margin : auto;
 	}
 
@@ -297,7 +346,7 @@
 	.aboutme_contents{
 		text-align:center;
 		position:relative;  
-		top:28%;
+		top:18%;
 		/* transform:translate(0,-50%); */
 		margin : auto;                                                                                                                                
 	}
@@ -324,12 +373,21 @@
 		letter-spacing: 0.3rem;
 	}
 	.aboutme_contents_table1{
-		/* border-collapse:collapse;
-		border:1px solid var(--my-green); */
+		border-collapse:collapse;
+		/* border:1px solid var(--my-green); */
 		margin:auto;
 		max-width:80%;
 		margin-top:4rem;
 	}
+	
+	.aboutme_contents_table1{
+		transition: all .1s ease-in-out;
+	}
+	.aboutme_contents_table1:hover{
+		transform: scale(1.03);
+		cursor:pointer;
+	}
+	
 	.aboutme_contents_table1 td{
 		/* border:1px solid var(--my-green); */
 	}
@@ -357,7 +415,9 @@
 		font-size:1.8rem;
 		word-spacing:0.3rem;
 	}
-	
+	.introdce_blank{
+		font-size:2rem;
+	}
 </style>
 
 
@@ -385,7 +445,6 @@
 						<span class="date contents_nanaum">
 							2021.01~2021.07
 						</span>
-						
 					</td>
 				</tr>
 				<tr>
@@ -410,6 +469,11 @@
 					<td class="contents contents_nanaum" >서버 고도화 및 내부관리자 웹 유지/보수</td>
 				</tr>
 			</table>
+			<div class="introdce_blank">
+				<br/>ㆍ
+				<br/>ㆍ
+				<br/>ㆍ
+			</div>
 		</div>
 	</div>
 </body>
