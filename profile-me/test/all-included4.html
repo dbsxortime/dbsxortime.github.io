@@ -45,7 +45,9 @@
 		color:#29453c;
 		scroll-behavior:smooth;
 	}
-
+	table{
+		border-collapse:collapse;
+	}
 	a{
 		text-decoration: none;
 	}
@@ -306,22 +308,6 @@
 					</td>
 				</tr>
 			</table>
-			
-			
-			<!-- <div class="menu_footer">
-				<div class="header_menu_instagram header_menu_my" onclick="location.href='http://www.instagram.com/yun_taketaek'">
-					<img class="menu_footer_img_instagram" src="../images/icon/instagram_w.png">
-					<span class="menu_footer_span">&nbsp;@yun_taketaek</span>
-				</div>
-				<div class="header_menu_github header_menu_my" onclick="https://github.com/dbsxortime">
-					<img class="menu_footer_img_github" src="../images/icon/github_w.png">
-					<span class="menu_footer_span">&nbsp;github.com/dbsxortime</span>
-				</div>
-				<div class="header_menu_email header_menu_my">
-					<img class="menu_footer_img_email" src="../images/icon/email_w.png">
-					<span class="menu_footer_span">&nbsp;dbsxortime@naver.com</span>
-				</div>
-			</div> -->
 		</div>
 	</div>
 </body>
@@ -426,7 +412,7 @@
 		letter-spacing: 0.3rem;
 	}
 	.aboutme_contents_table1{
-		border-collapse:collapse;
+		
 		/* border:1px solid var(--my-green); */
 		margin:auto;
 		max-width:80%;
@@ -481,7 +467,7 @@
 		</div>
 		<div class="aboutme_contents">
 			<p class="contents_nanaum">
-				FullStack 신입 개발자 박윤택입니다.<br/> 
+				안녕하세요 웹개발자 박윤택입니다.<br/> 
 				항상 스스로 디버깅하며 생길 수 있는 문제를 먼저 찾아내어<br/>
 				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
 			</p>
@@ -489,21 +475,57 @@
 				<tr>
 					<td>
 						<span class="category contents_nanaum">
-							[교육]
+							[경력]
 						</span>
 						<span class="title contents_nanaum">
-							구트 아카데미학원
+							이전경력들 작성
 						</span>
 						<span class="date contents_nanaum">
-							2021.01~2021.07
+							2019.04~2021.07
 						</span>
 					</td>
 				</tr>
 				<tr>
-					<td class="contents contents_nanaum" >자바 기반 빅데이터 개발자 양성 과정</td>
+					<td class="contents contents_nanaum" >했던 업무 간략하게 작성하기 유지/보수</td>
 				</tr>
 			</table>
 			<table class="aboutme_contents_table1" onclick="displayProject(2)">
+				<tr>
+					<td>
+						<span class="category contents_nanaum">
+							[경력]
+						</span>
+						<span class="title contents_nanaum">
+							이전경력들 작성
+						</span>
+						<span class="date contents_nanaum">
+							2021.07~2021.08
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="contents contents_nanaum" >했던 업무 간략하게 작성하기 SI</td>
+				</tr>
+			</table>
+			<table class="aboutme_contents_table1" onclick="displayProject(3)">
+				<tr>
+					<td>
+						<span class="category contents_nanaum">
+							[경력]
+						</span>
+						<span class="title contents_nanaum">
+							이전경력들 작성
+						</span>
+						<span class="date contents_nanaum">
+							2021.08~2021.09
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="contents contents_nanaum" >했던 업무 간략하게 작성하기 유지/보수</td>
+				</tr>
+			</table>
+			<table class="aboutme_contents_table1" onclick="displayProject(4)">
 				<tr>
 					<td>
 						<span class="category contents_nanaum">
@@ -684,18 +706,25 @@
 		margin-top:2rem;
 	}
 	.projects_subtitle{
-		font-size:1.8rem;
+		font-size:1.5rem;
 		font-weight: 300;
-		width:9rem;
+		width:8rem;
+		height:4.4rem;
 		margin:0 2rem;
 		padding:1rem 0;
 		border:2px solid var(--my-green);
 		border-radius: 1rem;
 		background-color:#fff;
+		transition: all .1s ease-in-out;
 	}
 	.projects_subtitle:hover{
 		background-color:var(--my-green);
 		color:#fff;
+		transform: scale(1.03);
+	}
+	.projects_subtitle:active{
+		font-size:1.35rem;
+		transform: scale(1.01);
 	}
 	.projects_contents_box{
 		position:relative;
@@ -706,7 +735,15 @@
 	.projects_contents_table{
 		width:100%;
 		border-collapse:collapse;
-		/* border:1px solid var(--my-green); */
+		text-align:center;
+	}
+	.projects_contents_table tr{
+		width:100%;
+	}
+	.projects_contents_title{
+		font-size:1.8rem;
+		margin:auto;
+		margin-top:1rem;
 	}
 </style>
 <style>
@@ -717,8 +754,23 @@
 <script>
 	function displayProject(page){
 		$('.projects_contents_table').css('display','none');
-		$('#p_'+page).css('display','block');
+		$('#p_'+page).css('display','table');
+		
+		btn_noclick();
+		btn_click(page);
+		
 		location.href="#4p";
+	}
+	function btn_click(page){
+		$('.project_'+page).css('background-color','var(--my-green)');
+		$('.project_'+page).css('color','#fff');
+	}
+	function btn_noclick(){
+		$('.projects_subtitle').css('background-color','#fff');
+		$('.projects_subtitle').css('color','var(--my-green)');
+	}
+	function btn_click_ing(){
+		$(this).css('font-size','1.2rem');
 	}
 </script>
 <body>
@@ -726,31 +778,41 @@
 		<div class="projects_title">
 			<p class="projects_row1 font_LEMONMILK">Projects</p>
 			<div class="projects_subtitle_row">
-				<button onclick="displayProject(1);" class="projects_subtitle font_LEMONMILK">first</button>
-				<button onclick="displayProject(2);" class="projects_subtitle font_LEMONMILK">second</button>
-				<button onclick="displayProject(3);" class="projects_subtitle font_LEMONMILK">third</button>
-				<button onclick="displayProject(4);" class="projects_subtitle font_LEMONMILK">last</button>
+				<button onclick="displayProject(1);" onmousedown="btn_click_ing();" class="projects_subtitle font_LEMONMILK project_1">first</button>
+				<button onclick="displayProject(2);" onmousedown="btn_click_ing();" class="projects_subtitle font_LEMONMILK project_2">second</button>
+				<button onclick="displayProject(3);" onmousedown="btn_click_ing();" class="projects_subtitle font_LEMONMILK project_3">third</button>
+				<button onclick="displayProject(4);" onmousedown="btn_click_ing();" class="projects_subtitle font_LEMONMILK project_4">last</button>
 			</div>
 		</div>
 		<div class="projects_contents_box">
 			<table class="projects_contents_table" id="p_1">
 				<tr>
-					<th>page1 구트아카데미학원 내용 작성</th>
+					<th class="projects_contents_title">page1 프로젝트 타이틀 작성할 공간</th>
+				</tr>
+				<tr>
+					<table>
+						<tr>
+							
+						</tr>
+					</table>
 				</tr>
 			</table>
+			
 			<table class="projects_contents_table" id="p_2">
 				<tr>
-					<th>page2 스마트로pg 내용 작성</th>
+					<th class="projects_contents_title">page2 자세한 프로젝트 작성</th>
 				</tr>
 			</table>
+			
 			<table class="projects_contents_table" id="p_3">
 				<tr>
-					<th>page3</th>
+					<th class="projects_contents_title">page3 자세한 프로젝트 작성</th>
 				</tr>
 			</table>
+			
 			<table class="projects_contents_table" id="p_4">
 				<tr>
-					<th>page4</th>
+					<th class="projects_contents_title">page4 스마트로pg 내용 작성</th>
 				</tr>
 			</table>
 		</div>
