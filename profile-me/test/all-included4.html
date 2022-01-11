@@ -100,28 +100,6 @@
 			height: 6,
 			target : 'body',
 		});
-		
-		$("html").on("mousewheel", function(e) {
-			var wheel = e.originalEvent.wheelDelta; 
-			var sHeight = $(document).scrollTop();
-			if(wheel>0){ // 스크롤 올렸을 때
-				if(sHeight<=500){
-					goPage('#1p');
-				}else if(sHeight>=1400&&sHeight<=2100){
-					goPage('#2p');
-				}else if(sHeight>=2100&&sHeight<=2400){
-					goPage('#3p');
-				}
-			} else { // 스크롤 내렸을 때
-				if(sHeight>=500&&sHeight<=1300){
-					goPage('#2p');
-				}else if(sHeight>=1300&&sHeight<=2400){
-					goPage('#3p');
-				}else if(sHeight>=2400){
-					goPage('#4p');
-				}
-			} 
-		})
 	};
 	
 </script>
