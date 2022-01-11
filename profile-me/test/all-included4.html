@@ -107,15 +107,15 @@
 			if(wheel>0){ // 스크롤 올렸을 때
 				if(sHeight<=500){
 					goPage('#1p');
-				}else if(sHeight>=1400&&sHeight<=1600){
+				}else if(sHeight>=1400&&sHeight<=2100){
 					goPage('#2p');
 				}else if(sHeight>=2100&&sHeight<=2400){
 					goPage('#3p');
 				}
 			} else { // 스크롤 내렸을 때
-				if(sHeight>=500&&sHeight<=700){
+				if(sHeight>=500&&sHeight<=1300){
 					goPage('#2p');
-				}else if(sHeight>=1300&&sHeight<=1500){
+				}else if(sHeight>=1300&&sHeight<=2400){
 					goPage('#3p');
 				}else if(sHeight>=2400){
 					goPage('#4p');
