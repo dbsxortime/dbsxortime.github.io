@@ -79,8 +79,19 @@
 	::-webkit-scrollbar { display: none; }
 </style>
 <script>
+	function displayProject(){
+		$('.projects_contents_table').css('display','none');
+		$('#p_1').css('display','table');
+		
+		btn_noclick();
+		btn_click(1);
+	}
 	window.onload=function(){
-		displayProject(1);
+		$('.projects_contents_table').css('display','none');
+		$('#p_1').css('display','table');
+		$('.project_1').css('background-color','var(--my-green)');
+		$('.project_1').css('color','#fff');
+		
 		$.progressIndicator({
 			direction : 'left',
 			barColor: 'var(--my-green)',
@@ -89,17 +100,30 @@
 			height: 6,
 			target : 'body',
 		});
+		
+		$("html").on("mousewheel", function(e) {
+			var wheel = e.originalEvent.wheelDelta; 
+			var sHeight = $(document).scrollTop();
+			if(wheel>0){ // 스크롤 올렸을 때
+				if(sHeight<=500){
+					goPage('#1p');
+				}else if(sHeight>=1400&&sHeight<=1600){
+					goPage('#2p');
+				}else if(sHeight>=2100&&sHeight<=2400){
+					goPage('#3p');
+				}
+			} else { // 스크롤 내렸을 때
+				if(sHeight>=500&&sHeight<=700){
+					goPage('#2p');
+				}else if(sHeight>=1300&&sHeight<=1500){
+					goPage('#3p');
+				}else if(sHeight>=2400){
+					goPage('#4p');
+				}
+			} 
+		})
 	};
 	
-	var page_name = '<div id="pageName" style="position: fixed; line-height: 1em; background: rgba(255, 255, 255, 0.7); color: rgb(34, 34, 34); padding: 2px; font-size: 8px; left: 100%; bottom: 0px;">13%</div>';
-	$('#progress-indicator').append(page_name);
-	
-	$(window).on('scroll', function(){
-		var currentPercentage = ($(window).scrollTop() / ($(document).outerHeight() - $(window).height())) * 100;
-		if(currentPercentage>=17){
-			$('#pageName').text('first');
-		}
-	});
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -258,6 +282,10 @@
 		$('.header_menu_closer').css('display','none');
 		$(".header_menu_div").animate({right: "-200px"}, 250);
 	}
+	function goPage(page){
+		var sHeight = $(document).scrollTop();
+		location.replace(page);
+	}
 </script>
 
 <body>
@@ -270,11 +298,10 @@
 			</a>
 			<div class="header_menu_box">
 				<div class="header_menu_box_textbox">
-					<a href="#1p">ㆍ Top</a><br/><br/>
-					<a href="#2p">ㆍ Introduce</a><br/><br/>
-					<a href="#3p">ㆍ skills</a><br/><br/>
-					
-					<a href="#4p">ㆍ projects</a>
+					<a onclick="goPage('#1p')">ㆍ Top</a><br/><br/>
+					<a onclick="goPage('#2p')">ㆍ Introduce</a><br/><br/>
+					<a onclick="goPage('#3p')">ㆍ skills</a><br/><br/>
+					<a onclick="goPage('#4p')">ㆍ projects</a>
 				</div>	
 				<div class="menu_header">
 					<span>FrontBack</span>
@@ -327,7 +354,7 @@
 		margin : auto;
 	}
 	.main_title p{
-		transition: all .2s ease-in-out;
+		transition: all .1s ease-in-out;
 	}
 	.main_title p:hover{
 		transform: scale(1.05);
@@ -419,7 +446,7 @@
 		margin-top:3rem;
 	}
 	.aboutme_contents_table1{
-		transition: all .1s ease-in-out;
+		transition: all .05s ease-in-out;
 	}
 	.aboutme_contents_table1:hover{
 		transform: scale(1.03);
