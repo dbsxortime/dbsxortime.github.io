@@ -291,77 +291,6 @@
 </style>
 <style>
 @media ( max-width: 1023px ) {
-	.header_menu_div{
-		position:fixed;
-		right:-200px;
-		top:50%;
-		transform:translate(0%,-50%);
-		width:200px;
-		height:100%;
-		z-index:9999;
-	}
-	
-	.header_menu_box{
-		position:fixed;
-		right:0;
-		width:100%;
-		height:100%;
-		background-color:#000;
-		opacity:0.5;
-	}
-	
-	.header_menu_btn{
-		width:6rem;
-		height:6rem;
-		position:fixed;
-		top:50%;
-		transform:translate(0%,-50%);
-		right:200px;
-	}
-	.header_menu_handler:hover{
-		cursor:pointer;
-	}
-	.header_menu_closer{
-		position:fixed;
-		right:200px;
-		width:500px;
-		height:100vh;
-		display:none;
-	}
-	.header_menu_box_textbox{
-		width:120px;
-		position:fixed;
-		right:50px;
-		top:50%;
-		transform:translate(0%,-50%);
-		text-align:left;
-	}
-	.header_menu_box_textbox a{
-		font-family: Nanumsquare;
-		color:#fff;
-		font-size:16px;
-		padding:10px;
-	}
-	.header_menu_box_textbox a:hover{
-		font-size:16.5px;
-		cursor:pointer;
-	}
-	.menu_footer{
-		position:absolute;
-		left:2rem;
-		bottom:2rem;
-		font-size:1.2rem;
-		color:#fff;
-	}
-	.header_menu_my{
-		width:150px;
-		height:1.8rem;
-		text-align:left;
-		margin-top:0.5rem;
-	}
-	.header_menu_instagram:hover{
-		cursor:pointer
-	}
 	.menu_footer_img_instagram{
 		width:3rem;
 		height:3rem;
@@ -373,16 +302,6 @@
 	.menu_footer_img_github{
 		width:3rem;
 		height:3rem;
-	}
-	.menu_footer_span{
-		position:relative;
-		bottom:0.2rem;
-		color:#fff;
-	}
-	.linked:hover{
-		cursor:pointer;
-		transform: scale(1.05);
-		/* color: var(--my-green); */
 	}
 }
 </style>
@@ -904,22 +823,26 @@
 	.projects_contents_table{
 		transition: all 1s ease-in-out;
 	}
-	
+	.align_left{
+		text-align:left;
+	}
 </style>
 <style>
 	@media ( max-width: 1023px ) {
 		.projects_subtitle{
+			width:8rem;
 			font-size:1.1rem;
 		}
 		.projects_subtitle:active{
 			font-size:1.2rem;
+			transform: scale(1.01);
 		}
 		.projects_contents_box{
+			width:95%;
 			word-break: keep-all;
 		}
-		.projects_contents_table tbody{
-			width:100%;
-			height:60vh;
+		.projects_contents_table tbody tr td{
+			padding:2rem 1rem;
 		}
 	}
 </style>
@@ -985,7 +908,7 @@
 					</tr>
 					<tr>
 						<th>개발내용</th>
-						<td colspan="3">
+						<td class="align_left" colspan="3">
 							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
 							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
 							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
@@ -993,7 +916,7 @@
 					</tr>
 					<tr>
 						<th>느낀 점</th>
-						<td colspan="3">
+						<td class="align_left" colspan="3">
 							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
 							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
 						</td>
