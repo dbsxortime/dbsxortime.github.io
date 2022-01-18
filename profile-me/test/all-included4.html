@@ -760,6 +760,7 @@
 		font-size:1.8rem;
 		margin:auto;
 		margin-top:1rem;
+		
 	}
 	.projects_contents_table tbody{
 		width:100%;
@@ -774,6 +775,10 @@
 		font-weight:bold;
 		border:1px solid var(--my-green);
 	}
+	.projects_contents_table{
+		transition: all 1s ease-in-out;
+	}
+
 </style>
 <style>
 	@media ( max-width: 1023px ) {
@@ -783,12 +788,13 @@
 <script>
 	function displayProject(page){
 		$('.projects_contents_table').css('display','none');
+		
 		$('#p_'+page).css('display','table');
 		
+		location.href="#4p";
 		btn_noclick();
 		btn_click(page);
 		
-		location.href="#4p";
 	}
 	function btn_click(page){
 		$('.project_'+page).css('background-color','var(--my-green)');
@@ -848,12 +854,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>소속</th>
-						<td>여기저기소속</td>
+						<th>소속2</th>
+						<td>요기조기소속</td>
 					</tr>
 					<tr>
 						<th>프로젝트 이름</th>
-						<td>이런저런 프로젝트의 이름이 작성됨</td>
+						<td>저런저런 프로젝트의 이름이 작성됨</td>
 					</tr>
 					<tr>
 						<th>기간</th>
@@ -875,11 +881,11 @@
 				<tbody>
 					<tr>
 						<th>소속</th>
-						<td>여기저기소속</td>
+						<td>저기여기소속</td>
 					</tr>
 					<tr>
 						<th>프로젝트 이름</th>
-						<td>이런저런 프로젝트의 이름이 작성됨</td>
+						<td>저런이런 프로젝트의 이름이 작성됨</td>
 					</tr>
 					<tr>
 						<th>기간</th>
@@ -901,11 +907,11 @@
 				<tbody>
 					<tr>
 						<th>소속</th>
-						<td>여기저기소속</td>
+						<td>죠기요기소속</td>
 					</tr>
 					<tr>
 						<th>프로젝트 이름</th>
-						<td>이런저런 프로젝트의 이름이 작성됨</td>
+						<td>저런쯧쯧 프로젝트의 이름이 작성됨</td>
 					</tr>
 					<tr>
 						<th>기간</th>
