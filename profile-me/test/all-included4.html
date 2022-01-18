@@ -799,6 +799,7 @@
 		font-size:1.7rem;
 	}
 	.projects_contents_table tbody tr th{
+		height:3rem;
 		font-size:1.7rem;
 		font-weight:bold;
 		border:1px solid var(--my-green);
@@ -812,7 +813,12 @@
 <style>
 	@media ( max-width: 1023px ) {
 		.projects_subtitle{
-			width:10rem;
+			width:8rem;
+			font-size:1.1rem;
+		}
+		.projects_subtitle:active{
+			font-size:1.2rem;
+			transform: scale(1.01);
 		}
 		.projects_contents_box{
 			position:relative;
@@ -820,6 +826,10 @@
 			margin:auto;
 			width:95%;
 			word-break: keep-all;
+		}
+		.projects_contents_table tbody{
+		width:100%;
+		height:60vh;
 		}
 	}
 </style>
@@ -866,7 +876,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th height="40">프로젝트 이름</th>
+						<th>프로젝트 이름</th>
 						<td>이런저런 프로젝트의 이름이 작성됨</td>
 						<th>기간</th>
 						<td>2021.01.01~2021.12.31</td>
@@ -909,7 +919,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th height="40">프로젝트 이름</th>
+						<th>프로젝트 이름</th>
 						<td>이런저런 프로젝트의 이름이 작성됨</td>
 						<th>기간</th>
 						<td>2021.01.01~2021.12.31</td>
@@ -952,7 +962,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th height="40">프로젝트 이름</th>
+						<th>프로젝트 이름</th>
 						<td>이런저런 프로젝트의 이름이 작성됨</td>
 						<th>기간</th>
 						<td>2021.01.01~2021.12.31</td>
@@ -995,7 +1005,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th height="40">프로젝트 이름</th>
+						<th>프로젝트 이름</th>
 						<td>이런저런 프로젝트의 이름이 작성됨</td>
 						<th>기간</th>
 						<td>2021.01.01~2021.12.31</td>
