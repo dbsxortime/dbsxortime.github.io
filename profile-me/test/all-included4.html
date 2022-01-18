@@ -75,16 +75,42 @@
 	.pages{
 		width:100vw;
 		height:100vh;
+		transition: all .3s ease-in-out;
 	}
 	::-webkit-scrollbar { display: none; }
 </style>
 <script>
 	$(window).on('scroll', function(){
 		var currentPercentage = ($(window).scrollTop() / ($(document).outerHeight() - $(window).height())) * 100;
+		// alert(currentPercentage);
 		if(currentPercentage==100){
 			appearFooter();
 		}else {
 			disAppearFooter();
+		}
+		
+		
+		//1page - top
+		if(currentPercentage>10){
+			$('#1p').css('opacity','0');
+		}
+		if(currentPercentage<=10){
+			$('#1p').css('opacity','1');
+		}
+		
+		//2page - introduce
+		if(currentPercentage>9){
+			$('#2p').css('opacity','1');
+		}
+		
+		//3page - skills
+		if(currentPercentage>37){
+			$('#3p').css('opacity','1');
+		}
+		
+		//4page - projects
+		if(currentPercentage>66){
+			$('#4p').css('opacity','1');
 		}
 	});
 	function displayProject(){
@@ -94,12 +120,16 @@
 		btn_noclick();
 		btn_click(1);
 	}
+	
 	window.onload=function(){
 		$('.projects_contents_table').css('display','none');
 		$('#p_1').css('display','table');
 		$('.project_1').css('background-color','var(--my-green)');
 		$('.project_1').css('color','#fff');
 		
+		$('#2p').css('opacity','0');
+		$('#3p').css('opacity','0');
+		$('#4p').css('opacity','0');
 		$.progressIndicator({
 			direction : 'left',
 			barColor: 'var(--my-green)',
@@ -343,7 +373,7 @@
 		margin : auto;
 	}
 	.main_title p{
-		transition: all .1s ease-in-out;
+		transition: all .3s ease-in-out;
 	}
 	.main_title p:hover{
 		transform: scale(1.05);
