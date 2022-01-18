@@ -4,71 +4,82 @@
 <meta charset="UTF-8">
 <title>Taek's profile</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<script src="https://cdn.rawgit.com/tyleteam/jquery-progress-indicator/master/jquery-progress-indicator-1.0.5.min.js"></script>
 <style>
-@font-face{
-	src:url('../fonts/LEMONMILK-MEDIUM.OTF');
-	font-family: 'LEMONMILK';
-} 
-@font-face{
-	src:url('../fonts/LEMONMILK-BOLD.OTF');
-	font-family: 'LEMONMILK-BOLD';
-} 
-@font-face{
-	src:url('../fonts/MONTSERRAT-MEDIUM.TTF');
-	font-family: 'Montserrat';
-}
-@font-face{
-	src:url('../fonts/NANUMSQUARE_ACR.TTF');
-	font-family: 'Nanumsquare';
-}
-@font-face{
-	src:url('../fonts/ROBOTO-REGULAR.TTF');
-	font-family: 'Roboto';
-}
-@font-face{
-	src:url('../fonts/ROBOTO-BOLD.TTF');
-	font-family: 'Roboto-bold';
-}
-@font-face{
-	src:url('../fonts/MONTSERRAT-LIGHT.TTF');
-	font-family: 'Montserrat-light';
-}
-:root{
-	--my-green: #29453c;
-}
-*{
-	margin:0;
-	padding:0;
-	font-size: 10px;
-	color:#29453c;
-	overflow: hidden;
-}
+	@font-face{
+		src:url('../fonts/LEMONMILK-MEDIUM.OTF');
+		font-family: 'LEMONMILK';
+	} 
+	@font-face{
+		src:url('../fonts/LEMONMILK-BOLD.OTF');
+		font-family: 'LEMONMILK-BOLD';
+	} 
+	@font-face{
+		src:url('../fonts/MONTSERRAT-MEDIUM.TTF');
+		font-family: 'Montserrat';
+	}
+	@font-face{
+		src:url('../fonts/NANUMSQUARE_ACR.TTF');
+		font-family: 'Nanumsquare';
+	}
+	@font-face{
+		src:url('../fonts/ROBOTO-REGULAR.TTF');
+		font-family: 'Roboto';
+	}
+	@font-face{
+		src:url('../fonts/ROBOTO-BOLD.TTF');
+		font-family: 'Roboto-bold';
+	}
+	@font-face{
+		src:url('../fonts/MONTSERRAT-LIGHT.TTF');
+		font-family: 'Montserrat-light';
+	}
+	:root{
+		--my-green: #29453c;
+	}
+	
+	*{
+		margin:0;
+		padding:0;
+		font-size: 10px;
+		color:#29453c;
+		scroll-behavior:smooth;
+	}
+	table{
+		border-collapse:collapse;
+	}
+	a{
+		text-decoration: none;
+	}
 
-a{
-	text-decoration: none;
-}
+	.font_LEMONMILK{
+		font-family: LEMONMILK;
+	}
+	.font_LEMONMILK_BOLD{
+		font-family: LEMONMILK-BOLD;
+	}
+	.font_Montserrat{
+		font-family: Montserrat;
+	}
 
-.font_LEMONMILK{
-	font-family: LEMONMILK;
-}
-.font_LEMONMILK_BOLD{
-	font-family: LEMONMILK-BOLD;
-}
-.font_Montserrat{
-	font-family: Montserrat;
-}
-
-.font_Roboto{
-	font-family: Roboto;
-}
-.font_Roboto_bold{
-	font-family: Roboto-bold;
-}
-.font_Nanumsquare{
-	font-family: Nanumsquare;
-}
+	.font_Roboto{
+		font-family: Roboto;
+	}
+	.font_Roboto_bold{
+		font-family: Roboto-bold;
+	}
+	.font_Nanumsquare{
+		font-family: Nanumsquare;
+	}
+	
+	.pages{
+		width:100vw;
+		height:100vh;
+		transition: all .3s ease-in-out;
+	}
+	::-webkit-scrollbar { display: none; }
 </style>
-
+	
 <script type="text/javascript">
 	
 	var $html = $("html");
@@ -137,21 +148,86 @@ a{
 	});
 </script>
 
-
-
-
-<!-- header css -->
-<style type="text/css">
+<script>
+	$(window).on('scroll', function(){
+		var currentPercentage = ($(window).scrollTop() / ($(document).outerHeight() - $(window).height())) * 100;
+		// alert(currentPercentage);
+		if(currentPercentage>=97){
+			appearFooter();
+		}else {
+			disAppearFooter();
+		}
+		
+		
+		//1page - top
+		if(currentPercentage>10){
+			$('#1p').css('opacity','0');
+		}
+		if(currentPercentage<=10){
+			$('#1p').css('opacity','1');
+		}
+		
+		//2page - introduce
+		if(currentPercentage>9){
+			$('#2p').css('opacity','1');
+		}
+		
+		//3page - skills
+		if(currentPercentage>37){
+			$('#3p').css('opacity','1');
+		}
+		
+		//4page - projects
+		if(currentPercentage>66){
+			$('#4p').css('opacity','1');
+		}
+	});
+	function displayProject(){
+		$('.projects_contents_table').css('display','none');
+		$('#p_1').css('display','table');
+		
+		btn_noclick();
+		btn_click(1);
+	}
+	
+	window.onload=function(){
+		$('.projects_contents_table').css('display','none');
+		$('#p_1').css('display','table');
+		$('.project_1').css('background-color','var(--my-green)');
+		$('.project_1').css('color','#fff');
+		
+		$('#2p').css('opacity','0');
+		$('#3p').css('opacity','0');
+		$('#4p').css('opacity','0');
+		$.progressIndicator({
+			direction : 'left',
+			barColor: 'var(--my-green)',
+			percentageEnabled : false,
+			easingSpeed : 0.1,
+			height: 6,
+			target : 'body',
+		});
+	};
+	
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@media ( max-width: 1023px ) {
+	*{
+		font-size: 5px;
+	}
 	.pages{
-		width:100vw;
 		height:100vh;
 	}
-
+}
+</style>
+</head>
+<!-- header css -->
+<style type="text/css">
 	.header{
 		font-family: Montserrat-light;
 		text-align: center;
 	}
-
 	.header_top{
 		position:fixed;
 		top:5rem;
@@ -175,80 +251,193 @@ a{
 		right:0;
 		transform:translate(0%,-50%);
 	}
-	
-	
+	.menu_header{
+		position:relative;
+		top:5rem;
+	}
+	.menu_header span{
+		color:#fff;
+		font-size:1.5rem;
+	}
 	.header_menu_handler{
 		width:6rem;
 		height:6rem;
 	}
 
-	.header_menu_opened{
+	.header_menu_div{
 		position:fixed;
+		right:-200px;
 		top:50%;
 		transform:translate(0%,-50%);
-		right:0;
-		width:100%;
+		width:200px;
 		height:100%;
-		display:none;
+		z-index:9999;
 	}
 	
 	.header_menu_box{
 		position:fixed;
 		right:0;
-		width:30vw;
+		width:100%;
 		height:100%;
 		background-color:#000;
 		opacity:0.5;
 	}
 	
-	.header_menu_opened .header_menu_handler{
+	.header_menu_btn{
 		width:6rem;
 		height:6rem;
 		position:fixed;
 		top:50%;
 		transform:translate(0%,-50%);
-		right:30vw;
+		right:200px;
 	}
-	
+	.header_menu_handler:hover{
+		cursor:pointer;
+	}
 	.header_menu_closer{
 		position:fixed;
-		left:0;
-		width:70vw;
+		right:200px;
+		width:500px;
 		height:100vh;
+		display:none;
+	}
+	.header_menu_box_textbox{
+		width:120px;
+		position:fixed;
+		right:50px;
+		top:50%;
+		transform:translate(0%,-50%);
+		text-align:left;
+	}
+	.header_menu_box_textbox a{
+		font-family: Nanumsquare;
+		color:#fff;
+		font-size:16px;
+		padding:10px;
+	}
+	.header_menu_box_textbox a:hover{
+		font-size:16.5px;
+		cursor:pointer;
+	}
+	.menu_footer{
+		position:absolute;
+		left:2rem;
+		bottom:2rem;
+		font-size:1.2rem;
+		color:#fff;
+	}
+	.header_menu_my{
+		width:150px;
+		height:1.8rem;
+		text-align:left;
+		margin-top:0.5rem;
+	}
+	.header_menu_instagram:hover{
+		cursor:pointer
+	}
+	.menu_footer_img_instagram{
+		width:1.8rem;
+		height:1.8rem;
+	}
+	.menu_footer_img_email{
+		width:1.8rem;
+		height:1.3rem;
+	}
+	.menu_footer_img_github{
+		width:1.8rem;
+		height:1.8rem;
+	}
+	.menu_footer_span{
+		position:relative;
+		bottom:0.2rem;
+		color:#fff;
+	}
+	.linked:hover{
+		cursor:pointer;
+		transform: scale(1.05);
+		/* color: var(--my-green); */
 	}
 </style>
-	
+<style>
+@media ( max-width: 1023px ) {
+	.menu_footer_img_instagram{
+		width:3rem;
+		height:3rem;
+	}
+	.menu_footer_img_email{
+		width:3rem;
+		height:2.2rem;
+	}
+	.menu_footer_img_github{
+		width:3rem;
+		height:3rem;
+	}
+}
+</style>
 <script>
 	function menu_open(){
-		// document.getElementsByClassName('header_menu_opened')[0].style.display="block";
-		alert('test');
+		$('.header_menu_closer').css('display','block');
+		$(".header_menu_div").animate({right: "0"}, 250);
 	}
 	function menu_close(){
-		document.getElementsByClassName('header_menu_opened')[0].style.display="none";
+		$('.header_menu_closer').css('display','none');
+		$(".header_menu_div").animate({right: "-200px"}, 250);
 	}
-	
+	function goPage(page){
+		var sHeight = $(document).scrollTop();
+		location.replace(page);
+	}
 </script>
 
 <body>
 	<div class="header">
 		<span class="header_top">FrontBack</span>
 		<span class="header_bot">Park YunTaek</span>
-		<div class="header_menu_opened" id="menu_tab">
-			<div class="header_menu_closer" onclick="menu_close();">
-				
-			</div>
+		<div class="header_menu_div" id="menu_tab">
+			<a class="header_menu_btn div-close" onclick="menu_open();" onmousedown="menu_open();">
+				<img class="header_menu_handler" src="../images/icon/handler.png">
+			</a>
 			<div class="header_menu_box">
-				
+				<div class="header_menu_box_textbox">
+					<a onclick="goPage('#1p')">ㆍ Top</a><br/><br/>
+					<a onclick="goPage('#2p')">ㆍ Introduce</a><br/><br/>
+					<a onclick="goPage('#3p')">ㆍ skills</a><br/><br/>
+					<a onclick="goPage('#4p')">ㆍ projects</a>
+					<br/><br/><br/><br/>
+					<a onclick="window.open('')">ㆍ 이력서 보기</a>
+				</div>	
+				<div class="menu_header">
+					<span>FrontBack</span>
+				</div>
 			</div>
-			<a>
-				<img class="header_menu_handler" src="../images/icon/handler.png">
-			</a>
-			
-		</div>
-		<div class="header_menu" id="menu_bar" onclick="menu_open();">
-			<a>
-				<img class="header_menu_handler" src="../images/icon/handler.png">
-			</a>
+			<div class="header_menu_closer" onclick="menu_close();" onmousedown="menu_close();">
+			</div>
+			<table class="menu_footer">
+				<tr class="header_menu_my linked" onclick="window.open('http://www.instagram.com/yun_taketaek')">
+					<td>
+						<img class="menu_footer_img_instagram" src="../images/icon/instagram_w.png">
+					</td>
+					<td>
+						<span class="menu_footer_span linked">&nbsp;@yun_taketaek</span>
+					</td>
+				</tr>
+				<tr class="header_menu_my linked" onclick="window.open('https://github.com/dbsxortime')">
+					<td>
+						<img class="menu_footer_img_github" src="../images/icon/github_w.png">
+					</td>
+					<td>
+						<span class="menu_footer_span linked">&nbsp;github.com/dbsxortime</span>
+					</td>
+				</tr>
+				<tr class="header_menu_my">
+					<td>
+						<img class="menu_footer_img_email" src="../images/icon/email_w.png">
+					</td>
+					<td>
+						<span class="menu_footer_span">&nbsp;dbsxortime@naver.com</span>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </body>
@@ -267,11 +456,17 @@ a{
 		transform:translate(0,-50%); 
 		margin : auto;
 	}
-
+	.main_title p{
+		transition: all .3s ease-in-out;
+	}
+	.main_title p:hover{
+		transform: scale(1.05);
+	}
 	.main_row1{
 		font-size:3.5rem;
 		letter-spacing: 6.22px;
 		margin:0;
+		z-index:3;
 	}
 
 	.main_row2{
@@ -280,11 +475,12 @@ a{
 		margin:0;
 		position:relative;
 		top:-1rem;
+		z-index:2;
 	}
 </style>
-</head>
+
 <body>
-	<div class="pages">
+	<div class="pages" id="1p">
 		<div class="main_title font_Montserrat">
 			<p class="main_row1">I'm Web / Server</p>
 			<p class="main_row2">Developer</p>
@@ -292,25 +488,21 @@ a{
 	</div>
 </body>
 
-
-
-
 <!-- ----------------------------- 2page / about me ------------------------------ -->
-
-
 <!-- body css -->
 <style type="text/css">
 	.aboutme_title{
 		text-align:center;
 		position:relative;  
-		top:25%;
-		transform:translate(0,-25%);
+		top:9rem;
+		/* transform:translate(0,-12%); */
 		margin : auto;
 	}
 
 	.aboutme_row1{
 		font-size:3rem;
 		margin:0;
+		margin-top:3rem;
 		height:3.3rem;
 	}
 
@@ -323,15 +515,15 @@ a{
 	.aboutme_contents{
 		text-align:center;
 		position:relative;  
-		top:50%;
-		transform:translate(0,-50%);
-		margin : auto;
+		top:18%;
+		/* transform:translate(0,-50%); */
+		margin : auto;                                                                                                                                
 	}
 
 	.aboutme_goott{
 		width:35rem;
 		margin:auto;
-		margin-top:10rem;
+		margin-top:5rem;
 	}
 	.aboutme_goott_left{
 		float:left;
@@ -341,32 +533,149 @@ a{
 		margin-right:0.8rem;
 		float:right;
 	}
-
+	.contents_nanaum{
+		font-size: 2rem;
+		font-family: Nanumsquare;
+	}
 	.aboutme_goott_clean{
 		clear: both;
 		letter-spacing: 0.3rem;
 	}
+	.aboutme_contents_table1{
+		
+		/* border:1px solid var(--my-green); */
+		margin:auto;
+		max-width:80%;
+		margin-top:3rem;
+	}
+	.aboutme_contents_table1{
+		transition: all .05s ease-in-out;
+	}
+	.aboutme_contents_table1:hover{
+		transform: scale(1.03);
+		cursor:pointer;
+	}
+	
+	.aboutme_contents_table1 td{
+		/* border:1px solid var(--my-green); */
+	}
+	.aboutme_contents_table1 .category{
+		width:20rem;
+		margin-left:1rem;
+		text-align:left;
+		font-size:1.2rem;
+	}
+	.aboutme_contents_table1 .title{
+		width:20rem;
+		/* height:3rem; */
+		text-align:center;
+		font-size:1.4rem;
+	}
+	.aboutme_contents_table1 .date{
+		width:20rem;
+		margin-left:1rem;
+		text-align:center;
+		font-size:1.4rem;
+	}
+	.aboutme_contents_table1 .contents{
+		/* height:5rem; */
+		text-align:center;
+		font-size:1.8rem;
+		word-spacing:0.3rem;
+	}
+	.introdce_blank{
+		font-size:2rem;
+	}
 </style>
-
-
 <body>
-	<div class="pages">
+	<div class="pages" id="2p">
 		<div class="aboutme_title page2_child">
-			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
 			<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
+			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
 		</div>
 		<div class="aboutme_contents">
 			<p class="contents_nanaum">
-				FullStack 신입 개발자 박윤택입니다. 항상 스스로 디버깅하며<br/>
-				생길 수 있는 문제를 먼저 찾아내어<br/>
+				안녕하세요 웹개발자 박윤택입니다.<br/> 
+				항상 스스로 디버깅하며 생길 수 있는 문제를 먼저 찾아내어<br/>
 				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
 			</p>
-		<div class="aboutme_goott">
-			<p class="contents_nanaum aboutme_goott_left">구트 아카데미학원	</p>
-			<p class="contents_nanaum aboutme_goott_right" style="font-size:1.4rem;">2021.01~2021.07</p>
-			<p class="contents_nanaum aboutme_goott_clean">자바 기반 빅데이터 개발자 양성 과정</p>
-		</div>
-			
+			<table class="aboutme_contents_table1" onclick="displayProject(1)">
+				<tr>
+					<td>
+						<span class="category contents_nanaum">
+							[경력]
+						</span>
+						<span class="title contents_nanaum">
+							이전경력들 작성
+						</span>
+						<span class="date contents_nanaum">
+							2019.04~2021.07
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="contents contents_nanaum" >했던 업무 간략하게 작성하기 유지/보수</td>
+				</tr>
+			</table>
+			<table class="aboutme_contents_table1" onclick="displayProject(2)">
+				<tr>
+					<td>
+						<span class="category contents_nanaum">
+							[경력]
+						</span>
+						<span class="title contents_nanaum">
+							이전경력들 작성
+						</span>
+						<span class="date contents_nanaum">
+							2021.07~2021.08
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="contents contents_nanaum" >했던 업무 간략하게 작성하기 SI</td>
+				</tr>
+			</table>
+			<table class="aboutme_contents_table1" onclick="displayProject(3)">
+				<tr>
+					<td>
+						<span class="category contents_nanaum">
+							[경력]
+						</span>
+						<span class="title contents_nanaum">
+							이전경력들 작성
+						</span>
+						<span class="date contents_nanaum">
+							2021.08~2021.09
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="contents contents_nanaum" >했던 업무 간략하게 작성하기 유지/보수</td>
+				</tr>
+			</table>
+			<table class="aboutme_contents_table1" onclick="displayProject(4)">
+				<tr>
+					<td>
+						<span class="category contents_nanaum">
+							[경력]
+						</span>
+						<span class="title contents_nanaum">
+							스마트로PG
+						</span>
+						<span class="date contents_nanaum">
+							2021.10~재직중
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="contents contents_nanaum" >서버 고도화 및 내부관리자 웹 유지/보수</td>
+				</tr>
+			</table>
+			<div class="introdce_blank">
+				<br/>ㆍ
+				<br/>ㆍ
+				<br/>ㆍ
+			</div>
 		</div>
 	</div>
 </body>
@@ -399,22 +708,25 @@ a{
 	}
 
 	.skills{
+		position: relative;
+		top: 8rem;
 		width:67rem;
-		position:relative;
-		top:50%;
-		transform:translate(0,-70%);
 		margin:auto;
+		margin-top:3vw;
+		text-align:left;
 	}
 
 	.skills_left{
 		line-height: 1.65;
 		float:left;
+		font-size:1.8rem;
 	}
 
 	.skills_right{
 		line-height: 1.65;
 		float:left;
 		margin-left:3rem;
+		font-size:1.8rem;
 	}
 
 	.skills_clean{
@@ -422,16 +734,59 @@ a{
 		letter-spacing: 0.3rem;
 	}
 </style>
+<style>
+	@media ( max-width: 1023px ) {
+		.introduce_title{
+			margin : auto;
+			position:relative;
+			top:9rem;
+		}
 
+		.introduce_row1{
+			font-size:3.5rem;
+			font-weight:500;
+			margin:0;
+		}
+
+		.introduce_subtitle{
+			font-size:2.2rem;
+			font-weight: 500;
+			margin:0;
+			margin-top:1rem;
+		}
+
+		.skills{
+			
+			max-width:80%;
+			height:35rem;
+		}
+		.skills_left{
+			line-height: 1.65;
+			float:left;
+			font-size:1.3rem;
+		}
+
+		.skills_right{
+			line-height: 1.65;
+			float:left;
+			margin-left:2rem;
+			font-size:1.3rem;
+		}
+		.skills_clean{
+			clear: both;
+			letter-spacing: 0.3rem;
+		}
+	}
+</style>
 
 <body>
-	<div class="pages">
+	<div class="pages" id="3p">
 		<div class="introduce_title">
 			<p class="introduce_row1 font_LEMONMILK">Introduce</p>
 			<p class="introduce_subtitle font_LEMONMILK">Skills</p>
 		</div>
 		<div class="skills">
-			<p class="contents_nanaum skills_left" style="font-size:1.8rem;">
+			<p class="font_Nanumsquare skills_left">
 				Java <br/>
 				HTML / JSP<br/>
 				Javascript / Jquery<br/>
@@ -443,7 +798,7 @@ a{
 				Github / SVN<br/>
 				Zeplin	
 			</p>
-			<p class="contents_nanaum skills_right" style="font-size:1.8rem;">
+			<p class="font_Nanumsquare skills_right">
 				주어진 문제를 이해하고 적절한 라이브러리를 활용하여 문제 해결<br/>
 				DOM의 이해와 적절한 태그 사용으로 원하는 화면 구현<br/>
 				정확하고 다양하며 간결한 동작 해결<br/>
@@ -465,208 +820,450 @@ a{
 <!-- body css -->
 
 <style type="text/css">
-
-	.projects{
-		position:absolute;
-		top:calc(100vh * 3);
-		width:100%;
-		height:100%;
-	}
-
 	.projects_title{
-		position: relative;
-		top: 8rem;
-		left: 40rem;
-	}
-
-	.projects_row1{
-		font-size: 5.75rem;
-		margin:0;
-		padding-right:1.5rem;
-	}
-
-	.projects_subtitle{
-		font-size:2.2rem;
-		font-weight: 500;
-		margin:0;
-		margin-top:4.68rem;
-	}
-
-	.contents_nanaum{
-		font-size: 2rem;
-		font-family: Nanumsquare;
-	}
-
-	.projects_box{
-		width:33.18rem;
-		height:100vh;
-		background-color: var(--my-green);
-		position:absolute;
-		top:300%;
-		left:0;
-
-		font-style: none;
-	}
-
-	.projects_box_contents{
+		text-align:center;
+		margin : auto;
 		position:relative;
-		top:50%;
-		transform:translate(0,-50%);
-		margin-left:9rem;
+		top:9rem;
 	}
-
-	.projects_box_contents_title{
-		width:100%;
-		text-align: center;
-		color:#fff;
-		opacity: 0.4;	
-		font-size: 3.375rem;
+	.projects_row1{
+		font-size:3.5rem;
+		font-weight:500;
+		margin:0;
 	}
-	.projects_box_contents_box{
-		margin-top:4.6rem;
+	.projects_subtitle_row{
+		width:90%;
+		margin:auto;
+		margin-top:2rem;
 	}
-
-	.projects_box_contents_box_contents_select{
-		margin-top:1.625rem;
-		font-size:1.56rem;
-		color:#fff;
-		opacity: 1;
-	}
-	.projects_box_contents_box_contents_select_no{
-		margin-top:1.625rem;
-		height:100px;
-		font-size:1.56rem;
-		color:#fff;
-		opacity: 0.4;
-	}
-
-	.projects_title_float{
-		float:left;
-		width:100%;
-		height:8rem;
-	}
-
-	.projects_title_button{
-		font-size:1.344rem;
-		padding:0.5rem 0;
-		padding-left:0.958rem;
-		padding-right:0.688rem;
+	.projects_subtitle{
+		font-size:1.5rem;
+		font-weight: 300;
+		width:8rem;
+		height:4.4rem;
+		margin:0 2rem;
+		padding:1rem 0;
 		border:2px solid var(--my-green);
 		border-radius: 1rem;
-		position: relative;
-		top:-1.2rem;
+		background-color:#fff;
+		transition: all .1s ease-in-out;
 	}
-
-	.projects_title_button:hover{
+	.projects_subtitle:hover{
 		background-color:var(--my-green);
 		color:#fff;
+		transform: scale(1.03);
 	}
-
-	.button_icon_hover{
-		display: none;
+	.projects_subtitle:active{
+		font-size:1.35rem;
+		transform: scale(1.01);
 	}
-	.projects_title_button:hover .button_icon{
-		display:none;
+	.projects_contents_box{
+		position:relative;
+		top:12%;
+		margin:auto;
+		width:1000px;
 	}
-	.projects_title_button:hover .button_icon_hover{
-		display:inline;
-	}
-
-	.button_icon{
-		width:1rem;
-		height:0.85rem;
-	}
-	.button_icon_hover{
-		width:1rem;
-		height:0.85rem;
-	}
-
-	.projects_title_detail{
-		color:#000000;
-		opacity: 0.5;
-		font-size: 1.156rem;
-		position: relative;
-		top: -4.2rem;
-		left: 31rem;
-		width:17.5rem;
-		height:2.6rem;
-	}
-
-	.projects_title_contents{
-		color:#000000;
-		opacity: 0.5;
-		font-size: 1.56rem;
-	}
-
-	.projects_contents1{
-		margin:0;
-		margin-top:2.5rem;
-		overflow: hidden;
-		width:55rem;
-		height:56rem;
-		position: relative;
-		left:40rem;
-		top:7.25rem;
-	}
-	.projects_contents2{
-		margin:0;
-		overflow: hidden;
-		width:55rem;
-		height:56rem;
-		position: relative;
-		left:64rem;
-		top:-42.75rem;
-	}
-
-	.projects_contents_img{
+	.projects_contents_table{
 		width:100%;
-		height:100%;
+		border-collapse:collapse;
+		text-align:center;
+	}
+	.projects_contents_table tr{
+		width:100%;
+	}
+	.projects_contents_title{
+		font-size:1.8rem;
+		margin:auto;
+		margin-top:1rem;
+		padding-bottom:1rem;
+	}
+	.projects_contents_table tbody{
+		width:100%;
+		height:60vh;
+	}
+	.projects_contents_table tbody tr td{
+		border:1px solid var(--my-green);
+		font-size:1.7rem;
+	}
+	.projects_contents_table tbody tr th{
+		height:3rem;
+		font-size:1.7rem;
+		font-weight:bold;
+		border:1px solid var(--my-green);
+		padding:0 3rem;
+	}
+	.projects_contents_table{
+		transition: all 1s ease-in-out;
+	}
+	.align_left{
+		text-align:left;
 	}
 </style>
-
-
+<style>
+	@media ( max-width: 1023px ) {
+		.projects_subtitle{
+			width:8rem;
+			font-size:1.1rem;
+		}
+		.projects_subtitle:active{
+			font-size:1.2rem;
+			transform: scale(1.01);
+		}
+		.projects_contents_box{
+			width:95%;
+			word-break: keep-all;
+		}
+		.projects_contents_table tbody tr td{
+			padding:2rem 1rem;
+		}
+	}
+</style>
+<script>
+	function displayProject(page){
+		$('.projects_contents_table').css('display','none');
+		
+		$('#p_'+page).css('display','table');
+		
+		location.href="#4p";
+		btn_noclick();
+		btn_click(page);
+		
+	}
+	function btn_click(page){
+		$('.project_'+page).css('background-color','var(--my-green)');
+		$('.project_'+page).css('color','#fff');
+	}
+	function btn_noclick(){
+		$('.projects_subtitle').css('background-color','#fff');
+		$('.projects_subtitle').css('color','var(--my-green)');
+	}
+	function btn_click_ing(){
+		$(this).css('font-size','1.2rem');
+	}
+</script>
 <body>
-	<div class="pages">
-		<!-- left box -->
-		<div class="projects_box">
-			<div class="projects_box_contents">
-				<a class="projects_box_contents_title font_Roboto_bold" href="#">PROJECT</a>
-				<div class="projects_box_contents_box">
-					<a class="projects_box_contents_box_contents_select font_Roboto" href="#">01 Shopping Mall Web </a>
-					<div style="height:1.625rem;"></div>
-					<a class="projects_box_contents_box_contents_select_no font_Roboto" href="#">02 Profile Web </a>
-					<div style="height:1.625rem;"></div>
-					<a class="projects_box_contents_box_contents_select_no font_Roboto" href="#">03 Java Mini Game </a>
-				</div>
-			</div>
-		</div>
-		
-		
+	<div class="pages" id="4p">
 		<div class="projects_title">
-			<div class="projects_title_float">
-				<span class="projects_row1 font_LEMONMILK_BOLD">ROGO</span>
-				<a class="projects_title_button font_Nanumsquare" href="#">보러가기
-					<img class="button_icon" src="../images/icon/↓_g.png">
-					<img class="button_icon-hover" src="../images/icon/↓_w_right.png">
-				</a>
-				<p class="projects_title_detail font_Nanumsquare">
-					2021. 06~ 2021.07 [2명, 4주]<br/>
-					파트 : 화면구현, 기능 및 DB (서버)설계
-				</p>
+			<p class="projects_row1 font_LEMONMILK">Projects</p>
+			<div class="projects_subtitle_row">
+				<button onclick="displayProject(1);" onmousedown="btn_click_ing();" class="projects_subtitle font_LEMONMILK project_1">first</button>
+				<button onclick="displayProject(2);" onmousedown="btn_click_ing();" class="projects_subtitle font_LEMONMILK project_2">second</button>
+				<button onclick="displayProject(3);" onmousedown="btn_click_ing();" class="projects_subtitle font_LEMONMILK project_3">third</button>
+				<button onclick="displayProject(4);" onmousedown="btn_click_ing();" class="projects_subtitle font_LEMONMILK project_4">last</button>
 			</div>
-			<br style="clear:both"/>
-			<span class="projects_title_contents font_Nanumsquare">
-				ROGO프로젝트는 기존 쇼핑몰 ‘RUSKO’를 개선하기위한 가상 의뢰 프로젝트로 전반적인 디자인 변경, 기능의 개선이 이루어졌다.<br/>
-				요즘 트렌드에 맞는 미니멀한 컨셉으로의 변경, 세부적인 기능의 개선으로 더 직관적이고 편리한 웹으로 개선되었다.
-			</span>
 		</div>
-		<div class="projects_contents1">
-			<img class="projects_contents_img" src="../images/project/ROGO.jpg">
-		</div>
-		<div class="projects_contents2">
-			<img class="projects_contents_img" src="../images/project/ROGO2.jpg">
+		<div class="projects_contents_box">
+			<table class="projects_contents_table" id="p_1">
+				<thead>
+					<tr>
+						<th colspan="6" class="projects_contents_title">1. 어디어디 소속 - 프로젝트 이름</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>프로젝트 이름</th>
+						<td>이런저런 프로젝트의 이름이 작성됨</td>
+						<th>기간</th>
+						<td>2021.01.01~2021.12.31</td>
+					</tr>
+					<tr>
+						<th>프로젝트 설명</th>
+						<td colspan="3">설명 설명설명!설명 설명설명!설명 설명설명!설명 설명설명!</td>
+					</tr>
+					<tr>
+						<th>활용 기술, 스택</th>
+						<td colspan="3">이 기술, 저 기술, 이런 기술, 저런 기술</td>
+					</tr>
+					<tr>
+						<th>기여도</th>
+						<td colspan="3">어디파트 100%, 저기파트 80%, 어떤파트 100%</td>
+					</tr>
+					<tr>
+						<th>개발내용</th>
+						<td class="align_left" colspan="3">
+							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
+							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
+							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
+						</td>
+					</tr>
+					<tr>
+						<th>느낀 점</th>
+						<td class="align_left" colspan="3">
+							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
+							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<table class="projects_contents_table" id="p_2">
+				<thead>
+					<tr>
+						<th colspan="6" class="projects_contents_title">page2 자세한 프로젝트 작성</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>프로젝트 이름</th>
+						<td>이런저런 프로젝트의 이름이 작성됨</td>
+						<th>기간</th>
+						<td>2021.01.01~2021.12.31</td>
+					</tr>
+					<tr>
+						<th>프로젝트 설명</th>
+						<td colspan="3">설명 설명설명!설명 설명설명!설명 설명설명!설명 설명설명!</td>
+					</tr>
+					<tr>
+						<th>활용 기술, 스택</th>
+						<td colspan="3">이 기술, 저 기술, 이런 기술, 저런 기술</td>
+					</tr>
+					<tr>
+						<th>기여도</th>
+						<td colspan="3">어디파트 100%, 저기파트 80%, 어떤파트 100%</td>
+					</tr>
+					<tr>
+						<th>개발내용</th>
+						<td class="align_left" colspan="3">
+							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
+							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
+							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
+						</td>
+					</tr>
+					<tr>
+						<th>느낀 점</th>
+						<td class="align_left" colspan="3">
+							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
+							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<table class="projects_contents_table" id="p_3">
+				<thead>
+					<tr>
+						<th colspan="6" class="projects_contents_title">page3 자세한 프로젝트 작성</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>프로젝트 이름</th>
+						<td>이런저런 프로젝트의 이름이 작성됨</td>
+						<th>기간</th>
+						<td>2021.01.01~2021.12.31</td>
+					</tr>
+					<tr>
+						<th>프로젝트 설명</th>
+						<td colspan="3">설명 설명설명!설명 설명설명!설명 설명설명!설명 설명설명!</td>
+					</tr>
+					<tr>
+						<th>활용 기술, 스택</th>
+						<td colspan="3">이 기술, 저 기술, 이런 기술, 저런 기술</td>
+					</tr>
+					<tr>
+						<th>기여도</th>
+						<td colspan="3">어디파트 100%, 저기파트 80%, 어떤파트 100%</td>
+					</tr>
+					<tr>
+						<th>개발내용</th>
+						<td class="align_left" colspan="3">
+							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
+							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
+							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
+						</td>
+					</tr>
+					<tr>
+						<th>느낀 점</th>
+						<td class="align_left" colspan="3">
+							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
+							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<table class="projects_contents_table" id="p_4">
+				<thead>
+					<tr>
+						<th colspan="6" class="projects_contents_title">page4 스마트로pg 내용 작성</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>프로젝트 이름</th>
+						<td>이런저런 프로젝트의 이름이 작성됨</td>
+						<th>기간</th>
+						<td>2021.01.01~2021.12.31</td>
+					</tr>
+					<tr>
+						<th>프로젝트 설명</th>
+						<td colspan="3">설명 설명설명!설명 설명설명!설명 설명설명!설명 설명설명!</td>
+					</tr>
+					<tr>
+						<th>활용 기술, 스택</th>
+						<td colspan="3">이 기술, 저 기술, 이런 기술, 저런 기술</td>
+					</tr>
+					<tr>
+						<th>기여도</th>
+						<td colspan="3">어디파트 100%, 저기파트 80%, 어떤파트 100%</td>
+					</tr>
+					<tr>
+						<th>개발내용</th>
+						<td class="align_left" colspan="3">
+							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
+							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
+							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
+						</td>
+					</tr>
+					<tr>
+						<th>느낀 점</th>
+						<td class="align_left" colspan="3">
+							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
+							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </body>
+
+
+
+
+
+<!-- ----------------------------- last page / footer ------------------------------ -->
+
+
+<!-- body css -->
+
+<style type="text/css">
+	.footer{
+		height:300px;
+		width:100%;
+		background-color:var(--my-green);
+		color:#fff;
+	}
+	.footer_box{
+		margin:auto;
+		position:relative;
+		top:80px;
+		height:150px;
+		width:600px;
+		/* background-color:#999; */
+	}
+	.footer_contact_box{
+		margin:auto;
+		width:300px;
+		height:150px;
+		text-align:center;
+		float:left;
+	}
+	.footer_contact_box p{
+		padding-bottom:8px;
+		border-bottom: 1px solid #fff;
+		font-size:2rem;
+		color:#fff;
+		width: 120px;
+    	margin: auto;
+		margin-bottom:10px;
+	}
+	.footer_contact_box span{
+		margin-top:10px;
+		line-height: 1.9;
+		font-size:1.1rem;
+		color:#fff;
+	}
+	.footer_contact_box span a{
+		color:#fff;
+		cursor:pointer;
+		font-size:1.3rem;
+	}
+	
+	.footer_contact_left{
+		width:100px;
+	}
+	.footer_contact_right{
+		width:200px;
+	}
+</style>
+<style>
+	@media ( max-width: 1023px ) {
+		.footer_box{
+			width:300px;
+			height:120px;
+			position:relative;
+			top:40px;
+		}
+		.footer_contact_left{
+			width:150px;
+		}
+		.footer_contact_right{
+			width:150px;
+		}
+		.footer_contact_box {
+			width:150px;
+			height:110px;
+			float:none;
+		}
+		.footer_contact_box p{
+			width:90px;
+			margin-bottom:7px;
+		}
+		.footer_contact_box span{
+			margin-top:10px;
+			line-height: 1.6;
+			font-size:1.3rem;
+			color:#fff;
+		}
+		.footer_contact_box span a{
+			color:#fff;
+			cursor:pointer;
+			font-size:1.3rem;
+		}
+	}
+</style>
+<script>
+	function appearFooter(){
+		var header_bot = document.getElementsByClassName('header_bot');
+		header_bot[0].style.color = '#fff';
+	}
+	function disAppearFooter(){
+		var header_bot = document.getElementsByClassName('header_bot');
+		header_bot[0].style.color = 'var(--my-green)';
+	}
+</script>
+<body>
+	<div class="footer">
+		<div class="footer_box">
+			<div class="footer_contact_box">
+				<p class="footer_contact_left">Info</p>
+				<span>
+					박윤택<br/>
+					010-8998-0372<br/>
+					<a onclick="window.open('')">이력서 보기</a>
+				</span>
+			</div>
+			<div class="footer_contact_box">
+				<p class="footer_contact_right">Contact</p>
+				<span>
+					email : dbsxortime@naver.com<br/>
+					instagram : @yun_taketaek<br/>
+					github : github/dbsxortime
+				</span>
+			</div>
+		</div>
+	</div>
+</body>
+
+
+
+
+
+
+
+
+
+
 
 </html>
