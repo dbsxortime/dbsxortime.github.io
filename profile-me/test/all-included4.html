@@ -83,7 +83,7 @@
 	$(window).on('scroll', function(){
 		var currentPercentage = ($(window).scrollTop() / ($(document).outerHeight() - $(window).height())) * 100;
 		// alert(currentPercentage);
-		if(currentPercentage==100){
+		if(currentPercentage>=97){
 			appearFooter();
 		}else {
 			disAppearFooter();
@@ -1152,11 +1152,12 @@
 	}
 </style>
 <script>
-	var header_bot = document.getElementsByClassName('header_bot');
 	function appearFooter(){
+		var header_bot = document.getElementsByClassName('header_bot');
 		header_bot[0].style.color = '#fff';
 	}
 	function disAppearFooter(){
+		var header_bot = document.getElementsByClassName('header_bot');
 		header_bot[0].style.color = 'var(--my-green)';
 	}
 </script>
