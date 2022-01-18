@@ -503,8 +503,6 @@
 		font-size:2rem;
 	}
 </style>
-
-
 <body>
 	<div class="pages" id="2p">
 		<div class="aboutme_title page2_child">
@@ -813,7 +811,16 @@
 </style>
 <style>
 	@media ( max-width: 1023px ) {
-		
+		.projects_subtitle{
+			width:10rem;
+		}
+		.projects_contents_box{
+			position:relative;
+			top:12%;
+			margin:auto;
+			width:95%;
+			word-break: keep-all;
+		}
 	}
 </style>
 <script>
@@ -1081,10 +1088,48 @@
 		cursor:pointer;
 		font-size:1.3rem;
 	}
+	
+	.footer_contact_left{
+		width:100px;
+	}
+	.footer_contact_right{
+		width:200px;
+	}
 </style>
 <style>
 	@media ( max-width: 1023px ) {
-		
+		.footer_box{
+			width:300px;
+			height:120px;
+			position:relative;
+			top:40px;
+		}
+		.footer_contact_left{
+			width:150px;
+		}
+		.footer_contact_right{
+			width:150px;
+		}
+		.footer_contact_box {
+			width:150px;
+			height:110px;
+			float:none;
+		}
+		.footer_contact_box p{
+			width:90px;
+			margin-bottom:7px;
+		}
+		.footer_contact_box span{
+			margin-top:10px;
+			line-height: 1.4;
+			font-size:0.9rem;
+			color:#fff;
+		}
+		.footer_contact_box span a{
+			color:#fff;
+			cursor:pointer;
+			font-size:1.1rem;
+		}
 	}
 </style>
 <script>
@@ -1100,7 +1145,7 @@
 	<div class="footer">
 		<div class="footer_box">
 			<div class="footer_contact_box">
-				<p style="width: 100px;">Info</p>
+				<p class="footer_contact_left">Info</p>
 				<span>
 					박윤택<br/>
 					010-8998-0372<br/>
@@ -1108,7 +1153,7 @@
 				</span>
 			</div>
 			<div class="footer_contact_box">
-				<p style="width: 200px;">Contact</p>
+				<p class="footer_contact_right">Contact</p>
 				<span>
 					email : dbsxortime@naver.com<br/>
 					instagram : @yun_taketaek<br/>
