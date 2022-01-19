@@ -451,8 +451,7 @@
 	.aboutme_contents{
 		text-align:center;
 		position:relative;  
-		top:18%;
-		/* transform:translate(0,-50%); */
+		top:15rem;
 		margin : auto;                                                                                                                                
 	}
 
@@ -655,24 +654,16 @@
 	.skills_box{
 		margin:auto;
 	}
-	
-	.skills_left{
+	.skills_box table{
+		margin:auto;
+		
+	}
+	.skills_box table tr td{
 		line-height: 1.65;
-		float:left;
 		font-size:1.8rem;
+		padding:0 1rem;
 	}
 
-	.skills_right{
-		line-height: 1.65;
-		float:left;
-		margin-left:3rem;
-		font-size:1.8rem;
-	}
-
-	.skills_clean{
-		clear: both;
-		letter-spacing: 0.3rem;
-	}
 </style>
 <style>
 	@media ( max-width: 1023px ) {
@@ -696,26 +687,17 @@
 		}
 
 		.skills{
-			
-			max-width:80%;
+			max-width:95%;
 			height:35rem;
 		}
 		
-		.skills_left{
-			line-height: 1.65;
-			float:left;
-			font-size:1.3rem;
+		.skills_box table tr td{
+			font-size:1.55rem;
 		}
-
-		.skills_right{
-			line-height: 1.65;
-			float:left;
-			margin-left:2rem;
+	}
+	@media ( max-width: 500px ) {
+		.skills_box table tr td{
 			font-size:1.3rem;
-		}
-		.skills_clean{
-			clear: both;
-			letter-spacing: 0.3rem;
 		}
 	}
 </style>
@@ -728,30 +710,50 @@
 		</div>
 		<div class="skills">
 			<div class="skills_box">
-				<p class="font_Nanumsquare skills_left">
-					Java <br/>
-					HTML / JSP<br/>
-					Javascript / Jquery<br/>
-					CSS<br/>
-					Spring<br/>
-					Mybatis / ibatis<br/>
-					OracleSQL / MySql<br/>
-					Python<br/>
-					Github / SVN<br/>
-					Zeplin	
-				</p>
-				<p class="font_Nanumsquare skills_right">
-					주어진 문제를 이해하고 적절한 라이브러리를 활용하여 문제 해결<br/>
-					DOM의 이해와 적절한 태그 사용으로 원하는 화면 구현<br/>
-					정확하고 다양하며 간결한 동작 해결<br/>
-					원하는 디자인의 정확한 표현과 애니메이션 구현<br/>
-					Spring Framework의 이해와 효율적인 활용<br/>
-					유동적 SQL 작성을 통한 조건에 맞는 문구 작성 및 활용<br/>
-					DataBase 구조설계 작성 및 구현<br/>
-					간단한 연산, 라이브러리 활용을 통한 기능 생성<br/>
-					프로젝트의 공유, 브런치등 활용으로 효율적인 협업<br/>
-					디자이너 의도에 맞는 정확한 구현과 Style Guide의 활용<br/>
-				</p>
+				<table class="font_Nanumsquare">
+					<tr>
+						<td>Java</td>
+						<td class="td_right_margin">주어진 문제를 이해하고 적절한 라이브러리를 활용하여 문제 해결</td>
+					</tr>
+					
+					
+					<tr>
+						<td>HTML / JSP</td>
+						<td>DOM의 이해와 적절한 태그 사용으로 원하는 화면 구현</td>
+					</tr>
+					<tr>
+						<td>Javascript / Jquery</td>
+						<td>정확하고 다양하며 간결한 동작 해결</td>
+					</tr>
+					<tr>
+						<td>CSS</td>
+						<td>원하는 디자인의 정확한 표현과 애니메이션 구현</td>
+					</tr>
+					<tr>
+						<td>Spring</td>
+						<td>Spring Framework의 이해와 효율적인 활용</td>
+					</tr>
+					<tr>
+						<td>Mybatis / ibatis</td>
+						<td>유동적 SQL 작성을 통한 조건에 맞는 문구 작성 및 활용</td>
+					</tr>
+					<tr>
+						<td>OracleSQL / MySql</td>
+						<td>DataBase 구조설계 작성 및 구현</td>
+					</tr>
+					<tr>
+						<td>Python</td>
+						<td>간단한 연산, 라이브러리 활용을 통한 기능 생성</td>
+					</tr>
+					<tr>
+						<td>Github / SVN</td>
+						<td>프로젝트의 공유, 브런치등 활용으로 효율적인 협업</td>
+					</tr>
+					<tr>
+						<td>Zeplin</td>
+						<td>디자이너 의도에 맞는 정확한 구현과 Style Guide의 활용</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>
