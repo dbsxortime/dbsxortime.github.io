@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>doodle!</title>
+<title>wordle!</title>
 <style>
 	*{
 		margin:0;
@@ -15,13 +15,11 @@
 		width:330px;
 		height:600px;
 	}
-	
 	.board{
 		width:320px;
 		margin:auto;
 		margin-top:20px;
 	}
-	
 	.input_text{
 		width:50px;
 		height:50px;
@@ -31,11 +29,7 @@
 		margin : 5px 5px;
 		text-align:center;
 	}
-	
 	.btn_submit{
-		/* position:absolute;
-		top:550px; */
-		
 		width:330px;
 		height:50px;
 		background-color:red;
@@ -47,25 +41,7 @@
 </style>
 <script>
 	var idx=1;
-	var arr = [
-		'ACTOR',
-		'ABOVE',
-		'ADMIN',
-		'AVOID',
-		'BASIC',
-		'BEACH',
-		'BEGIN',
-		'BELOW',
-		'BENCH',
-		'BLACK',
-		'BLIND',
-		'BRAIN',
-		'BREAK',
-		'BRING',
-		'BROWN',
-		'BUILD'
-	];
-	
+	var arr = ['ACTOR','ABOVE','ADMIN','AVOID','BASIC','BEACH','BEGIN','BELOW','BENCH','BLACK','BLIND','BRAIN','BREAK','BRING','BROWN','BUILD'];
 	var ans = '';
 	
 	window.onload=function(){
@@ -174,6 +150,5 @@
 	<div class="board" id="board">
 	</div>
 </div>
-<!-- <div class="btn_submit" id="submit" onclick="submit();">제출하기</div> -->
 </body>
 </html>
