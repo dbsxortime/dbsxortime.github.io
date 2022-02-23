@@ -71,6 +71,7 @@
 	window.onload=function(){
 		makeRow();
 		ans = arr[randomNum(0,arr.length-1)];
+		document.getElementById(11).focus();
 	}
 	
 	function randomNum(min, max){
@@ -144,6 +145,13 @@
 			submit();
 			return;
 		}
+		
+		if(event.keyCode == 8){
+			var prevId = index + (num-1).toString();
+			document.getElementById(prevId).focus();
+			document.getElementById(prevId).value = '';
+		}
+		
 		var val = String.fromCharCode(event.keyCode);
 		val = val.replace(/[^a-z]/gi,'');
 		
