@@ -49,6 +49,15 @@
 		ans = arr[randomNum(0,arr.length-1)];
 		document.getElementById(11).focus();
 	}
+	window.addEventListener("keydown", function (event) {
+		var key = event.keyCode;
+		if(key == 37){
+			event.target.previousElementSibling.focus();
+		}
+		if(key == 39){
+			event.target.nextElementSibling.focus();
+		}
+	},true);
 	
 	function randomNum(min, max){
 		var randNum = Math.floor(Math.random()*(max-min+1)) + min;
@@ -58,11 +67,11 @@
 	function makeRow(){
 		var input = 
 			'<div>'+
-			'<input id="'+idx+'1" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',1)" onkeyup="checkInput(this.value,'+idx+',1);"/>'+
-			'<input id="'+idx+'2" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',2)" onkeyup="checkInput(this.value,'+idx+',2);"/>'+
-			'<input id="'+idx+'3" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',3)" onkeyup="checkInput(this.value,'+idx+',3);"/>'+
-			'<input id="'+idx+'4" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',4)" onkeyup="checkInput(this.value,'+idx+',4);"/>'+
-			'<input id="'+idx+'5" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',5)" onkeyup="checkInput(this.value,'+idx+',5);"/>'+
+			'<input id="'+idx+'1" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',1,event)" onkeyup="checkInput(this.value,'+idx+',1,event);"/>'+
+			'<input id="'+idx+'2" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',2,event)" onkeyup="checkInput(this.value,'+idx+',2,event);"/>'+
+			'<input id="'+idx+'3" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',3,event)" onkeyup="checkInput(this.value,'+idx+',3,event);"/>'+
+			'<input id="'+idx+'4" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',4,event)" onkeyup="checkInput(this.value,'+idx+',4,event);"/>'+
+			'<input id="'+idx+'5" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',5,event)" onkeyup="checkInput(this.value,'+idx+',5,event);"/>'+
 			'</div>';
 		document.getElementById('board').insertAdjacentHTML('beforeend',input);
 		var id = idx + '1';
@@ -116,30 +125,45 @@
 		}
 	}
 	
-	function checkInputDown(value,index,num){
+	function checkInputDown(value,index,num,event){
+		var key = event.keyCode;
+		if(key == 13){
+			return;
+		}
+		if(key == 37){
+			event.target.previousElementSibling.focus();
+			return;
+		}
+		if(key == 39){
+			event.target.nextElementSibling.focus();
+			return;
+		}
+		
 		if(value != ''){
 			var id = index + (num.toString());
 			document.getElementById(id).value = '';
 		}
 	}
 	
-	function checkInput(value,index,num){
+	function checkInput(value,index,num,event){
 		if(num == 5 && event.keyCode == '13' && value !=''){
 			submit();
 			return;
 		}
 		
+		var id = index + (num.toString());
+		
 		if(event.keyCode == 8){
 			var prevId = index + (num-1).toString();
 			document.getElementById(prevId).focus();
-			document.getElementById(prevId).value = '';
+			document.getElementById(id).value = '';
 		}
 		
-		var id = index + (num.toString());
 		var nextId = index + (num+1).toString();
 		
 		if(num == 5) return;
 		
+		if(event.keyCode != 37 && event.keyCode != 39)
 		if(value.length == 1){
 			document.getElementById(nextId).focus();
 		}
