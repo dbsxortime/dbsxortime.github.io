@@ -58,11 +58,11 @@
 	function makeRow(){
 		var input = 
 			'<div>'+
-			'<input id="'+idx+'1" type="text" class="input_text now_input" maxlength="1" onkeyup="checkInput(this.value,'+idx+',1);"/>'+
-			'<input id="'+idx+'2" type="text" class="input_text now_input" maxlength="1" onkeyup="checkInput(this.value,'+idx+',2);"/>'+
-			'<input id="'+idx+'3" type="text" class="input_text now_input" maxlength="1" onkeyup="checkInput(this.value,'+idx+',3);"/>'+
-			'<input id="'+idx+'4" type="text" class="input_text now_input" maxlength="1" onkeyup="checkInput(this.value,'+idx+',4);"/>'+
-			'<input id="'+idx+'5" type="text" class="input_text now_input" maxlength="1" onkeyup="checkInput(this.value,'+idx+',5);"/>'+
+			'<input id="'+idx+'1" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',1)" onkeyup="checkInput(this.value,'+idx+',1);"/>'+
+			'<input id="'+idx+'2" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',2)" onkeyup="checkInput(this.value,'+idx+',2);"/>'+
+			'<input id="'+idx+'3" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',3)" onkeyup="checkInput(this.value,'+idx+',3);"/>'+
+			'<input id="'+idx+'4" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',4)" onkeyup="checkInput(this.value,'+idx+',4);"/>'+
+			'<input id="'+idx+'5" type="text" class="input_text now_input" maxlength="1" onkeydown="checkInputDown(this.value,'+idx+',5)" onkeyup="checkInput(this.value,'+idx+',5);"/>'+
 			'</div>';
 		document.getElementById('board').insertAdjacentHTML('beforeend',input);
 		var id = idx + '1';
@@ -116,17 +116,18 @@
 		}
 	}
 	
+	function checkInputDown(value,index,num){
+		if(value != ''){
+			var id = index + (num.toString());
+			document.getElementById(id).value = '';
+		}
+	}
+	
 	function checkInput(value,index,num){
-		
 		if(num == 5 && event.keyCode == '13' && value !=''){
 			submit();
 			return;
 		}
-		
-		if(event.keyCode == 16){
-			return;
-		}
-		alert(event.keyCode);
 		
 		if(event.keyCode == 8){
 			var prevId = index + (num-1).toString();
@@ -134,21 +135,14 @@
 			document.getElementById(prevId).value = '';
 		}
 		
-		var val = String.fromCharCode(event.keyCode);
-		
 		var id = index + (num.toString());
 		var nextId = index + (num+1).toString();
 		
-		document.getElementById(id).value = val;
-
-		if(val == '') return;
 		if(num == 5) return;
-
+		
 		if(value.length == 1){
 			document.getElementById(nextId).focus();
 		}
-		
-		
 	}
 </script>
 </head>
