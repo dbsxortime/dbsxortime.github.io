@@ -28,6 +28,7 @@
 		border-radius:3px;
 		margin : 5px 5px;
 		text-align:center;
+		ime-mode: inactive ;
 	}
 	.btn_submit{
 		width:330px;
@@ -129,19 +130,26 @@
 		}
 		
 		var val = String.fromCharCode(event.keyCode);
-		val = val.replace(/[^a-z]/gi,'');
 		
 		var id = index + (num.toString());
 		var nextId = index + (num+1).toString();
 		
-		document.getElementById(id).value = val;
+		if((event.keyCode >= 48 && event.keyCode <= 57) ||
+		   (event.keyCode >= 65 && event.keyCode <= 90)){
+			document.getElementById(id).value = val;
 		
-		if(val == '') return;
-		if(num == 5) return;
-		
-		if(value.length == 1){
-			document.getElementById(nextId).focus();
+			if(val == '') return;
+			if(num == 5) return;
+
+			if(value.length == 1){
+				document.getElementById(nextId).focus();
+			}
+		}else {
+			document.getElementById(id).value = '';
+			return;
 		}
+		
+		
 	}
 </script>
 </head>
