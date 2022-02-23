@@ -117,6 +117,7 @@
 	}
 	
 	function checkInput(value,index,num){
+		alert(event.keyCode);
 		if(num == 5 && event.keyCode == '13' && value !=''){
 			submit();
 			return;
@@ -133,19 +134,13 @@
 		var id = index + (num.toString());
 		var nextId = index + (num+1).toString();
 		
-		if((event.keyCode >= 48 && event.keyCode <= 57) ||
-		   (event.keyCode >= 65 && event.keyCode <= 90)){
-			document.getElementById(id).value = val;
-		
-			if(val == '') return;
-			if(num == 5) return;
+		document.getElementById(id).value = val;
 
-			if(value.length == 1){
-				document.getElementById(nextId).focus();
-			}
-		}else {
-			document.getElementById(id).value = '';
-			return;
+		if(val == '') return;
+		if(num == 5) return;
+
+		if(value.length == 1){
+			document.getElementById(nextId).focus();
 		}
 		
 		
