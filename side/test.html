@@ -117,7 +117,7 @@
 	}
 	
 	function checkInput(value,index,num){
-		alert(event.keyCode);
+		
 		if(num == 5 && event.keyCode == '13' && value !=''){
 			submit();
 			return;
@@ -126,6 +126,7 @@
 		if(event.keyCode == 16){
 			return;
 		}
+		alert(event.keyCode);
 		
 		if(event.keyCode == 8){
 			var prevId = index + (num-1).toString();
