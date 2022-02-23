@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>doodle!</title>
+<style>
+	.paper{
+		margin:auto;
+		border:1px solid #666;
+		width:100%;
+		height:800px;
+	}
+	
+	.board{
+		width:95%;
+		margin:auto;
+		margin-top:20px;
+	}
+	
+	.btn_input{
+		width:17%;
+		height:17%;
+		font-size:40px;
+		background-color:#fff;
+		border-radius:3px;
+		margin : 5px .5%;
+	}
+</style>
+<script>
+	var idx=1;
+	var ans = 'abcde';
+	
+	function makeRow(idx){
+		var input = 
+			'<div>'+
+			'<input id="row'+idx+'" type="text" class="btn_input now_input"/> '+
+			'<input id="row'+idx+'" type="text" class="btn_input now_input"/> '+
+			'<input id="row'+idx+'" type="text" class="btn_input now_input"/> '+
+			'<input id="row'+idx+'" type="text" class="btn_input now_input"/> '+
+			'<input id="row'+idx+'" type="text" class="btn_input now_input"/> '+
+			'</div>';
+		document.getElementById('board').insertAdjacentHTML('beforeend',input);
+		idx++;
+	}
+	
+	function submit(){
+		var input = document.querySelectorAll('.now_input');
+		//공백검사
+		// for(var i=0; i<5; i++){
+		// 	if(input[i].value==''){
+		// 		return;
+		// 	}
+		// }
+		
+		//입력데이터 검사
+		for(var i=0; i<5; i++){
+			if(input[i].value == ans[i]){
+				input[i].style.background = 'green';
+			}else if(ans.includes(input[i].value)){
+				input[i].style.background = 'yellow';
+			}else {
+				input[i].style.background = 'lightgrey';
+			}
+			input[i].classList.remove('now_input');
+		}
+		
+		makeRow(idx);
+	}
+</script>
+</head>
+<body>
+<div class="paper">
+	<div class="top_blank"></div>
+	<div class="board" id="board">
+		<input id="row0" type="text" class="btn_input now_input"/>
+		<input id="row0" type="text" class="btn_input now_input"/>
+		<input id="row0" type="text" class="btn_input now_input"/>
+		<input id="row0" type="text" class="btn_input now_input"/>
+		<input id="row0" type="text" class="btn_input now_input"/>
+	</div>
+	<button id="submit" onclick="submit();">제출하기</button>
+</div>
+</body>
+</html>
