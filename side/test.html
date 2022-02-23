@@ -123,6 +123,10 @@
 			return;
 		}
 		
+		if(event.keyCode == 16){
+			return;
+		}
+		
 		if(event.keyCode == 8){
 			var prevId = index + (num-1).toString();
 			document.getElementById(prevId).focus();
