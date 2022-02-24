@@ -821,7 +821,7 @@
 	.projects_contents_title{
 		font-size:1.8rem;
 		margin:auto;
-		margin-top:1rem;
+		padding-top:5px;
 		padding-bottom:1rem;
 	}
 	.projects_contents_table tbody{
@@ -830,10 +830,10 @@
 	}
 	.projects_contents_table tbody tr td{
 		border:1px solid var(--my-green);
-		font-size:1.7rem;
+		font-size:1.5rem;
+		padding:0rem 1rem;
 	}
 	.projects_contents_table tbody tr th{
-		height:3rem;
 		font-size:1.7rem;
 		font-weight:bold;
 		border:1px solid var(--my-green);
@@ -844,6 +844,10 @@
 	}
 	.align_left{
 		text-align:left;
+	}
+	
+	.projects_contents_table tbody tr td span{
+		font-size:1.5rem;
 	}
 </style>
 <style>
@@ -861,7 +865,7 @@
 			word-break: keep-all;
 		}
 		.projects_contents_table tbody tr td{
-			padding:2rem 1rem;
+			padding:1rem 1rem;
 		}
 	}
 </style>
@@ -874,7 +878,6 @@
 		location.href="#4p";
 		btn_noclick();
 		btn_click(page);
-		
 	}
 	function btn_click(page){
 		$('.project_'+page).css('background-color','var(--my-green)');
@@ -903,41 +906,74 @@
 			<table class="projects_contents_table" id="p_1">
 				<thead>
 					<tr>
-						<th colspan="6" class="projects_contents_title">1. 어디어디 소속 - 프로젝트 이름</th>
+						<th colspan="6" class="projects_contents_title">SMARTRO PG </th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<th>프로젝트 이름</th>
-						<td>이런저런 프로젝트의 이름이 작성됨</td>
-						<th>기간</th>
-						<td>2021.01.01~2021.12.31</td>
+						<th style="height:15%;" width="20%">프로젝트명</th>
+						<td width="35%" class="align_left" style="padding:0 1rem;">
+							<input type="radio" name="projects_btn_1" value="11" checked/>
+							<label for="projects_btn_1"><span class="projects_contents_project_span">내부관리자 고도화</span></label>
+							<br/>
+							<input type="radio" name="projects_btn_1" value="12"/>
+							<label for="projects_btn_1"><span class="projects_contents_project_span">내부관리자 유지/보수</span></label>
+							<br/>
+							<input type="radio" name="projects_btn_1" value="13"/>
+							<label for="projects_btn_1"><span class="projects_contents_project_span">가맹점관리자 유지/보수</span></label>
+						</td>
+						<th width="15%">기간</th>
+						<td width="30%">2021.10.27 ~ <span style="opacity:0;">2022.00.00</span></td>
 					</tr>
 					<tr>
 						<th>프로젝트 설명</th>
-						<td colspan="3">설명 설명설명!설명 설명설명!설명 설명설명!설명 설명설명!</td>
-					</tr>
-					<tr>
-						<th>활용 기술, 스택</th>
-						<td colspan="3">이 기술, 저 기술, 이런 기술, 저런 기술</td>
-					</tr>
-					<tr>
-						<th>기여도</th>
-						<td colspan="3">어디파트 100%, 저기파트 80%, 어떤파트 100%</td>
-					</tr>
-					<tr>
-						<th>개발내용</th>
-						<td class="align_left" colspan="3">
-							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
-							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
-							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
+						<td colspan="3">
+							<span name="11" class="projects_contents_project_span">내부관리자 웹 서버 고도화 [MVC1 → MVC2 (SPRING) ]</span>
+							<span name="12" class="projects_contents_project_span">내부관리자 웹 서버 유지 / 보수</span>
+							
 						</td>
 					</tr>
 					<tr>
-						<th>느낀 점</th>
+						<th>활용 기술, 스택</th>
+						<td colspan="3">
+							<span name="11" class="projects_contents_project_span">JSP JAVA ibatis ORACLE</span>
+							<span name="12" class="projects_contents_project_span">JSP JAVA ibatis ORACLE</span>
+						</td>
+					</tr>
+					<tr>
+						<th>기여도</th>
+						<td colspan="3">
+							<span name="11" class="projects_contents_project_span">JSP, SQL 정리 100% - EXCEL<br/>-이 후 중단</span>
+							<span name="12" class="projects_contents_project_span">JSP, SQL 정리 100% - EXCEL<br/>-이 후 중단</span>
+						</td>
+					</tr>
+					<tr>
+						<th style="height:22%">업무내용</th>
 						<td class="align_left" colspan="3">
-							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
-							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
+							<span name="11" class="projects_contents_project_span">
+								서버 고도화를 위해 전체 JSP, 버튼, SQL 등 종합/정리<br/>
+								-PL개발자 부재로 중단
+							</span>
+							<span name="12" class="projects_contents_project_span">
+								서버 고도화를 위해 전체 JSP, 버튼, SQL 등 종합/정리<br/>
+								-PL개발자 부재로 중단
+							</span>
+							
+							
+						</td>
+					</tr>
+					<tr>
+						<th style="height:22%">느낀 점</th>
+						<td class="align_left" colspan="3">
+							<span name="11" class="projects_contents_project_span">
+								정리되지 않은 서버 유지/보수의 혼잡도를 직접적으로 체감할 수 있었다.<br/>
+								경로, 코드, 이미지 등의 소스 관리에 대한 고민과 개선안에 대한 고민을 할 수 있었다.
+							</span>
+							<span name="12" class="projects_contents_project_span">
+								정리되지 않은 서버 유지/보수의 혼잡도를 직접적으로 체감할 수 있었다.<br/>
+								경로, 코드, 이미지 등의 소스 관리에 대한 고민과 개선안에 대한 고민을 할 수 있었다.
+							</span>
+							
 						</td>
 					</tr>
 				</tbody>
