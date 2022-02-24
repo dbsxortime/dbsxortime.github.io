@@ -28,15 +28,16 @@
 		border-radius:3px;
 		margin : 5px 5px;
 		text-align:center;
+		/* color : #29453c; */
 	}
 	.input_text:focus{
-		background-color:#eee;
+		background-color:#f3f3f3;
 		border-bottom : 4px solid #29453c;
 	}
 	
 	input[type="text"]{
 		color : transparent;
-		text-shadow : 0 0 0 #000;
+		text-shadow : 0 0 0 #29453c;
 	}
 	input[type="text"]:focus{
 		outline : none;
@@ -108,12 +109,12 @@
 		var ansCnt =0;
 		for(var i=0; i<5; i++){
 			if(input[i].value == ans[i]){
-				input[i].style.background = 'green';
+				input[i].style.background = '#91C483';
 				ansCnt ++;
 			}else if(ans.includes(input[i].value)){
-				input[i].style.background = 'yellow';
+				input[i].style.background = '#FFE162';
 			}else {
-				input[i].style.background = 'lightgrey';
+				input[i].style.background = '#DEE1EC';
 			}
 			input[i].classList.remove('now_input');
 			input[i].readOnly = true;
@@ -139,6 +140,7 @@
 	}
 	
 	function checkInputDown(value,index,num,event){
+	
 		var key = event.keyCode;
 		if(key == 13){
 			return;
@@ -165,7 +167,7 @@
 		}
 		
 		var id = index + (num.toString());
-		
+		document.getElementById(id).value = value.toUpperCase();
 		if(event.keyCode == 8){
 			var prevId = index + (num-1).toString();
 			document.getElementById(prevId).focus();
@@ -178,6 +180,7 @@
 		
 		if(event.keyCode != 37 && event.keyCode != 39)
 		if(value.length == 1){
+			
 			document.getElementById(nextId).focus();
 		}
 	}
