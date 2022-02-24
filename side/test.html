@@ -7,7 +7,7 @@
 	*{
 		margin:0;
 		padding:0;
-		text-align:center;
+		
 	}
 	.paper{
 		margin:auto;
@@ -19,6 +19,7 @@
 		width:320px;
 		margin:auto;
 		margin-top:20px;
+		text-align:center;
 	}
 	.input_text{
 		width:50px;
@@ -51,6 +52,52 @@
 		line-height:54px;
 		margin:auto;
 		border:1px solid black;
+	}
+	.title{
+		text-align:center;
+	}
+	.how_to_span{
+		color:#446a91;
+		font-size:8pt;
+	}
+	
+	.how_to_span:hover{
+		cursor:pointer;
+	}
+	
+	
+	.pop_back{
+		position:absolute;
+		top:0;
+		left:0;
+		opacity:0.5;
+		width:100%;
+		height:100%;
+		background-color:#aaa;
+		display:none;
+	}
+	
+	.how_to_box{
+		width:300px;
+		height:110px;
+		background-color:#333;
+		position:absolute;
+		top:70px;
+		left:50%;
+		transform: translate(-50%, 0);
+		display:none;
+	}
+	
+	.pop_back:hover{
+		cursor:pointer;
+	}
+	.how_to_box:hover{
+		cursor:pointer;
+	}
+	.how_to{
+		color:#fff;
+		padding-left:10px;
+		font-size:9pt;
 	}
 </style>
 <script>
@@ -184,12 +231,44 @@
 			document.getElementById(nextId).focus();
 		}
 	}
+	
+	function how_to_on(){
+		var box = document.querySelector('.pop_back');
+		box.style.display = 'block';
+		box = document.querySelector('.how_to_box');
+		box.style.display = 'block';
+	}
+	
+	function how_to_off(){
+		var box = document.querySelector('.pop_back');
+		box.style.display = 'none';
+		box = document.querySelector('.how_to_box');
+		box.style.display = 'none';
+	}
 </script>
 </head>
 <body>
 <div class="paper">
-	<div class="board" id="board">
+	<div class="title">
+		<h1>
+			WORDLE!
+		</h1>
+		<a class="how_to_span" href="javascript:how_to_on();">how to</a>
 	</div>
+	
+	
+	
+	<div class="board" id="board"></div>
 </div>
+	
+<div id="pop_back" class="pop_back" onclick="how_to_off();"></div>
+<div class="how_to_box" onclick="how_to_off();">
+	<span class="how_to">알파벳을 입력해 단어를 맞추는 게임입니다.</span><br/>
+	<span class="how_to">단어가 가지고있는 알파벳을 맞추시면 색이 변합니다.</span><br/>
+	<span class="how_to">알파벳 + 위치 둘 다 맞으면 초록</span><br/>
+	<span class="how_to">알파벳만 맞으면 노랑</span><br/>
+	<span class="how_to">가지고 있지 않으면 회색입니다.</span>
+</div>
+
 </body>
 </html>
