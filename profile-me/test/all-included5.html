@@ -140,6 +140,7 @@
 			height: 6,
 			target : 'body',
 		});
+		
 	};
 	
 </script>
@@ -846,15 +847,8 @@
 		text-align:left;
 	}
 	
-	.projects_contents_table tbody tr td span, a{
+	.projects_contents_table tbody tr td span{
 		font-size:1.5rem;
-	}
-	.project_gogo{
-		float:right;
-		
-	}
-	.project_gogo:hover{
-		font-size:1.7rem;
 	}
 </style>
 <style>
@@ -873,6 +867,13 @@
 		}
 		.projects_contents_table tbody tr td{
 			padding:1rem 1rem;
+		}
+		
+		.span_disappear{
+			display:none;
+		}
+		.span_appear{
+			display:block;
 		}
 	}
 </style>
@@ -897,29 +898,18 @@
 	function btn_click_ing(){
 		$(this).css('font-size','1.2rem');
 	}
-	// function goSide(name){
-	// 	var url = '/dbsxortime_git/side/';
-	// 	url+=name;
-	// 	url+='.html'
-	// 	window.open(url,"","toolbar=no,resizable=no,width=450,height=650;");
-	// }
-	function goSide(name, w, h) {
-	var url = '/dbsxortime_git/side/';
-	url += name;
-	url += '.html';
-	
-    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
-    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
-    var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-    var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
-    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
-    var top = ((height / 2) - (h / 2)) + dualScreenTop;
-    var newWindow = window.open(url, '', 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
-    // Puts focus on the newWindow
-    if (window.focus) {
-        newWindow.focus();
-    }
-}
+	function checkProjectRadio(t){
+		var val = t.value;
+		var tbody = document.querySelectorAll('projects_body');
+		for(var i=0;i<tbody.length;i++){
+			if(tbody[i].getAttribute('id') == val){
+				tbody[i].style.display = 'block';
+			}else {
+				tbody[i].style.display = 'none';
+			}
+		}
+		// span.classList.remove('now_input');
+	}
 </script>
 <body>
 	<div class="pages" id="4p">
@@ -939,57 +929,38 @@
 						<th colspan="6" class="projects_contents_title">SMARTRO PG </th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody name="projects_body" id="11">
 					<tr>
 						<th style="height:15%;" width="20%">프로젝트명</th>
 						<td width="35%" class="align_left" style="padding:0 1rem;">
-							<input type="radio" name="projects_btn_1" value="11" checked/>
-							<label for="projects_btn_1"><span class="projects_contents_project_span">내부관리자 고도화</span></label>
+							<input type="radio" name="projects_btn_1" value="11" onclick="checkProjectRadio(this);" checked/>
+							<label for="projects_btn_1"><span class="">내부관리자 고도화</span></label>
 							<br/>
-							<input type="radio" name="projects_btn_1" value="12"/>
-							<label for="projects_btn_1"><span class="projects_contents_project_span">내부관리자 유지/보수</span></label>
+							<input type="radio" name="projects_btn_1" value="12" onclick="checkProjectRadio(this);"/>
+							<label for="projects_btn_1"><span class="">내부관리자 유지/보수</span></label>
 							<br/>
-							<input type="radio" name="projects_btn_1" value="13"/>
-							<label for="projects_btn_1"><span class="projects_contents_project_span">가맹점관리자 유지/보수</span></label>
+							<input type="radio" name="projects_btn_1" value="13" onclick="checkProjectRadio(this);"/>
+							<label for="projects_btn_1"><span class="">가맹점관리자 유지/보수</span></label>
 						</td>
 						<th width="15%">기간</th>
 						<td width="30%">2021.10.27 ~ <span style="opacity:0;">2022.00.00</span></td>
 					</tr>
 					<tr>
 						<th>프로젝트 설명</th>
-						<td colspan="3">
-							<span name="11" class="projects_contents_project_span">내부관리자 웹 서버 고도화 [MVC1 → MVC2 (SPRING) ]</span>
-							<span name="12" class="projects_contents_project_span">내부관리자 웹 서버 유지 / 보수</span>
-							
-						</td>
+						<td colspan="3">내부관리자 웹 서버 고도화 [MVC1 → MVC2 (SPRING) ]</td>
 					</tr>
 					<tr>
 						<th>활용 기술, 스택</th>
-						<td colspan="3">
-							<span name="11" class="projects_contents_project_span">JSP JAVA ibatis ORACLE</span>
-							<span name="12" class="projects_contents_project_span">JSP JAVA ibatis ORACLE</span>
-						</td>
+						<td colspan="3">JSP JAVA ibatis ORACLE</td>
 					</tr>
 					<tr>
-						<th>기여도</th>
-						<td colspan="3">
-							<span name="11" class="projects_contents_project_span">JSP, SQL 정리 100% - EXCEL<br/>-이 후 중단</span>
-							<span name="12" class="projects_contents_project_span">JSP, SQL 정리 100% - EXCEL<br/>-이 후 중단</span>
-						</td>
+						<th style="height:22%">기여도</th>
+						<td colspan="3"  class="align_left">JSP, SQL 정리 100% - EXCEL<br/>-이 후 중단</td>
 					</tr>
 					<tr>
 						<th style="height:22%">업무내용</th>
-						<td class="align_left" colspan="3">
-							<span name="11" class="projects_contents_project_span">
-								서버 고도화를 위해 전체 JSP, 버튼, SQL 등 종합/정리<br/>
+						<td class="align_left" colspan="3">서버 고도화를 위해 전체 JSP, 버튼, SQL 등 종합/정리<br/>
 								-PL개발자 부재로 중단
-							</span>
-							<span name="12" class="projects_contents_project_span">
-								서버 고도화를 위해 전체 JSP, 버튼, SQL 등 종합/정리<br/>
-								-PL개발자 부재로 중단
-							</span>
-							
-							
 						</td>
 					</tr>
 					<tr>
@@ -1005,6 +976,42 @@
 							</span>
 							
 						</td>
+					</tr>
+				</tbody>
+				
+				
+				
+				<tbody name="projects_body" id="12">
+					<tr>
+						<th style="height:15%;" width="20%">프로젝트명</th>
+						<td width="35%" class="align_left" style="padding:0 1rem;">
+							<input type="radio" name="projects_btn_1" value="11" onclick="checkProjectRadio(this);"/>
+							<label for="projects_btn_1"><span class="">내부관리자 고도화</span></label>
+							<br/>
+							<input type="radio" name="projects_btn_1" value="12" onclick="checkProjectRadio(this);"/>
+							<label for="projects_btn_1"><span class="">내부관리자 유지/보수</span></label>
+							<br/>
+							<input type="radio" name="projects_btn_1" value="13" onclick="checkProjectRadio(this);"/>
+							<label for="projects_btn_1"><span class="">가맹점관리자 유지/보수</span></label>
+						</td>
+						<th width="15%">기간</th>
+						<td width="30%">2021.10.27 ~ <span style="opacity:0;">2022.00.00</span></td>
+					</tr>
+					<tr>
+						<th>프로젝트 설명</th>
+						<td colspan="3">
+							<span name="11" class="projects_contents_project_span">내부관리자 웹 서버 고도화 [MVC1 → MVC2 (SPRING) ]</span>
+						</td>
+					</tr>
+					<tr>
+						<th>활용 기술, 스택</th>
+						<td colspan="3">
+							<span name="11" class="projects_contents_project_span">JSP JAVA ibatis ORACLE</span>
+						</td>
+					</tr>
+					<tr>
+						<th>제목</th>
+						<td>내용</td>
 					</tr>
 				</tbody>
 			</table>
@@ -1098,28 +1105,42 @@
 			<table class="projects_contents_table" id="p_4">
 				<thead>
 					<tr>
-						<th colspan="6" class="projects_contents_title">연습 프로젝트</th>
+						<th colspan="6" class="projects_contents_title">page4 스마트로pg 내용 작성</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<th style="width:20%; height:11%">프로젝트명</th>
-						<td style="width:35%;">WORDLE!</td>
-						<th style="width:15%;">기간</th>
-						<td style="width:30%;">2022.02.23 ~</td>
+						<th>프로젝트 이름</th>
+						<td>이런저런 프로젝트의 이름이 작성됨</td>
+						<th>기간</th>
+						<td>2021.01.01~2021.12.31</td>
 					</tr>
-					<tr style="height:11%">
+					<tr>
 						<th>프로젝트 설명</th>
-						<td colspan="3"class="align_left">
-							<span>회사 프로젝트 사이 남는 시간에 자바스크립트 활용 연습을 위한 WORDLE게임 구현</span>
-							<a class="project_gogo" href="#project" onclick="goSide('wordle','450','650');">Go!&nbsp;</a>
+						<td colspan="3">설명 설명설명!설명 설명설명!설명 설명설명!설명 설명설명!</td>
+					</tr>
+					<tr>
+						<th>활용 기술, 스택</th>
+						<td colspan="3">이 기술, 저 기술, 이런 기술, 저런 기술</td>
+					</tr>
+					<tr>
+						<th>기여도</th>
+						<td colspan="3">어디파트 100%, 저기파트 80%, 어떤파트 100%</td>
+					</tr>
+					<tr>
+						<th>개발내용</th>
+						<td class="align_left" colspan="3">
+							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
+							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
+							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
 						</td>
 					</tr>
 					<tr>
-						<th></th>
-						<td></td>
-						<th></th>
-						<td></td>
+						<th>느낀 점</th>
+						<td class="align_left" colspan="3">
+							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
+							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
+						</td>
 					</tr>
 				</tbody>
 			</table>
