@@ -124,16 +124,6 @@
 		document.getElementById(11).focus();
 	}
 	
-	window.addEventListener("keydown", function (event) {
-		var key = event.keyCode;
-		if(key == 37){
-			event.target.previousElementSibling.focus();
-		}
-		if(key == 39){
-			event.target.nextElementSibling.focus();
-		}
-	},true);
-	
 	function randomNum(min, max){
 		var randNum = Math.floor(Math.random()*(max-min+1)) + min;
 		return randNum;
