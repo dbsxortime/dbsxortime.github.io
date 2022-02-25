@@ -814,6 +814,7 @@
 		width:100%;
 		border-collapse:collapse;
 		text-align:center;
+		height:600px;
 	}
 	.projects_contents_table tr{
 		width:100%;
@@ -824,9 +825,9 @@
 		padding-top:5px;
 		padding-bottom:1rem;
 	}
-	.projects_contents_table tbody{
+	.projects_contents_table_body{
 		width:100%;
-		height:60vh;
+		height:150px;
 	}
 	.projects_contents_table tbody tr td{
 		border:1px solid var(--my-green);
@@ -849,6 +850,24 @@
 	.projects_contents_table tbody tr td span, a{
 		font-size:1.5rem;
 	}
+	
+	.projects_contents_table_body_1{
+		height:350px;
+	}
+	.projects_contents_table_body_2, .projects_contents_table_body_3{
+		height:350px;
+		display:none;
+	}
+	
+	.projects_contents_table_body_1 td, .projects_contents_table_body_2 td, .projects_contents_table_body_3 td{
+		text-align:left
+	}
+	
+	.projects_12, .projects_13{
+		display:none;
+	}
+	
+	
 	.project_gogo{
 		float:right;
 		background-color:var(--my-green);
@@ -888,6 +907,7 @@
 		display:none;
 		z-index: 9998;
 	}
+	
 </style>
 <style>
 	@media ( max-width: 1023px ) {
@@ -909,6 +929,19 @@
 	}
 </style>
 <script>
+	function checkRadio(t){
+		var val = t.value;
+		
+		var allBody = document.querySelectorAll('.projects_display');
+		for(var i=0; i<allBody.length;i++){
+			allBody[i].style.display = 'none';
+		}
+		var targetBody = document.querySelectorAll('.projects_'+val);
+		for(var i=0; i<targetBody.length;i++){
+			targetBody[i].style.display = 'contents';
+		}
+	}
+	
 	function displayProject(page){
 		$('.projects_contents_table').css('display','none');
 		
@@ -958,7 +991,6 @@
 		preview.style.display = 'none';
 		var img = document.querySelector('.project_side_preview_img');
 		img.style.display = 'none';
-		
 	}
 </script>
 <body>
@@ -984,60 +1016,142 @@
 						<th colspan="6" class="projects_contents_title">SMARTRO PG </th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody class="projects_contents_table_body">
 					<tr>
-						<th style="height:15%;" width="20%">프로젝트명</th>
+						<th style="height:85px;" width="20%">프로젝트명</th>
 						<td width="35%" class="align_left" style="padding:0 1rem;">
-							<input type="radio" name="projects_btn_1" value="11" checked/>
+							<input type="radio" name="projects_btn_1" value="11" onchange="checkRadio(this);" checked/>
 							<label for="projects_btn_1"><span class="projects_contents_project_span">내부관리자 고도화</span></label>
 							<br/>
-							<input type="radio" name="projects_btn_1" value="12"/>
+							<input type="radio" name="projects_btn_1" value="12" onchange="checkRadio(this);"/>
 							<label for="projects_btn_1"><span class="projects_contents_project_span">내부관리자 유지/보수</span></label>
 							<br/>
-							<input type="radio" name="projects_btn_1" value="13"/>
+							<input type="radio" name="projects_btn_1" value="13" onchange="checkRadio(this);"/>
 							<label for="projects_btn_1"><span class="projects_contents_project_span">가맹점관리자 유지/보수</span></label>
 						</td>
 						<th width="15%">기간</th>
-						<td width="30%">2021.10.27 ~ <span style="opacity:0;">2022.00.00</span></td>
+						<td width="30%">2021.10.27 ~ </td>
 					</tr>
 					<tr>
 						<th>프로젝트 설명</th>
 						<td colspan="3">
-							<span name="11" class="projects_contents_project_span">내부관리자 웹 서버 고도화 [MVC1 → MVC2 (SPRING) ]</span>
+							<span class="projects_contents_project_span projects_11 projects_display">내부관리자 웹 서버 고도화 [MVC1 → MVC2 (SPRING) ]</span>
+							<span class="projects_contents_project_span projects_12 projects_display">내부관리자 웹 유지/보수 [MVC1]</span>
+							<span class="projects_contents_project_span projects_13 projects_display">가맹점관리자 웹 유지/보수 [SPRING]</span>
+						</td>
+					</tr>
+					
+				</tbody>
+				
+				<tbody class="projects_contents_table_body_1 projects_11 projects_display">
+					<tr>
+						<th height="63">활용 기술, 스택</th>
+						<td colspan="3" style="text-align:center;">
+							<span class="projects_contents_project_span">JSP JAVA javascript ibatis ORACLE</span>
 						</td>
 					</tr>
 					<tr>
-						<th>활용 기술, 스택</th>
+						<th width="20%" height="100">기여도</th>
+						<td colspan="3"><span class="projects_contents_project_span">JSP, SQL 정리 100% - EXCEL<br/>-이 후 중단</span></td>
+					</tr>
+					<tr>
+						<th height="100">업무내용</th>
 						<td colspan="3">
-							<span name="11" class="projects_contents_project_span">JSP JAVA ibatis ORACLE</span>
-						</td>
-					</tr>
-					<tr>
-						<th>기여도</th>
-						<td colspan="3">
-							<span name="11" class="projects_contents_project_span">JSP, SQL 정리 100% - EXCEL<br/>-이 후 중단</span>
-						</td>
-					</tr>
-					<tr>
-						<th style="height:22%">업무내용</th>
-						<td class="align_left" colspan="3">
-							<span name="11" class="projects_contents_project_span">
+							<span class="projects_contents_project_span">
 								서버 고도화를 위해 전체 JSP, 버튼, SQL 등 종합/정리<br/>
 								-PL개발자 부재로 중단
 							</span>
 						</td>
 					</tr>
 					<tr>
-						<th style="height:22%">느낀 점</th>
-						<td class="align_left" colspan="3">
-							<span name="11" class="projects_contents_project_span">
+						<th height="100">느낀 점</th>
+						<td colspan="3">
+							<span class="projects_contents_project_span">
 								정리되지 않은 서버 유지/보수의 혼잡도를 직접적으로 체감할 수 있었다.<br/>
 								경로, 코드, 이미지 등의 소스 관리에 대한 고민과 개선안에 대한 고민을 할 수 있었다.
 							</span>
 						</td>
 					</tr>
 				</tbody>
+				
+				
+				
+				
+				<tbody class="projects_contents_table_body_2 projects_12 projects_display">
+					<tr>
+						<th height="63">활용 기술, 스택</th>
+						<td colspan="3" style="text-align:center;">
+							<span name="11" class="projects_contents_project_span">JSP JAVA javascript ibatis ORACLE</span>
+						</td>
+					</tr>
+					<tr>
+						<th width="20%" height="100">기여도</th>
+						<td colspan="3"><span class="projects_contents_project_span">
+							개발계획 : 100%<br/>
+							개발 : 100%
+						</span></td>
+					</tr>
+					<tr>
+						<th height="100">업무내용</th>
+						<td colspan="3">
+							<span class="projects_contents_project_span">
+								서버 고도화를 위해 전체 JSP, 버튼, SQL 등 종합/정리<br/>
+								-PL개발자 부재로 중단
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<th height="100">결과 / 효과</th>
+						<td colspan="3">
+							<span class="projects_contents_project_span">
+								기존 소스 개선 : 유효성검사, 데이터검증, 엑셀 업로드, 엑셀 다운로드, SQL문 <br/>
+								개발 계획 시 데이터처리와 효율성을 고려한 프로세스 설계로 기존 방식에서의 확연한 속도 개선.
+							</span>
+						</td>
+					</tr>
+				</tbody>
+				
+				
+				
+				
+				
+				<tbody class="projects_contents_table_body_3 projects_13 projects_display">
+					<tr>
+						<th height="63">활용 기술, 스택</th>
+						<td colspan="3" style="text-align:center;">
+							<span name="11" class="projects_contents_project_span">JSP JAVA javascript ibatis ORACLE MAVEN SPRING</span>
+						</td>
+					</tr>
+					<tr>
+						<th width="20%" height="100">기여도</th>
+						<td colspan="3"><span class="projects_contents_project_span">
+							개발계획 : 100%<br/>
+							개발 : 100%
+						</span></td>
+					</tr>
+					<tr>
+						<th height="100">업무내용</th>
+						<td colspan="3">
+							<span class="projects_contents_project_span">
+								서버 고도화를 위해 전체 JSP, 버튼, SQL 등 종합/정리<br/>
+								-PL개발자 부재로 중단
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<th height="100">결과 / 효과</th>
+						<td colspan="3">
+							<span class="projects_contents_project_span">
+								-
+							</span>
+						</td>
+					</tr>
+				</tbody>
 			</table>
+			
+			
+			
+			
 			
 			<table class="projects_contents_table" id="p_2">
 				<thead>
@@ -1133,12 +1247,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th style="width:20%; height:11%">프로젝트명</th>
+						<th style="width:20%; height:40px;">프로젝트명</th>
 						<td style="width:35%;">WORDLE!</td>
 						<th style="width:15%;">기간</th>
 						<td style="width:30%;">2022.02.23 ~</td>
 					</tr>
-					<tr style="height:11%">
+					<tr style="height:60px;">
 						<th>프로젝트 설명</th>
 						<td colspan="3"class="align_left">
 							<span style="line-height:3rem;">회사 프로젝트 사이 남는 시간에 자바스크립트 활용 연습을 위한 WORDLE게임 구현</span>
@@ -1149,7 +1263,10 @@
 						</td>
 					</tr>
 					<tr>
-						<th colspan="4"></th>
+						<th colspan="4">
+							.<br/>.<br/>.
+							
+						</th>
 					</tr>
 				</tbody>
 			</table>
