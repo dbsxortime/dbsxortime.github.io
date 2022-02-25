@@ -56,7 +56,11 @@
 	.title{
 		text-align:center;
 	}
+	.title h1{
+		margin-top:10px;
+	}
 	.how_to_span{
+		text-decoration:none;
 		color:#446a91;
 		font-size:8pt;
 	}
@@ -102,8 +106,13 @@
 </style>
 <script>
 	var idx=1;
-	var arr = ['ACTOR','ABOVE','ADMIN','AVOID','BASIC','BEACH','BEGIN','BELOW','BENCH','BLACK','BLIND','BRAIN','BREAK','BRING','BROWN','BUILD'];
+	var arr = ['ACTOR','ABOVE','ADMIN','AVOID','ADOVE','ABOUT','ACORN','ADULT','AFTER','AIMER','ALIEN','ALIGN','ALIVE','ALTER','ANGEL',
+			   'BASIC','BEACH','BEGIN','BELOW','BENCH','BLACK','BLIND','BRAIN','BREAK','BRING','BROWN','BUILD','BRICK','BUMPY','BURLY',
+			   'CROCK','CRONE','CROWD','CRUSH','CRUST','CURVE','CURSE','CURVY','CLIME','CHILE','CABIN','CRUDE',
+			   'DAILY','DAIRY','DANCE','DAVID','DEATH','DEBTS','DEBUG','DECAF','DEBUT','DEPOT','DEPTH'
+			  ];
 	var ans = '';
+	var cnt = 6;
 	
 	window.onload=function(){
 		makeRow();
@@ -173,7 +182,7 @@
 			return;
 		}
 		
-		if(idx>6){
+		if(idx>cnt){
 			alert('실패! 정답 : ' + ans);
 			location.href = location.href;
 			return;
