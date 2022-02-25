@@ -254,6 +254,11 @@
 		box = document.querySelector('.how_to_box');
 		box.style.display = 'none';
 	}
+	
+	function set_on(){
+		var input = prompt('몇 번의 기회로 설정하시겠습니까? 현재 : ' + cnt, '');
+		cnt = input;
+	}
 </script>
 </head>
 <body>
@@ -262,7 +267,8 @@
 		<h1>
 			WORDLE!
 		</h1>
-		<a class="how_to_span" href="javascript:how_to_on();">how to</a>
+		<a class="how_to_span" href="javascript:how_to_on();">how to</a><br/>
+		<a class="how_to_span" href="javascript:set_on();">set</a>
 	</div>
 	
 	
