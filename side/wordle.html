@@ -63,6 +63,7 @@
 		text-decoration:none;
 		color:#446a91;
 		font-size:8pt;
+		padding:0;
 	}
 	
 	.how_to_span:hover{
@@ -113,12 +114,17 @@
 			  ];
 	var ans = '';
 	var cnt = 6;
+	var param = getParam('set');
+	param = param.split("?")[0];
+	alert(param);
+	if(param != '' && param != null && param!='null')cnt = param;
 	
 	window.onload=function(){
 		makeRow();
 		ans = arr[randomNum(0,arr.length-1)];
 		document.getElementById(11).focus();
 	}
+	
 	window.addEventListener("keydown", function (event) {
 		var key = event.keyCode;
 		if(key == 37){
@@ -178,13 +184,15 @@
 		
 		if(ansCnt == 5) {
 			alert(idx-1 + '번 째 정답. 엔터를 눌러 초기화'); 
-			location.href = location.href;
+			var url = location.href.split('?')[0];
+			location.href = url+'?set='+cnt;
 			return;
 		}
 		
 		if(idx>cnt){
 			alert('실패! 정답 : ' + ans);
-			location.href = location.href;
+			var url = location.href.split('?')[0];
+			location.href = url+'?set='+cnt;
 			return;
 		}
 		
@@ -230,13 +238,10 @@
 			document.getElementById(id).value = '';
 		}
 		
-		var nextId = index + (num+1).toString();
-		
 		if(num == 5) return;
 		
-		if(event.keyCode != 37 && event.keyCode != 39)
-		if(value.length == 1){
-			
+		if(event.keyCode != 37 && event.keyCode != 39&& value.length == 1){
+			var nextId = index + (num+1).toString();
 			document.getElementById(nextId).focus();
 		}
 	}
@@ -259,6 +264,17 @@
 		var input = prompt('몇 번의 기회로 설정하시겠습니까? 현재 : ' + cnt, '');
 		cnt = input;
 	}
+	
+	function getParam(sname) {
+		var params = location.search.substr(location.search.indexOf("?") + 1);
+		var sval = "";
+		params = params.split("&");
+			for (var i = 0; i < params.length; i++) {
+				temp = params[i].split("=");
+				if ([temp[0]] == sname) { sval = temp[1]; }
+			}
+		return sval;
+	}
 </script>
 </head>
 <body>
@@ -270,8 +286,6 @@
 		<a class="how_to_span" href="javascript:how_to_on();">how to</a><br/>
 		<a class="how_to_span" href="javascript:set_on();">set</a>
 	</div>
-	
-	
 	
 	<div class="board" id="board"></div>
 </div>
