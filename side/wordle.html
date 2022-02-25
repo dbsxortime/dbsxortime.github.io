@@ -260,9 +260,9 @@
 	}
 	
 	function set_on(){
-		var input = prompt('몇 번의 기회로 설정하시겠습니까? 현재 : ' + cnt, '');
+		var input = prompt('몇 번의 기회로 설정하시겠습니까? 현재 : ' + cnt + '(최대:7)', '');
 		cnt = input;
-		if(input=='')cnt=6;
+		if(!(input>=1&&input<=6))cnt=6;
 	}
 	
 	function getParam(sname) {
