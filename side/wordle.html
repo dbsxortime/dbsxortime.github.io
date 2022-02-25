@@ -116,8 +116,7 @@
 	var cnt = 6;
 	var param = getParam('set');
 	param = param.split("?")[0];
-	alert(param);
-	if(param != '' && param != null && param!='null')cnt = param;
+	if(param != '' && param != null && param != 'null')cnt = param;
 	
 	window.onload=function(){
 		makeRow();
@@ -263,6 +262,7 @@
 	function set_on(){
 		var input = prompt('몇 번의 기회로 설정하시겠습니까? 현재 : ' + cnt, '');
 		cnt = input;
+		if(input=='')cnt=6;
 	}
 	
 	function getParam(sname) {
