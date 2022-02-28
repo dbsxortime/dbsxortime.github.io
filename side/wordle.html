@@ -10,7 +10,7 @@
 		
 	}
 	.paper{
-		margin:auto;
+		margin:20px auto;
 		border:1px solid #666;
 		width:330px;
 		height:600px;
@@ -35,7 +35,6 @@
 		background-color:#f3f3f3;
 		border-bottom : 4px solid #29453c;
 	}
-	
 	input[type="text"]{
 		color : transparent;
 		text-shadow : 0 0 0 #29453c;
@@ -43,7 +42,6 @@
 	input[type="text"]:focus{
 		outline : none;
 	}
-	
 	.btn_submit{
 		width:330px;
 		height:50px;
@@ -65,12 +63,9 @@
 		font-size:8pt;
 		padding:0;
 	}
-	
 	.how_to_span:hover{
 		cursor:pointer;
 	}
-	
-	
 	.pop_back{
 		position:absolute;
 		top:0;
@@ -81,7 +76,6 @@
 		background-color:#aaa;
 		display:none;
 	}
-	
 	.how_to_box{
 		width:300px;
 		height:130px;
@@ -92,7 +86,6 @@
 		transform: translate(-50%, 0);
 		display:none;
 	}
-	
 	.pop_back:hover{
 		cursor:pointer;
 	}
@@ -114,6 +107,7 @@
 			  ];
 	var ans = '';
 	var cnt = 6;
+	var submitCnt = 0;
 	var param = getParam('set');
 	
 	
@@ -125,6 +119,8 @@
 		
 		param = param.split("?")[0];
 		if(param != '' && param != null && param != 'null')cnt = param;
+		
+		checkRemain();
 	}
 	
 	function randomNum(min, max){
@@ -193,10 +189,12 @@
 			input[i].classList.remove('now_input');
 			input[i].readOnly = true;
 		}
+		
+		submitCnt++;
+		checkRemain();
 	}
 	
 	function checkInputDown(value,index,num,event){
-	
 		var key = event.keyCode;
 		if(key == 13){
 			return;
@@ -256,6 +254,9 @@
 		var input = prompt('몇 번의 기회로 설정하시겠습니까? 현재 : ' + cnt + '(최대:7)', '');
 		cnt = input;
 		if(!(input>=1&&input<=6))cnt=6;
+		
+		var url = location.href.split('?')[0];
+		location.href = url+'?set='+cnt;
 	}
 	
 	function getParam(sname) {
@@ -268,6 +269,10 @@
 			}
 		return sval;
 	}
+	
+	function checkRemain(){
+		document.getElementById("remain").innerText = cnt - submitCnt;
+	}
 </script>
 </head>
 <body>
@@ -277,7 +282,14 @@
 			WORDLE!
 		</h1>
 		<a class="how_to_span" href="javascript:how_to_on();">how to</a><br/>
-		<a class="how_to_span" href="javascript:set_on();">set</a>
+		<a class="how_to_span" href="javascript:set_on();">set</a><br/>
+		<span class="how_to_span">남은 기회 : </span>
+		<span style="color:#ee6271" id="remain">
+			<!-- <script>
+				var remain = cnt;
+				document.write(remain);
+			</script> -->
+		</span>
 	</div>
 	
 	<div class="board" id="board"></div>
