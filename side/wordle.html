@@ -115,13 +115,16 @@
 	var ans = '';
 	var cnt = 6;
 	var param = getParam('set');
-	param = param.split("?")[0];
-	if(param != '' && param != null && param != 'null')cnt = param;
+	
 	
 	window.onload=function(){
 		makeRow();
 		ans = arr[randomNum(0,arr.length-1)];
 		document.getElementById(11).focus();
+		
+		
+		param = param.split("?")[0];
+		if(param != '' && param != null && param != 'null')cnt = param;
 	}
 	
 	function randomNum(min, max){
