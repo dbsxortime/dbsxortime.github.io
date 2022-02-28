@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Taek's profile</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<script src="https://cdn.rawgit.com/tyleteam/jquery-progress-indicator/master/jquery-progress-indicator-1.0.5.min.js"></script>
+<style>
+	@font-face{
+		src:url('../fonts/LEMONMILK-MEDIUM.OTF');
+		font-family: 'LEMONMILK';
+	} 
+	@font-face{
+		src:url('../fonts/LEMONMILK-BOLD.OTF');
+		font-family: 'LEMONMILK-BOLD';
+	} 
+	@font-face{
+		src:url('../fonts/MONTSERRAT-MEDIUM.TTF');
+		font-family: 'Montserrat';
+	}
+	@font-face{
+		src:url('../fonts/NANUMSQUARE_ACR.TTF');
+		font-family: 'Nanumsquare';
+	}
+	@font-face{
+		src:url('../fonts/ROBOTO-REGULAR.TTF');
+		font-family: 'Roboto';
+	}
+	@font-face{
+		src:url('../fonts/ROBOTO-BOLD.TTF');
+		font-family: 'Roboto-bold';
+	}
+	@font-face{
+		src:url('../fonts/MONTSERRAT-LIGHT.TTF');
+		font-family: 'Montserrat-light';
+	}
+	:root{
+		--my-green: #29453c;
+	}
+	
+	*{
+		margin:0;
+		padding:0;
+		font-size: 10px;
+		color:#29453c;
+		scroll-behavior:smooth;
+		
+	}
+	table{
+		border-collapse:collapse;
+	}
+	a{
+		text-decoration: none;
+	}
+
+	.font_LEMONMILK{
+		font-family: LEMONMILK;
+	}
+	.font_LEMONMILK_BOLD{
+		font-family: LEMONMILK-BOLD;
+	}
+	.font_Montserrat{
+		font-family: Montserrat;
+	}
+
+	.font_Roboto{
+		font-family: Roboto;
+	}
+	.font_Roboto_bold{
+		font-family: Roboto-bold;
+	}
+	.font_Nanumsquare{
+		font-family: Nanumsquare;
+	}
+	
+	.pages{
+		width:100vw;
+		height:100vh;
+		transition: all .3s ease-in-out;
+		background-color:#f4f4f463;
+	}
+	::-webkit-scrollbar { display: none; }
+</style>
+<script>
+	function displayProject(){
+		$('.projects_contents_table').css('display','none');
+		$('#p_1').css('display','table');
+		
+		btn_noclick();
+		btn_click(1);
+	}
+	
+	window.onload=function(){
+		$('.projects_contents_table').css('display','none');
+		$('#p_1').css('display','table');
+		$('.project_1').css('background-color','var(--my-green)');
+		$('.project_1').css('color','#fff');
+		
+		$.progressIndicator({
+			direction : 'left',
+			barColor: 'var(--my-green)',
+			percentageEnabled : false,
+			easingSpeed : 0.1,
+			height: 6,
+			target : 'body',
+		});
+		
+	};
+	
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<!-- ----------------------------- 4page / projects-1 ------------------------------ -->
+
+
+<!-- body css -->
+
+<style type="text/css">
+	.projects_title{
+		text-align:center;
+		margin : auto;
+		position:relative;
+		top:9rem;
+	}
+	.projects_row1{
+		font-size:3.5rem;
+		font-weight:500;
+		margin:0;
+	}
+	.projects_subtitle_row{
+		width:90%;
+		margin:auto;
+		margin-top:2rem;
+	}
+	.projects_subtitle{
+		font-size:1.5rem;
+		font-weight: 300;
+		width:8rem;
+		height:4.4rem;
+		margin:0 2rem;
+		padding:1rem 0;
+		border:2px solid var(--my-green);
+		border-radius: 1rem;
+		background-color:#fff;
+		transition: all .1s ease-in-out;
+	}
+	.projects_subtitle:hover{
+		background-color:var(--my-green);
+		color:#fff;
+		transform: scale(1.03);
+	}
+	.projects_subtitle:active{
+		font-size:1.35rem;
+		transform: scale(1.01);
+	}
+	.projects_contents_box{
+		position:relative;
+		top:12%;
+		margin:auto;
+		width:1000px;
+	}
+	.projects_contents_table{
+		width:100%;
+		border-collapse:collapse;
+		text-align:center;
+		height:600px;
+	}
+	.projects_contents_table tr{
+		width:100%;
+	}
+	.projects_contents_title{
+		font-size:1.8rem;
+		margin:auto;
+		padding-top:5px;
+		padding-bottom:1rem;
+	}
+	.projects_contents_table_body{
+		width:100%;
+		height:150px;
+	}
+	.projects_contents_table tbody tr td{
+		border:1px solid var(--my-green);
+		font-size:1.5rem;
+		padding:0rem 1rem;
+	}
+	.projects_contents_table tbody tr th{
+		font-size:1.7rem;
+		font-weight:bold;
+		border:1px solid var(--my-green);
+		padding:0 3rem;
+	}
+	.projects_contents_table{
+		transition: all 1s ease-in-out;
+	}
+	.align_left{
+		text-align:left;
+	}
+	
+	.projects_contents_table tbody tr td span, a{
+		font-size:1.5rem;
+	}
+	
+	.projects_contents_table_body_1{
+		height:350px;
+	}
+	.projects_contents_table_body_2, .projects_contents_table_body_3{
+		height:350px;
+		display:none;
+	}
+	
+	.projects_contents_table_body_1 td, .projects_contents_table_body_2 td, .projects_contents_table_body_3 td{
+		text-align:left
+	}
+	
+	.projects_12, .projects_13{
+		display:none;
+	}
+	
+	
+	.project_gogo{
+		float:right;
+		background-color:var(--my-green);
+		color:#fff;
+		font-weight:bold;
+		border: 4px solid var(--my-green);
+		border-radius:4px;
+	}
+	.project_gogo:hover{
+		font-size:1.6rem;
+		border: 5px solid var(--my-green);
+	}
+	.project_preview{
+		float:right;
+		background-color:var(--my-green);
+		color:#fff;
+		font-weight:bold;
+		border: 4px solid var(--my-green);
+		border-radius:4px;
+	}
+	.project_side_preview_back{
+		width:100%;
+		height:100%;
+		position:fixed;
+		top:0;
+		left:0;
+		background-color:#aaa;
+		opacity:0.5;
+		z-index: 9997;
+		display:none;
+	}
+	.project_side_preview_img{
+		position:fixed;
+		top:50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		display:none;
+		z-index: 9998;
+	}
+	
+	.projects_smartro_box{
+		border:1px solid var(--my-green);
+		width:800px;
+		padding:20px;
+		margin:10px auto;
+		/* height:300px; */
+	}
+	.projects_smartro_box pre{
+		font-size: 1.7rem;
+		font-family: Nanumsquare;
+		line-height:2.5rem;
+	}
+	.projects_smartro_box pre h3{
+		font-size: 2rem;
+		font-family: Nanumsquare;
+	}
+</style>
+<style>
+	@media ( max-width: 1023px ) {
+		.projects_subtitle{
+			width:8rem;
+			font-size:1.1rem;
+		}
+		.projects_subtitle:active{
+			font-size:1.2rem;
+			transform: scale(1.01);
+		}
+		.projects_contents_box{
+			width:95%;
+			word-break: keep-all;
+		}
+		.projects_contents_table tbody tr td{
+			padding:1rem 1rem;
+		}
+	}
+</style>
+<body>
+	<div class="projects_contents_box">
+		<div class="projects_smartro_box">
+			<pre>
+<h3>### 01</h3>
+> 기존 기능에서의 수정 / 새로운 기능 추가 (새로운 기능 구현 중 담당자 바뀜)
+
+수정 : 
+  1. 검색된 특정 데이터 행의 수정 페이지 (입력정보 추가)
+  2. 리스트 중 선택 행의 데이터 일괄 변경
+   > 작성된 정보의 유효성 검사방식 변경 (정규식 작성 및 자동변경)
+   > 유효성 검사 및 데이터 검증 완료 시 업데이트 및 이력 저장(트랜젝션)
+  3. 사용자의 요청에 맞게 ui 수정
+
+새 기능 구현 : 
+  1. 사용자가 작성한 정보를 가공하여 통일된 형식으로 수정 후 업로드
+  2. 사용자가 검색한 조건으로 조회된 리스트를 엑셀 다운로드
+  3. 업로드된 엑셀의 리스트 일괄 등록
+   > 작성된 정보의 유효성 검사방식 변경 (정규식 작성 및 자동변경)
+   > 유효성 검사 및 데이터 검증 완료 시 업데이트 및 이력 저장(트랜젝션)
+
+결과 및 효과 : 
+  1. 기존의 엑셀 일괄업로드 소스를 개선시켜 엑셀에 작성된 내용들을 한 번에 더 빠르게 
+     유효성검사 및 검증을 마칠 수 있게 함.
+  2. 검색 시 사용자 실수를 처리하는 과정의 추가로 더 편리하게 사용할 수 있게 개선.
+			</pre>
+		</div>
+
+
+		
+
+		<div class="projects_smartro_box">
+			<pre>
+<h3>### 02</h3>
+> 기존 기능에서의 수정 / 새로운 기능 추가
+
+수정 : 
+  1. 검색된 특정 데이터 행의 수정 페이지 (입력정보 추가)
+   > 작성된 정보의 유효성 검사방식 변경 (정규식 작성 및 자동변경)
+   > 유효성 검사 및 데이터 검증 완료 시 업데이트 및 이력 저장(트랜젝션)
+
+새 기능 구현 : 
+  1. 일정 조건으로 조회된 리스트의 엑셀 다운로드
+  2. 데이터 수정 화면 구현 및 ajax를 활용한 db접근, 조회를 통해 데이터 검증
+   > 유효성 검사 및 데이터 검증 완료 시 업데이트 및 이력 저장(트랜젝션)
+  3. coder, deCoder 메소드 작성/활용을 통한 사용 통일성 부여
+
+결과 및 효과 : 
+  1. 엑셀 다운로드 방식을 단순화시켜 다운로드 속도를 더 빠르게 함.
+   > 조회문, 화면(jsp)수정 (약 1/3 단축)
+  2. ajax를 통한 비동기식 검증 및 화면수정으로 사용자편의성을 증가시킴.
+  3. coder, deCoder 메소드를 통한 휴먼에러 최소화.
+  4. 정규식, 유효성 검사 등 코드를 단순화시켜 향후 유지/보수의 편의성을 높임.
+			</pre>
+		</div>
+
+		
+		
+		<div class="projects_smartro_box">
+			<pre>
+<h3>### 03</h3>
+> 개발 중단된 기능의 버그수정 / 새로운 기능 구현
+
+수정 : 
+  > 테이블에 저장된 데이터의 유효성 오류확인
+  > 연계된 다른 기능의 데이터 저장 및 조회문 수정 (데이터 연계됨)
+	>> 데이터를 사용자언어로 변경하는 단계를 SQL에서 JSP로 변경(메인오류 해결)
+
+구현 : 
+  1. 조회된 데이터의 리스트 구현화면 및 상세페이지 작성
+  2. 데이터를 사용자언어로 변경
+  3. 조회된 데이터의 리스트를 엑셀로 다운로드
+
+결과 및 효과 : 
+  1. 기존의 기능 중 오류가 있지만 치명적이지 않아 방치되던 오류를 발견
+     (해당 오류로 신규 기능에 문제가 생길 수 있다고 판단되어 수정)
+  2. SQL문 작성의 단순화로 유지/보수의 편의성을 높임.
+			</pre>
+		</div>
+
+		<div class="projects_smartro_box">
+			<pre>
+<h3>### 04</h3>
+> crontab을 통한 배치 메일 동작 구현 (신규)
+
+> 데이터 중 특정 상태에 있는 리스트를 특정 시간, 특정 인원에게 이메일 전송하는 기능 구현
+
+  1. 기존 배치 구현 클래스 소스 분석
+  2. 데이터 분석, 조회 조건 분석 및 조회문 작성
+  3. 메일 템플릿 작성(jsp, db에 저장)
+  4. 배치 구현 클래스 작성
+  5. sh파일 작성
+  6. crontab 등록
+  7. 테스트
+  8. 운영계 적용
+
+결과 및 효과 : 
+  1. 사용자가 원하는 조건의 리스트를 정확히 작성하고, 
+     요구자가 생각하지 못한 문제와 조건을 먼저 파악하여 사전에 오류를 예방할 수 있게 됨.
+  2. 운영체제와 익스플로러등의 버젼 차이로 생기는 화면 구현의 오류를 인지하고 예방할 수 있게 됨.
+			</pre>
+		</div>
+
+
+		<div class="projects_smartro_box">
+			<pre>
+<h3>### 05</h3>
+> 기존 기능에서의 수정
+
+수정 : 기존 엑셀 다운로드의 양식 수정
+  1. 사용자가 원하는 형식의 데이터를 보여주지 않는 양식 수정
+    > 데이터를 사용자언어로 변경하는 단계를 SQL에서 JSP로 변경
+	    (예외처리를 통한 데이터처리문제 해결)
+    > 시간, 카드사, 카드번호, 거래번호 등의 정보를 사용자가 원하는 형태로 처리할 수 있게 
+	  decoder작성
+
+결과 및 효과 : 
+  1. 사용자가 원하는 정보를 정확한 형태로 보여질 수 있게 수정됨.
+  2. coder, deCoder 메소드를 통한 휴먼에러 최소화.
+  3. 정규식, 유효성 검사 등 코드를 단순화시켜 향후 유지/보수의 편의성을 높임.
+			</pre>
+		</div>
+
+		<div class="projects_smartro_box">
+			<pre>
+<h3>### 06</h3>
+> 기존 기능의 데이터와 연계되는 신규 기능 구현
+
+> 기존 기능의 화면, 기능에 공통/연계점이 많아 기존 소스 수정의 허가를 받아 
+  일부 SQL 및 화면 수정하여 개발
+
+수정 : 
+  1. 데이터를 조회/수정/삭제/생성하는 '화면', 'SQL문'
+
+추가 :
+  1. 특정 조건으로 조회되는 리스트의 조회화면 구현 (+검색)
+  2. 위의 조건을 엑셀로 다운로드할 수 있는 기능 구현
+
+결과 및 효과 : 
+  1. 기존 기능에서 갈라지는 방식으로 기능이 구현되어 문제 발생 시 
+     한 번에 처리할 수 있어 유지/보수의 편의성을 높임.
+  2. 엑셀화면에서의 데이터타입, 형태 등 요구자가 파악하지 못한 문제를 사전에 파악하고
+     확인 하여 오류발생을 사전에 예방.
+			</pre>
+		</div>
+
+		<div class="projects_smartro_box">
+			<pre>
+<h3>### 07</h3>
+> 새로운 기능 구현
+
+> 신규 확장 사업을 관리하는 운영/관리부서의 관리자 페이지 신규 구현
+
+기능 : 조회, 신규등록, 수정, 엑셀 다운로드, 특정데이터 수정, 특정데이터의 이력
+  1. 요구사항 분석 - 새롭게 구현되는 기능이라 사용자에게 필요한 데이터에 대한 분석을 
+     우선적으로 진행함.
+  2. 테이블 분석 - 새롭게 작성된 테이블이고 첫 사용이라 테이블 수정을 염두해두고 
+     칼럼의 유효성 분석에 중점을 둠
+  3. 저장될 데이터 분석 - 기존과 같이 key값과 value값이 '1:1'형태가 아닌 '1:다' 형태로, 
+     저장 및 조회 방식에 대한 분석에 중점을 둠
+  4. 저장 및 조회 프로세스/로직 작성 - 테이블에 저장될 방식과 사용자언어로의 처리 방식을 작성함
+  5. SQL문 작성 - '1:다'형태의 데이터들을 리스트로 조회할 수 있게 SQL문 작성
+  6. 화면 구현 - 받아온 데이터를 사용자언어로 처리하여 화면 구현
+  7. 동작 및 완료 페이지 작성 - 등록, 수정을 처리하는 페이지 작성. 사용자언어에서 데이터로 변환
+  8. 엑셀 다운로드 구현 - 받아온 데이터를 사용자언어로 처리하여 엑셀 다운로드 구현
+
+결과 및 효과 : 
+  1. 1개 key에 여러개 value를 담아 처리할 수 있게 DB조회 시 데이터를 json형태로 만들어 
+     관계형데이터베이스의 장점과 NoSql의 장점을
+  복합적으로 사용하여 데이터처리에 용이하게 개발되었음.
+    > 이유 : 
+      1) 개발되는 서버의 속도적인 측면에서 개선사항을 분석해본 결과, connection 단계에서 
+           가장 많은 시간이 걸리는 것으로 보여
+           해당 단계의 횟수를 줄임으로써 조회되는 속도가 확연히 줄어들음(connection 4회 > 1회)
+      2) 1:다 데이터를 관계형데이터베이스로 처리 시 어쩔 수 없이 같은 데이터가 
+           불필요하게 조회되고 주고받을 수밖에 없는데, 
+           1개 key에 들어갈 특정 value를 비관계형으로 처리하면 한 번에 조회가 가능하기 때문
+           (속도, 용량에서 큰 이점이 생김)
+			</pre>
+		</div>
+	</div>
+	
+</body>
+
+
+
+
+
+
+
+
+
+<!-- ----------------------------- last page / footer ------------------------------ -->
+
+
+<!-- body css -->
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

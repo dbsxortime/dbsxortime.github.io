@@ -964,7 +964,7 @@
 	}
 	
 	function goSide(name, w, h) {
-	var url = 'https://dbsxortime.github.io/side/'+name+'.html';
+	var url = 'https://dbsxortime.github.io/profile-me/pages/'+name+'.html';
 	
     var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
     var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
@@ -991,6 +991,23 @@
 		preview.style.display = 'none';
 		var img = document.querySelector('.project_side_preview_img');
 		img.style.display = 'none';
+	}
+	
+	function smartroDetail(name,w,h){
+		// var url = 'https://dbsxortime.github.io/side/'+name+'.html';
+		var url = 'https://qtime.run.goorm.io/dbsxortime_git/profile-me/pages/naebu.html';
+	
+		var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+		var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+		var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+		var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+		var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+		var top = ((height / 2) - (h / 2)) + dualScreenTop;
+		var newWindow = window.open(url, '', 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+		// Puts focus on the newWindow
+			if (window.focus) {
+				newWindow.focus();
+			}
 	}
 </script>
 <body>
@@ -1033,14 +1050,18 @@
 						<td width="30%">
 							<span class="projects_contents_project_span projects_11 projects_display">2021.10.27 ~ </span>
 							<span class="projects_contents_project_span projects_12 projects_display">2021.10.27 ~ </span>
-							<span class="projects_contents_project_span projects_13 projects_display">2022.02.25 ~ </span>
+							<span class="projects_contents_project_span projects_13 projects_display">2022.03.02 ~ </span>
 						</td>
 					</tr>
 					<tr>
 						<th>프로젝트 설명</th>
 						<td colspan="3">
-							<span class="projects_contents_project_span projects_11 projects_display">내부관리자 웹 서버 고도화 [MVC1 → MVC2 (SPRING) ]</span>
-							<span class="projects_contents_project_span projects_12 projects_display">내부관리자 웹 유지/보수 [MVC1]</span>
+							<span class="projects_contents_project_span projects_11 projects_display">내부관리자 웹 서버 고도화 [MVC1 → MVC2 (SPRING)]</span>
+							<span class="projects_contents_project_span projects_12 projects_display">
+								내부관리자 웹 유지/보수 [MVC1]
+								<a class="project_preview " href="#4p" onclick="smartroDetail('naebu',900,800)">자세히</a>
+							</span>
+							
 							<span class="projects_contents_project_span projects_13 projects_display">가맹점관리자 웹 유지/보수 [SPRING]</span>
 						</td>
 					</tr>
@@ -1153,95 +1174,6 @@
 				</tbody>
 			</table>
 			
-			
-			
-			
-			
-			<table class="projects_contents_table" id="p_2">
-				<thead>
-					<tr>
-						<th colspan="6" class="projects_contents_title">page2 자세한 프로젝트 작성</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>프로젝트 이름</th>
-						<td>이런저런 프로젝트의 이름이 작성됨</td>
-						<th>기간</th>
-						<td>2021.01.01~2021.12.31</td>
-					</tr>
-					<tr>
-						<th>프로젝트 설명</th>
-						<td colspan="3">설명 설명설명!설명 설명설명!설명 설명설명!설명 설명설명!</td>
-					</tr>
-					<tr>
-						<th>활용 기술, 스택</th>
-						<td colspan="3">이 기술, 저 기술, 이런 기술, 저런 기술</td>
-					</tr>
-					<tr>
-						<th>기여도</th>
-						<td colspan="3">어디파트 100%, 저기파트 80%, 어떤파트 100%</td>
-					</tr>
-					<tr>
-						<th>개발내용</th>
-						<td class="align_left" colspan="3">
-							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
-							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
-							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
-						</td>
-					</tr>
-					<tr>
-						<th>느낀 점</th>
-						<td class="align_left" colspan="3">
-							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
-							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			
-			<table class="projects_contents_table" id="p_3">
-				<thead>
-					<tr>
-						<th colspan="6" class="projects_contents_title">page3 자세한 프로젝트 작성</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>프로젝트 이름</th>
-						<td>이런저런 프로젝트의 이름이 작성됨</td>
-						<th>기간</th>
-						<td>2021.01.01~2021.12.31</td>
-					</tr>
-					<tr>
-						<th>프로젝트 설명</th>
-						<td colspan="3">설명 설명설명!설명 설명설명!설명 설명설명!설명 설명설명!</td>
-					</tr>
-					<tr>
-						<th>활용 기술, 스택</th>
-						<td colspan="3">이 기술, 저 기술, 이런 기술, 저런 기술</td>
-					</tr>
-					<tr>
-						<th>기여도</th>
-						<td colspan="3">어디파트 100%, 저기파트 80%, 어떤파트 100%</td>
-					</tr>
-					<tr>
-						<th>개발내용</th>
-						<td class="align_left" colspan="3">
-							어디파트 : 이런저런 개발을 했고 이렇게 개발함. 저런식으로도 해볼까함<br/>
-							저기파트 : 저런이런 개발을 했음. 어디서 코드 가져와 커스텀해 사용함<br/>
-							어떤파트 : 어떤저떤 개발을 했고 이렇게 개발함. 이런 문제가 있었지만 이렇게 해결함
-						</td>
-					</tr>
-					<tr>
-						<th>느낀 점</th>
-						<td class="align_left" colspan="3">
-							이런 어려움이 있었고 이랬지만 이렇게 해결했고, 저렇게 결과를 맺음.<br/>
-							이런 기술의 저런 활용을 이해했고, 활용함으로 다음에는 더 빠르고 정확하게 작성할 수 있을 것 같음.
-						</td>
-					</tr>
-				</tbody>
-			</table>
 			
 			<table class="projects_contents_table" id="p_4">
 				<thead>
