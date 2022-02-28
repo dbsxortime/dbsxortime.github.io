@@ -271,7 +271,11 @@
 	}
 	
 	function checkRemain(){
-		document.getElementById("remain").innerText = cnt - submitCnt;
+		var span = document.getElementsByName("remain");
+		
+		for(var i=0; i<span.length; i++){
+			span[i].innerText = cnt - submitCnt;
+		}
 	}
 </script>
 </head>
@@ -284,12 +288,7 @@
 		<a class="how_to_span" href="javascript:how_to_on();">how to</a><br/>
 		<a class="how_to_span" href="javascript:set_on();">set</a><br/>
 		<span class="how_to_span">남은 기회 : </span>
-		<span style="color:#ee6271" id="remain">
-			<!-- <script>
-				var remain = cnt;
-				document.write(remain);
-			</script> -->
-		</span>
+		<span style="color:#ee6271" name="remain"></span>
 	</div>
 	
 	<div class="board" id="board"></div>
@@ -303,7 +302,10 @@
 	<span class="how_to">알파벳만 맞으면 노랑</span><br/>
 	<span class="how_to">가지고 있지 않으면 회색입니다.</span><br/>
 	<span class="how_to">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-	<span class="how_to">[총 6번의 기회가 있습니다!]</span>
+	<span class="how_to">[현재
+		<span class="how_to" style="color:#ee6271" name="remain"></span>&nbsp;
+		번의 기회가 있습니다!]
+	</span>
 </div>
 
 </body>
