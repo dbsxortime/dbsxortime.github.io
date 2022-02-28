@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Taek's profile</title>
+<title>Taek's profile : FrontBack</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 <script src="https://cdn.rawgit.com/tyleteam/jquery-progress-indicator/master/jquery-progress-indicator-1.0.5.min.js"></script>
 <style>
@@ -84,12 +84,6 @@
 <script>
 	$(window).on('scroll', function(){
 		var currentPercentage = ($(window).scrollTop() / ($(document).outerHeight() - $(window).height())) * 100;
-		// alert(currentPercentage);
-		if(currentPercentage>=97){
-			appearFooter();
-		}else {
-			disAppearFooter();
-		}
 		
 		
 		//1page - top
@@ -113,6 +107,13 @@
 		//4page - projects
 		if(currentPercentage>66){
 			$('#4p').css('opacity','1');
+		}
+		
+		//footer
+		if(currentPercentage>=97){
+			appearFooter();
+		}else {
+			disAppearFooter();
 		}
 	});
 	function displayProject(){
@@ -1293,8 +1294,8 @@
 				<p class="footer_contact_right">Contact</p>
 				<span>
 					email : dbsxortime@naver.com<br/>
-					instagram : @yun_taketaek<br/>
-					github : github/dbsxortime
+					<a onclick="window.open('http://www.instagram.com/yun_taketaek')">instagram : @yun_taketaek</a><br/>
+					<a onclick="window.open('https://github.com/dbsxortime')">github : github.com/dbsxortime</a><br/>
 				</span>
 			</div>
 		</div>
