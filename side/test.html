@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>wordle!</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+		
+	}
+	.paper{
+		margin:20px auto;
+		border:1px solid #666;
+		width:580px;
+		height:600px;
+	}
+	.board{
+		width:550px;
+		margin:auto;
+		margin-top:20px;
+		text-align:center;
+	}
+	.input_text{
+		width:50px;
+		height:50px;
+		font-size:40px;
+		background-color:#fff;
+		border-radius:3px;
+		margin : 5px 5px;
+		text-align:center;
+		/* color : #29453c; */
+	}
+	.input_text:focus{
+		background-color:#f3f3f3;
+		border-bottom : 4px solid #29453c;
+	}
+	input[type="text"]{
+		color : transparent;
+		text-shadow : 0 0 0 #29453c;
+	}
+	input[type="text"]:focus{
+		outline : none;
+	}
+	.btn_submit{
+		width:330px;
+		height:50px;
+		background-color:red;
+		text-align:center;
+		line-height:54px;
+		margin:auto;
+		border:1px solid black;
+	}
+	.title{
+		text-align:center;
+	}
+	.title h1{
+		margin-top:10px;
+	}
+	.how_to_span{
+		text-decoration:none;
+		color:#446a91;
+		font-size:8pt;
+		padding:0;
+	}
+	.how_to_span:hover{
+		cursor:pointer;
+	}
+	.pop_back{
+		position:absolute;
+		top:0;
+		left:0;
+		opacity:0.5;
+		width:100%;
+		height:100%;
+		background-color:#aaa;
+		display:none;
+	}
+	.how_to_box{
+		width:300px;
+		height:130px;
+		background-color:#333;
+		position:absolute;
+		top:70px;
+		left:50%;
+		transform: translate(-50%, 0);
+		display:none;
+	}
+	.pop_back:hover{
+		cursor:pointer;
+	}
+	.how_to_box:hover{
+		cursor:pointer;
+	}
+	.how_to{
+		color:#fff;
+		padding-left:10px;
+		font-size:9pt;
+	}
+</style>
+<script>
+	var idx=0;
+	var arr = [];
+	var ans = [];
+	var cnt = 8;
+	var submitCnt = 0;
+	var param = getParam('set');
+	
+	window.onload=function(){
+		makeRow();
+		document.getElementById(0).focus();
+		
+		
+		param = param.split("?")[0];
+		if(param != '' && param != null && param != 'null')cnt = param;
+		
+		checkWrongCnt()
+		makeAnswer();
+	}
+	
+	function randomNum(min, max){
+		var randNum = Math.floor(Math.random()*(max-min+1)) + min;
+		return randNum;
+	}
+	
+	function makeAnswer(){
+		for(var i=0; i<cnt; i++){
+			arr.push(randomNum(1,4));
+		}
+	}
+	
+	function makeRow(){
+		var input = '<div>';
+		
+		for(var i=0; i<cnt; i++){
+			input+= '<input id="'+i+'" name="input_name" type="button" class="input_text now_input" maxlength="1" onkeydown="checkInputDown('+i+')" />';
+		}
+			
+		input += '</div>';
+		
+		document.getElementById('board').insertAdjacentHTML('beforeend',input);
+	}
+	
+	function checkInputDown(index){
+		var key = event.keyCode;
+		
+		submit(key,index);
+	}
+	
+	function submit(value,index){
+		if(value>=37 && value <=40){
+			var val = value-36;
+			// ans.push(val);
+			if(arr[idx]==val){
+				ans.push(val);
+				checkAnswer(value,index);
+				inputValue(value,index);
+			}else{
+				failed();
+			}
+		}else {
+			return;
+		}
+	}
+	
+	function failed(){
+		var input = document.getElementsByName('input_name');
+		for(var i=0; i<input.length; i++){
+			input[i].value = '';
+		}
+		document.getElementById(0).focus();
+		idx = 0;
+		ans=[];
+		submitCnt++;
+		checkWrongCnt();
+	}
+	
+	
+	function inputValue(value,index){
+		var arrow = '';
+		if(value=='37'){
+			arrow = '←';
+		}
+		if(value=='38'){
+			arrow = '↑';
+		}
+		if(value=='39'){
+			arrow = '→';
+		}
+		if(value=='40'){
+			arrow = '↓';
+		}
+		if(index != cnt-1){
+			event.target.nextElementSibling.focus();
+		}
+		document.getElementById(index).value = arrow;
+		idx++;
+	}
+	
+	function checkAnswer(value,index){
+		if(index == cnt-1 && arr[index]==ans[index]){
+			alert('정답');
+			location.href=location.href;
+		}
+	}
+	
+	function how_to_on(){
+		var box = document.querySelector('.pop_back');
+		box.style.display = 'block';
+		box = document.querySelector('.how_to_box');
+		box.style.display = 'block';
+	}
+	
+	function how_to_off(){
+		var box = document.querySelector('.pop_back');
+		box.style.display = 'none';
+		box = document.querySelector('.how_to_box');
+		box.style.display = 'none';
+	}
+	
+	function getParam(sname) {
+		var params = location.search.substr(location.search.indexOf("?") + 1);
+		var sval = "";
+		params = params.split("&");
+			for (var i = 0; i < params.length; i++) {
+				temp = params[i].split("=");
+				if ([temp[0]] == sname) { sval = temp[1]; }
+			}
+		return sval;
+	}
+	
+	function checkWrongCnt(){
+		var span = document.getElementsByName("wrong_cnt");
+		for(var i=0; i<span.length; i++){
+			span[i].innerText = submitCnt;
+		}
+	}
+	
+</script>
+</head>
+<body>
+<div class="paper">
+	<div class="title">
+		<h1>
+			Test!
+		</h1>
+		<a class="how_to_span" href="javascript:how_to_on();">how to</a><br/>
+		<span class="how_to_span">틀린 횟수 : </span>
+		<span style="color:#ee6271" name="wrong_cnt"></span>
+	</div>
+	
+	<div class="board" id="board"></div>
+</div>
+	
+<div id="pop_back" class="pop_back" onclick="how_to_off();"></div>
+<div class="how_to_box" onclick="how_to_off();">
+	<span class="how_to">알파벳을 입력해 단어를 맞추는 게임입니다.</span><br/>
+	<span class="how_to">단어가 가지고있는 알파벳을 맞추시면 색이 변합니다.</span><br/>
+	<span class="how_to">알파벳 + 위치 둘 다 맞으면 초록</span><br/>
+	<span class="how_to">알파벳만 맞으면 노랑</span><br/>
+	<span class="how_to">가지고 있지 않으면 회색입니다.</span><br/>
+	<span class="how_to">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	<span class="how_to">[현재
+		<span class="how_to" style="color:#ee6271" name="remain"></span>&nbsp;
+		번의 기회가 있습니다!]
+	</span>
+</div>
+
+</body>
+</html>

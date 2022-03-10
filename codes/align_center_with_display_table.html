@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Reference | display:table</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	div{
+		border: 1px solid #bcbcbc;
+	}
+	.jb-table{
+		display:table;
+		width:100%;
+	}
+	.jb-table-row{
+		display:table-row;
+	}
+	.jb-table-cell{
+		display:table-cell;
+		padding : 0px 20px;
+		height:150px;
+	}
+	.jb-top:{
+		vertical-align:top;
+	}
+	.jb-middle{
+		vertical-align:middle;
+	}
+	.jb-bottom{
+		vertical-align:bottom;
+	}
+	
+	
+</style>
+</head>
+<body>
+	<div class="jb-table`">
+		<div class="jb-table-row">
+			<div class="jb-table-cell">
+				<p>Lorem</p>
+			</div>
+			<div class="jb-table-cell">
+				<p>Ipsum</p>
+			</div>
+			<div class="jb-table-cell">
+				<p>Dolor</p>
+			</div>
+		</div>
+		
+		<div class="jb-table-row">
+			<div class="jb-table-cell jb-top">
+				<p>Lorem</p>
+			</div>
+			<div class="jb-table-cell jb-middle">
+				<p>Ipsum</p>
+			</div>
+			<div class="jb-table-cell jb-bottom">
+				<p>Dolor</p>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+<!--	display:table-cell;		안의 객체에 
+		vertical-align:middle;	넣으면 세로 중앙	-->
+	<div class="test">
+		<p class="jb-table-cell jb-top">
+			Lorem
+		</p>
+		<p class="jb-table-cell jb-middle">
+			Ipsum Dolor Sets
+		</p>
+		<p class="jb-table-cell jb-bottom">
+			Dolor
+		</p>
+	</div>
+</body>
+</html>
