@@ -45,7 +45,6 @@
 	.btn_submit{
 		width:330px;
 		height:50px;
-		background-color:red;
 		text-align:center;
 		line-height:54px;
 		margin:auto;
@@ -97,25 +96,49 @@
 		padding-left:10px;
 		font-size:9pt;
 	}
+	.div_key{
+		position:relative;
+		top:20%;
+		left:50%;
+		transform: translate(-50%, 0);
+		width:500px;
+		height:300px;
+		text-align:center;
+	}
+	.key_arrow{
+		width:80px;
+		height:80px;
+		font-size:60px;
+		background-color:#fff;
+		border-radius:3px;
+		margin : 5px 5px;
+		text-align:center;
+	}
 </style>
 <script>
 	var idx=0;
 	var arr = [];
 	var ans = [];
-	var cnt = 8;
+	var cnt = 7;
 	var submitCnt = 0;
 	var param = getParam('set');
 	
 	window.onload=function(){
-		makeRow();
-		document.getElementById(0).focus();
-		
 		
 		param = param.split("?")[0];
 		if(param != '' && param != null && param != 'null')cnt = param;
 		
+		
+		makeRow();
+		document.getElementById(0).focus();
+		
+		
 		checkWrongCnt()
 		makeAnswer();
+	}
+	
+	window.onkeydown = function() {
+		
 	}
 	
 	function randomNum(min, max){
@@ -130,6 +153,7 @@
 	}
 	
 	function makeRow(){
+		
 		var input = '<div>';
 		
 		for(var i=0; i<cnt; i++){
@@ -190,10 +214,11 @@
 		if(value=='40'){
 			arrow = '↓';
 		}
+		var nxtIdx=0;
 		if(index != cnt-1){
-			event.target.nextElementSibling.focus();
+			nxtIdx = checkThisIndex();
 		}
-		document.getElementById(index).value = arrow;
+		document.getElementById(nxtIdx).value = arrow;
 		idx++;
 	}
 	
@@ -236,6 +261,43 @@
 		}
 	}
 	
+	function set_on(){
+		var input = prompt('몇 칸으로 설정하시겠습니까? 현재 : ' + cnt + ' (5~9사이로 입력하세요)', '');
+		cnt = input;
+		if(!(input>=5&&input<=9)){
+			alert('잘못된 값입니다. 5칸으로 입력합니다.');
+			cnt=5;
+		}
+		var url = location.href.split('?')[0];
+		location.href = url+'?set='+cnt;
+	}
+	
+	function pressedKey(val){
+		var index = checkThisIndex();
+		// alert(val);
+		// alert(index);
+		submit(val,index);
+	}
+	
+	function checkThisIndex(){
+		var arr = document.getElementsByName('input_name');
+		for(var i=0; i<arr.length; i++){
+			if(arr[i].value==''){
+				arr[i].focus();
+				return i;
+			}
+		}
+	}
+	
+	function getEmptyInput(){
+		var arr = document.getElementsByName('input_name');
+		for(var i=0; i<arr.length; i++){
+			if(arr[i].value==''){
+				arr[i].focus();
+				return;
+			}
+		}
+	}
 </script>
 </head>
 <body>
@@ -245,11 +307,19 @@
 			Random!
 		</h1>
 		<a class="how_to_span" href="javascript:how_to_on();">how to</a><br/>
+		<a class="how_to_span" href="javascript:set_on();">set</a><br/>
 		<span class="how_to_span">틀린 횟수 : </span>
 		<span style="color:#ee6271" name="wrong_cnt"></span>
 	</div>
 	
 	<div class="board" id="board"></div>
+	
+	<div class="div_key">
+		<input type="button" class="key_arrow" value="↑" onclick="pressedKey('38');"/><br/>
+		<input type="button" class="key_arrow" value="←" onclick="pressedKey('37');"/>
+		<input type="button" class="key_arrow" value="↓" onclick="pressedKey('40');"/>
+		<input type="button" class="key_arrow" value="→" onclick="pressedKey('39');"/>
+	</div>
 </div>
 	
 <div id="pop_back" class="pop_back" onclick="how_to_off();"></div>
@@ -262,6 +332,7 @@
 		번의 기회가 있습니다!]
 	</span> -->
 </div>
+
 
 </body>
 </html>
