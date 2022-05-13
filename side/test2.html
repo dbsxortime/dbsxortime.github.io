@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>석진님 타로</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<style>
+	.back_card{
+		width:70px;
+		height:95px;
+		margin:5px;
+	}
+	.back_card:hover{
+		border:5px solid red;
+	}
+	.clicked{
+		border:5px solid red;
+	}
+	.wait{
+		visibility:hidden;
+	}
+</style>
+<script>
+	var clickedCnt = 0;
+	function clicker(t){
+		if(t.classList.contains('clicked')) {
+			t.classList.remove('clicked');
+			clickedCnt--;
+		}else{
+			t.classList.add('clicked');
+			clickedCnt++;
+		}
+		
+		checkDone();
+	}
+	
+	function checkDone(){
+		if(clickedCnt==3){
+			setTimeout(function(){
+				location.href="test3.html";
+			},500);
+		}
+	}
+</script>
+</head>
+<body>
+<div class="paper">
+	<h1>
+		3장을 고르세요!
+	</h1>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>
+	<div id="waiter" class="wait">
+		<h1>잠시만 기다려주세요..</h1>
+	</div>
+</div>
+
+
+</body>
+</html>
