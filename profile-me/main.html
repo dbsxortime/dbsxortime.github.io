@@ -343,7 +343,7 @@
 					<a onclick="goPage('#3p')">ㆍ skills</a><br/><br/>
 					<a onclick="goPage('#4p')">ㆍ projects</a>
 					<br/><br/><br/><br/>
-					<a onclick="window.open('file/ParkYunTaek.pdf')">ㆍ 이력서 보기</a>
+					<a style="font-size:9px;" onclick="window.open('file/ParkYunTaek.pdf')">ㆍ 이력서 보기</a>
 				</div>	
 				<div class="menu_header">
 					<span>FrontBack</span>
@@ -552,7 +552,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="contents contents_nanaum" >파견 개발 : 스마트로PG <br/> 서버 고도화 및 내부관리자 웹 유지/보수</td>
+					<td class="contents contents_nanaum" >파견 개발 : 스마트로PG <br/> 서버 고도화 및 관리자 웹 유지/보수</td>
 				</tr>
 			</table>
 			
@@ -878,6 +878,10 @@
 	.projects_contents_table{
 		font-family: Nanumsquare;
 	}
+	
+	.nonePage{
+		display:none;
+	}
 </style>
 <style>
 	@media ( max-width: 1023px ) {
@@ -972,9 +976,10 @@
 	
 		getPopUp(url, w, h);
 	}
+	
 </script>
 <body>
-	<div class="pages" id="4p">
+	<div class="nonePage pages" id="4p">
 		<div class="project_side_preview_back" onclick="project_prevImg_off();"></div>
 		<img id="project_side_preview_wordle" src="https://github.com/dbsxortime/dbsxortime.github.io/blob/main/profile-me/images/side/wordle.jpg?raw=true" style="width:450px;" class="project_side_preview_img" onclick="project_prevImg_off();">
 		<img id="project_side_preview_2" class="project_side_preview_img" onclick="project_prevImg_off();">
