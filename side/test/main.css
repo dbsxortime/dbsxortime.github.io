@@ -1,0 +1,162 @@
+*{
+    background-color: rgb(255, 250, 244);
+    margin:0 auto;
+    padding:0;
+    font-family: 'Poor Story', cursive;
+}
+
+
+.pop{
+    width:100vw;
+    height:100vh;
+    z-index: 10;
+	display:none;
+}
+
+.pop_back{
+    width:100%;
+    height:100%;
+    background-color:#33333330;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.main_bar{
+    width:100%;
+    position:absolute;
+    top:6rem;
+    left:0;
+}
+
+.main_bar_section{
+    width:100%;
+    height:100%;
+    text-align: center;
+}
+
+.main_bar_pointer{
+    width:1rem;
+    height:1rem;
+    background-color:black;
+    display: inline-block;
+    position:relative;
+    border :2px solid black;
+    border-radius: 1rem;
+}
+
+.main_bar_bar{
+    width:9%;
+    height:1rem;
+    border :2px solid black;
+    background-color:rgb(255, 250, 244);
+    display: inline-block;
+    position:relative;
+    top:30%;
+    border-radius: 0.5rem;
+}
+
+.content{
+    position:absolute;
+    top:30%;
+    width:100%;
+    height:30rem;
+    text-align: center;
+}
+
+.content_img{
+    width:3rem;
+    height:3rem;
+    display: none;
+}
+
+.content_text{
+    padding:2rem;
+    font-size: 1.4rem;
+    line-height:1.9rem;
+    display: none;
+}
+
+.select{
+    position:absolute;
+    bottom:0%;
+    width:100%;
+    height:13rem;
+    text-align: center;
+}
+
+.select_btn_input{
+    /* padding:0.1rem; */
+    border:1px solid black;
+    border-radius: 1rem;
+    color:black;
+    font-size: 1.4rem;
+    width:15rem;
+    transition-duration: 0.2s;
+}
+
+.select_btn_input:hover{
+    cursor: pointer;
+    background-color:black;
+    color:#fff;
+}
+
+.result_box{
+    position:absolute;
+    top:45%;
+    left:50%;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.result_btn{
+    padding:1rem;
+    border:1px solid black;
+    border-radius: 1rem;
+    color:black;
+    font-size: 2rem;
+    font-weight: bold;
+    width:20rem;
+    transition-duration: 0.2s;
+}
+
+
+.result_btn:hover{
+    cursor: pointer;
+    background-color:black;
+    color:#fff;
+}
+
+.result_content{
+    width:100%;
+    height:70%;
+    /* background-color:red; */
+    position:absolute;
+    top:25%;
+    display:none;
+}
+
+.result_content_box{
+    margin:auto;
+    width:40%;
+    width:40%;
+}
+
+.result_content_1{
+    background-color:blue;
+}
+
+.result_content_2{
+    background-color:salmon;
+}
+@media screen and (max-width: 768px) {
+    *{
+        font-size: 7pt;
+    }
+
+    .content{
+        top:30%;
+    }
+}

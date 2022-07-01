@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&family=Stylish&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="page">
+        <div class="pop">
+            <div class="pop_back"></div>
+            <div class="pop_box">
+                <div class="pop_content">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="main_bar">
+            <div class="main_bar_section">
+                <div class="main_bar_pointer"></div>
+                <div id="0" class="main_bar_bar"></div>
+                <div id="1" class="main_bar_bar"></div>
+                <div id="2" class="main_bar_bar"></div>
+                <div id="3" class="main_bar_bar"></div>
+                <div id="4" class="main_bar_bar"></div>
+                <div class="main_bar_pointer"></div>
+            </div>
+        </div>
+        <div class="content">
+            <img class="content_img" id="img_0" alt="no" src="https://cdn-icons-png.flaticon.com/512/7205/7205089.png"/>
+            <img class="content_img" id="img_1" alt="no" src="https://cdn-icons-png.flaticon.com/512/166/166088.png"/>
+            <img class="content_img" id="img_2" alt="no" src="https://cdn-icons-png.flaticon.com/512/992/992588.png"/>
+            <img class="content_img" id="img_3" alt="no" src="https://cdn-icons-png.flaticon.com/512/1370/1370239.png"/>
+            <img class="content_img" id="img_4" alt="no" src="https://cdn-icons-png.flaticon.com/512/159/159607.png"/>
+
+            <p class="content_text" id="text_0">
+                "취미" <br/><br/>
+                나는 어렸을 때 예술적인 것들에 관심이 많았고, <br/>
+                특히 음악에 관심이 많아 <br/>
+                악기연주와 다양한 장르의 음악 듣는 것을 좋아했다.
+            </p>
+            <p class="content_text" id="text_1">
+                "특기" <br/><br/>
+                나는 한 가지에 몰두해 집중하는 것에<br/>
+                큰 어려움이 없고 <br/>
+                설정해둔 목표까지 앉은 자리에서 해결해낼 수 있다.
+            </p>
+            <p class="content_text" id="text_2">
+                "관리" <br/><br/>
+                나는 완벽하지 못 한 사람이라는 것을 인정하고 <br/>
+                더 나아지려 항상 노력하며 <br/>
+                구체적으로 어떤 노력들을 하고 있는 지 설명할 수 있다.
+            </p>
+            <p class="content_text" id="text_3">
+                "목표" <br/><br/>
+                나는 [잘 하는 것], [지금은 잘 하지 못하는 것],<br/>
+                [하고싶은 것], [지금 필요한 것]  들을 구분해내고 <br/>
+                단기 계획부터 장기 계획까지 나에게 맞는 목표를 설정할 수 있다.
+            </p>
+            <p class="content_text" id="text_4">
+                "실행" <br/><br/>
+                나는 하고싶은 것이 새롭게 생겼을 때  <br/>
+                기존 계획을 확인하고, 계획을 세우고 <br/>
+                바로 시작할 수 있는 능력이 있다.
+            </p>
+        </div>
+        <div class="select" id="btn_0">
+            <input type="button" onclick="clicked();" id="selected_0" class="select_btn_input" value="지금도 좋아한다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="좋아했다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="아니다"/>
+        </div>
+        <div class="select" id="btn_1">
+            <input type="button" onclick="clicked();" id="selected_1" class="select_btn_input" value="해낼 수 있다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="어느정도 가능하다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="해내지 못한다"/>
+        </div>
+        <div class="select" id="btn_2">
+            <input type="button" onclick="clicked();" id="selected_2" class="select_btn_input" value="설명할 수 있다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="난 이미 완벽하다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="설명하기 어렵다"/>
+        </div>
+        <div class="select" id="btn_3">
+            <input type="button" onclick="clicked();" id="selected_3" class="select_btn_input" value="설정할 수 있다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="어느정도 가능하다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="하지 못한다"/>
+        </div>
+        <div class="select" id="btn_4">
+            <input type="button" onclick="clicked();" id="selected_4" class="select_btn_input" value="시작할 수 있다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="계획해도 망설인다"/>
+            <br><br>
+            <input type="button" onclick="clicked();" class="select_btn_input" value="하던 방식대로가 좋다"/>
+        </div>
+    </div>
+    <div class="result_box" id="result_box">
+        <input type="button" onclick="getResult();" class="result_btn" value="결과 보러가기"/>
+    </div>
+    <div class="result_content" id="result_content">
+            <div class="result_content_box result_content_1">
+                <span>결과 화면입니다</span>
+            </div>
+        <div class="result_content_box result_content_2">
+            <span>쨔쟌 사실 박윤택에 대한 설명이었습니다</span>
+        </div>
+    </div>
+</body>
+</html>
