@@ -81,46 +81,7 @@
 		text-decoration:none;
 		color:var(--my-green);
 	}
-	.btn_left_img{
-		width:40px;
-		height:40px;
-		position:fixed;
-		left:3%;
-		top:var(--btn-top)%;
-	}
-	.btn_left{
-		width:40px;
-		height:40px;
-		border-radius:20px;
-		position:fixed;
-		left:3.5%;
-		top:var(--btn-top);
-		background-color:#fff;
-	}
-	.btn_right_img{
-		width:40px;
-		height:40px;
-		position:fixed;
-		right:2.5%;
-		top:var(--btn-top);
-		transform: scaleX(-1);
-	}
-	.btn_right{
-		width:40px;
-		height:40px;
-		border-radius:20px;
-		position:fixed;
-		right:3%;
-		top:var(--btn-top);
-		background-color:#fff;
-		text-align:center;
-		line-height:35px;
-	}
 	.card{
-		position:fixed;
-		left:50%;
-		top:30%;
-		transform: translate(-50%, 0);
 		width:450px;
 		height:250px;
 		background-color:#f6f6f6;
@@ -155,6 +116,20 @@
 		position:relative;
 		top:1px;
 	}
+	
+	.ENG{
+		position:relative;
+		left:50%;
+		top:30%;
+		transform: translate(-50%, 0);
+	}
+	
+	.KOR{
+		position:relative;
+		left:50%;
+		top:60%;
+		transform: translate(-50%, 0);
+	}
 </style>
 <style>
 @media ( max-width: 12450px ) {
@@ -178,22 +153,17 @@
 		transform: translate(-50%, 50%);
 	}
 }
-	@media ( max-width: 480px ) {
+@media ( max-width: 480px ) {
 	*{
 		transform: scale(0.9);
 		top:30%;
-	}
-		.card{
-		position:fixed;
-		top:30%;
-		transform: translate(-50%, 50%);
 	}
 }
 </style>
 <script>
 </script>
 <body>
-	<div class="card">
+	<div class="card ENG">
 		<div class="card_text_div">
 			<span class="card_name font_Roboto_bold">Park Yun Taek</span><br/>
 			<span class="card_text font_Roboto">Full Stack Developer</span>
@@ -211,5 +181,6 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>

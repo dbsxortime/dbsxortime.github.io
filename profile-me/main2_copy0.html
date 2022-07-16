@@ -432,9 +432,10 @@
 <!-- body css -->
 <style type="text/css">
 	.aboutme_title{
-		text-align:center;
+		/* text-align:center; */
 		position:relative;  
-		top:9rem;
+		top:0rem;
+		left:20rem;
 		/* transform:translate(0,-12%); */
 		margin : auto;
 	}
@@ -442,21 +443,36 @@
 	.aboutme_row1{
 		font-size:3rem;
 		margin:0;
-		margin-top:3rem;
+		/* margin-top:3rem; */
 		height:3.3rem;
 	}
 
 	.aboutme_row2{
-		font-size:3.5rem;
+		font-size:5.5rem;
 		font-weight: 500;
 		margin:0;
 	}
+	
+	.introduce-hr{
+		width:40rem;
+	}
+	
+	.aboutme_row3{
+		font-size:3rem;
+		margin:0;
+		margin-top:7rem;
+	}
 
 	.aboutme_contents{
-		text-align:center;
+		text-align:left;
 		position:relative;  
-		top:15rem;
-		margin : auto;                                                                                                                                
+		top:8rem;
+		left:20rem;
+		margin : auto;
+	}
+	
+	.aboutme_contents_text{
+		font-size:2rem;
 	}
 
 	.aboutme_goott{
@@ -473,7 +489,7 @@
 		float:right;
 	}
 	.contents_nanaum{
-		font-size: 2rem;
+		/* font-size: 2rem; */
 		font-family: Nanumsquare;
 	}
 	.aboutme_goott_clean{
@@ -525,61 +541,44 @@
 	.introdce_blank{
 		font-size:2rem;
 	}
+	
+	.aboutme_left{
+		float:left;
+	}
+	.aboutme_right{
+		float:right;
+	}
 </style>
+
 <body>
 	<div class="pages" id="2p">
 		<div class="aboutme_title page2_child">
 			<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
+			<hr class="introduce-hr"/>
 			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
+			<p class="aboutme_row3 font_Montserrat">EXPERIENCE</p>
 		</div>
-		<div class="aboutme_contents">
-			<p class="contents_nanaum">
-				안녕하세요 웹개발자 박윤택입니다.<br/> 
-				항상 스스로 디버깅하며 생길 수 있는 문제를 먼저 찾아내어<br/>
-				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
+		<div class="aboutme_contents aboutme_left">
+			<p class="aboutme_contents_text contents_nanaum">
+				안녕하세요 신입 개발자 박윤택 입니다.<br/>
+				도전하는 것을 좋아하고 새로운 것을 접목시키는 것을 좋아합니다.<br/>
+				완성된 레이아웃에 항상 새로운 한 가지를 추가하려 노력합니다.<br/>
+				사용자가 최소한의 동작으로 사용할 수 있게 항상 고민합니다.<br/>
+				<br/>
+				(only mouse, one click을 지향합니다)
 			</p>
-			<table class="aboutme_contents_table1" onclick="displayProject(1)">
-				<tr>
-					<td>
-						<span class="category contents_nanaum">
-							[경력]
-						</span>
-						<span class="title contents_nanaum">
-							이에스티 소프트
-						</span>
-						<span class="date contents_nanaum">
-							2021.10~재직중
-						</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="contents contents_nanaum" >파견 개발 : 스마트로PG <br/> 서버 고도화 및 관리자 웹 유지/보수</td>
-				</tr>
-			</table>
-			
-			<table class="aboutme_contents_table1" onclick="displayProject(4)">
-				<tr>
-					<td>
-						<span class="category contents_nanaum">
-							[기타]
-						</span>
-						<span class="title contents_nanaum">
-							미니 프로젝트
-						</span>
-						<span class="date contents_nanaum">
-							2021.10 ~ 성장중
-						</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="contents contents_nanaum" >연습을 위한 미니프로젝트 진행 중</td>
-				</tr>
-			</table>
-			<div class="introdce_blank">
-				<br/>ㆍ
-				<br/>ㆍ
-				<br/>ㆍ
-			</div>
+		</div>
+		<div class="aboutme_contents aboutme_right">
+			<p class="aboutme_contents_text contents_nanaum">
+				안녕하세요 신입 개발자 박윤택 입니다.<br/>
+				도전하는 것을 좋아하고 새로운 것을 접목시키는 것을 좋아합니다.<br/>
+				완성된 레이아웃에 항상 새로운 한 가지를 추가하려 노력합니다.<br/>
+				사용자가 최소한의 동작으로 사용할 수 있게 항상 고민합니다.<br/>
+				<br/>
+				(only mouse, one click을 지향합니다)
+			</p>
+		</div>
+		<div style="clear:both;">
 		</div>
 	</div>
 </body>
@@ -980,7 +979,7 @@
 	
 </script>
 <body>
-	<div class="pages" id="4p">
+	<div class="nonePage pages" id="4p">
 		<div class="project_side_preview_back" onclick="project_prevImg_off();"></div>
 		<img id="project_side_preview_wordle" src="https://github.com/dbsxortime/dbsxortime.github.io/blob/main/profile-me/images/side/wordle.jpg?raw=true" style="width:450px;" class="project_side_preview_img" onclick="project_prevImg_off();">
 		<img id="project_side_preview_2" class="project_side_preview_img" onclick="project_prevImg_off();">

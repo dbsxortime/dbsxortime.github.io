@@ -296,6 +296,10 @@
 		transform: scale(1.05);
 		/* color: var(--my-green); */
 	}
+	.btn_next{
+		width:30px;
+		height:30px;
+	}
 </style>
 <style>
 @media ( max-width: 1023px ) {
@@ -432,31 +436,42 @@
 <!-- body css -->
 <style type="text/css">
 	.aboutme_title{
-		text-align:center;
-		position:relative;  
-		top:9rem;
-		/* transform:translate(0,-12%); */
 		margin : auto;
 	}
 
 	.aboutme_row1{
 		font-size:3rem;
 		margin:0;
-		margin-top:3rem;
+		/* margin-top:3rem; */
 		height:3.3rem;
 	}
 
 	.aboutme_row2{
-		font-size:3.5rem;
+		font-size:5.5rem;
 		font-weight: 500;
 		margin:0;
 	}
+	
+	.introduce-hr{
+		width:40rem;
+	}
+	
+	.aboutme_row3{
+		font-size:3rem;
+		margin:0;
+		margin-top:7rem;
+	}
 
 	.aboutme_contents{
-		text-align:center;
+		text-align:left;
 		position:relative;  
-		top:15rem;
-		margin : auto;                                                                                                                                
+		top:8rem;
+		margin : auto;
+	}
+	
+	.aboutme_contents_text{
+		font-size:2.1rem;
+		line-height:3.3rem;
 	}
 
 	.aboutme_goott{
@@ -473,7 +488,7 @@
 		float:right;
 	}
 	.contents_nanaum{
-		font-size: 2rem;
+		/* font-size: 2rem; */
 		font-family: Nanumsquare;
 	}
 	.aboutme_goott_clean{
@@ -525,62 +540,292 @@
 	.introdce_blank{
 		font-size:2rem;
 	}
+	
+	.aboutme_table{
+		height:100vh;
+	}
+	
+	.aboutme_table tr td{
+		width:50vw;
+	}
+	
+	.aboutme_left{
+		position:relative;  
+		top:20%;
+		left:20rem;
+		width:40vw;
+	}
+	.aboutme_right{
+		position:absolute;
+		top:20vh;
+		width:40vw;
+	}
+	
+	.aboutme_contents_exp{
+		font-size:3rem;
+		margin:50px 0 0 0;
+	}
+	
+	.aboutme_exp_box{
+		width:500px;
+		height:110px;
+		/* border: 1px solid black; */
+		background-color:#fff;
+        box-shadow: 4px 4px 10px 4px #00000030;
+		margin-top:1.3rem;
+	}
+	.aboutme_exp_box2{
+		width:500px;
+		height:85px;
+		/* border: 1px solid black; */
+		background-color:#fff;
+        box-shadow: 4px 4px 10px 4px #00000030;
+		margin-top:1.3rem;
+	}
+	
+	.aboutme_contents_exp_content{
+		font-size:1.8rem;
+		padding:1.9rem;
+		line-height:2.5rem;
+	}
+	
+	.content_right_table{
+		position:relative;
+	}
+	
+	.aboutme_content_area{
+		position:relative;
+		width:600px;
+		height:130px;
+	}
+	
+	.aboutme_content_box{
+		width:500px;
+		height:100px;
+		box-shadow:4px 4px 4px 4px #aaa;
+		margin-top:30px;
+		float:left;
+		display:table;
+		transition: all ease 0.1s 0s;
+	}
+	
+	.aboutme_content_box_arrow{
+		position:relative;
+		top:60px;
+		left:5rem;
+		opacity:0.3;
+		transition: all ease 0.1s 0s;
+	}
+	
+	.aboutme_contents_box_text{
+		font-size:1.6rem;
+		line-height:2.4rem;
+		display:table-cell;
+		vertical-align:middle;
+		padding-left:25px;
+		
+	}
+	
+	.aboutme_content_area:hover{
+		cursor:pointer;
+	}
+	
+	.aboutme_content_area:hover .aboutme_content_box{
+		transform:scale(1.025);
+	}
+	
+	.aboutme_content_area:hover .aboutme_content_box_arrow{
+		opacity:1;
+	}
+	
+	.aboutme_content_detail{
+		display:none;
+	}
 </style>
+<script>
+	function getContent(id){
+		$('.aboutme_row1').text('WORK EXPERIENCE');
+		$('.content_display').css('display','none');
+		$('.content_right_table').css('left','-41vw');
+		$('.aboutme_right').css('top','32vh');
+		
+		$('#'+id).css('display','block');
+		$('.aboutme_content_detail').css('display','block');
+	}
+</script>
 <body>
 	<div class="pages" id="2p">
-		<div class="aboutme_title page2_child">
-			<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
-			<p class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
-		</div>
-		<div class="aboutme_contents">
-			<p class="contents_nanaum">
-				안녕하세요 웹개발자 박윤택입니다.<br/> 
-				항상 스스로 디버깅하며 생길 수 있는 문제를 먼저 찾아내어<br/>
-				컴파일 전에 먼저 버그 찾는 개발자가 되겠습니다.
-			</p>
-			<table class="aboutme_contents_table1" onclick="displayProject(1)">
-				<tr>
-					<td>
-						<span class="category contents_nanaum">
-							[경력]
-						</span>
-						<span class="title contents_nanaum">
-							이에스티 소프트
-						</span>
-						<span class="date contents_nanaum">
-							2021.10~재직중
-						</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="contents contents_nanaum" >파견 개발 : 스마트로PG <br/> 서버 고도화 및 관리자 웹 유지/보수</td>
-				</tr>
-			</table>
-			
-			<table class="aboutme_contents_table1" onclick="displayProject(4)">
-				<tr>
-					<td>
-						<span class="category contents_nanaum">
-							[기타]
-						</span>
-						<span class="title contents_nanaum">
-							미니 프로젝트
-						</span>
-						<span class="date contents_nanaum">
-							2021.10 ~ 성장중
-						</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="contents contents_nanaum" >연습을 위한 미니프로젝트 진행 중</td>
-				</tr>
-			</table>
-			<div class="introdce_blank">
-				<br/>ㆍ
-				<br/>ㆍ
-				<br/>ㆍ
+		<table class="aboutme_table">
+			<tr>
+				<td valign="top">
+					<div class="aboutme_left">
+						<div class="aboutme_title page2_child">
+							<p class="aboutme_row2 font_LEMONMILK">Introduce</p>
+							<hr class="introduce-hr"/>
+							<p id="aboutme_row1" class="aboutme_row1 font_Montserrat">Hi I'm new developer</p>
+							<p id="aboutme_row3" class="aboutme_row3 content_display font_Montserrat">EXPERIENCE</p>
+						</div>
+						<div id="aboutme_contents" class="aboutme_contents content_display">
+							<p class="aboutme_contents_text contents_nanaum">
+								안녕하세요 신입 개발자 박윤택 입니다.<br/>
+								도전하는 것을 좋아하고 새로운 것을 접목시키는 것을 좋아합니다.<br/>
+								완성된 레이아웃에 항상 새로운 한 가지를 추가하려 노력합니다.<br/>
+								사용자가 최소한의 동작으로 사용할 수 있게 항상 고민합니다.<br/>
+								<br/>
+								(only mouse, one click을 지향합니다)<br/><br/><br/><br/><br/><br/><br/><br/>
+							</p>
+						</div>
+					</div>
+				</td>
+				<td valign="top" class="content_right_table">
+					<div class="aboutme_right">
+						<table>
+							<tr>
+								<td>
+									<table>
+										<tr>
+											<td colspan="2">
+												<p class="aboutme_contents_exp font_Montserrat content_display">
+													WORK EXPERIENCE
+												</p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div id="aboutme_content_1" class="aboutme_content_area content_display" onclick="getContent(this.id);">
+													<div class="aboutme_content_box">
+														<p class="aboutme_contents_box_text contents_nanaum">
+															[경력] 이에스티 소프트 2021.10 ~ 재직중<br/>
+															파견개발 : 스마트로PG<br/>
+															서버 고도화 및 관리자 웹 유지/보수
+														</p>
+													</div>
+													<div class="aboutme_content_box_arrow">
+														<span style="font-size:30px;">▶</span>
+													</div>	
+												</div>
+											</td>
+										</tr>
+										
+										<tr class="aboutme_content_detail">
+											<td>
+												<h3>
+													test!!!!!
+												</h3>
+											</td>
+										</tr>
+										
+										<tr>
+											<td colspan="2">
+												<p class="aboutme_contents_exp font_Montserrat content_display">
+													PROJECT EXPERIENCE
+												</p>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="aboutme_content_area content_display">
+													<div class="aboutme_content_box">
+														<p class="aboutme_contents_box_text contents_nanaum">
+															정적 프로필 사이트 구축 2021.10 ~ <br/>
+															GITHUB PAGES 서비스를 활용한 정적 프로필사이트 구현<br/>
+														</p>
+													</div>
+													<div class="aboutme_content_box_arrow">
+														<span style="font-size:30px;">▶</span>
+													</div>
+												</div>
+											</td>
+											<td>
+												
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="aboutme_content_area content_display">
+													<div class="aboutme_content_box">
+														<p class="aboutme_contents_box_text contents_nanaum">
+															일정관리 앱 구현 2022.07 ~ <br/>
+															웹으로 접속해 일정 관리할 수 있는 웹페이지 서비스 구현<br/>
+														</p>
+													</div>
+													<div class="aboutme_content_box_arrow">
+														<span style="font-size:30px;">▶</span>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="aboutme_content_area content_display">
+													<div class="aboutme_content_box">
+														<p class="aboutme_contents_box_text contents_nanaum">
+															동적 프로필사이트 서버 구축 2022.07 ~ <br/>
+															정적으로 구현된 프로필 사이트를 동적사이트로 구현 (홈서버 활용)<br/>
+														</p>
+													</div>
+													<div class="aboutme_content_box_arrow">
+														<span style="font-size:30px;">▶</span>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		
+		
+		
+		
+		
+		<!--
+		<div class="aboutme_left">
+			<div class="aboutme_contents ">
+				<p class="aboutme_contents_exp font_Montserrat">
+					WORK EXPERIENCE
+				</p>
+				<div class="aboutme_exp_box">
+					<p class="aboutme_contents_exp_content contents_nanaum">
+						[경력] 이에스티 소프트 2021.10 ~ 재직 중<br/>
+						파견개발 : 스마트로PG<br/>
+						서버 고도화 및 관리자 웹 유지/보수
+					</p>
+				</div>
+				<img class="btn_next" src="images/icon/next.png"/>
+				<br/><br/><br/><br/><br/>
+				<p class="aboutme_contents_exp font_Montserrat">
+					PROJECT EXPERIENCE
+				</p>
+				<div class="aboutme_exp_box2">
+					<p class="aboutme_contents_exp_content contents_nanaum">
+						정적 프로필사이트 구축 (2021. 10 ~  )<br/>
+						GITHUB PAGES서비스를 활용한 정적 프로필사이트 구현
+					</p>
+				</div>
+				<br/>
+				<div class="aboutme_exp_box2">
+					<p class="aboutme_contents_exp_content contents_nanaum">
+						일정관리 앱 구현 (2022. 06 ~  )<br/>
+						웹으로 접속해 일정관리할 수있는 웹페이지 구현  
+					</p>
+				</div>
+				<br/>
+				<div class="aboutme_exp_box2">
+					<p class="aboutme_contents_exp_content contents_nanaum">
+						동적 프로필사이트 구축 (2022. 06 ~  )<br/>
+						정적으로 구현된 프로필 사이트를 동적사이트로 구현 
+					</p>
+				</div>
 			</div>
 		</div>
+-->
+		<div style="clear:both;">
 	</div>
 </body>
 
@@ -980,7 +1225,7 @@
 	
 </script>
 <body>
-	<div class="pages" id="4p">
+	<div class="nonePage pages" id="4p">
 		<div class="project_side_preview_back" onclick="project_prevImg_off();"></div>
 		<img id="project_side_preview_wordle" src="https://github.com/dbsxortime/dbsxortime.github.io/blob/main/profile-me/images/side/wordle.jpg?raw=true" style="width:450px;" class="project_side_preview_img" onclick="project_prevImg_off();">
 		<img id="project_side_preview_2" class="project_side_preview_img" onclick="project_prevImg_off();">
