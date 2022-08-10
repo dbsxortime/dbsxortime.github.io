@@ -1,0 +1,41 @@
+########## 민원관리 #########
+# 메일발송 시간 : 8시 50분 (9시 이전)
+# column name 확인		V
+
+>처리상태 : status			V
+	1 현재진행중
+	2 연락두절
+	3 정상종결
+	4 가맹점취소
+	5 강제취소
+	6 법적분쟁
+
+>회신기한 : repy_limit		V
+
+#조회조건 쿼리작성		V
+
+#메일 html작성			V
+
+#자바 작성			V
+
+#이메일 테스트			V
+
+##########1228
+#데이터 정리			V
+#레이아웃 정리			V
+
+##########1229
+#쿼리수정(TID 당 최신 민원 1개만)	V
+#레이아웃 정리			V
+#배치 테스트			V
+
+#mail1 template title 수정		V
+#mail2 template table width 수정	V
+#mail3 template font size : 9		V
+#mail4 template set bold		V
+------------------------------------------
+#mail1 금액 오른쪽 정렬		V
+#mail2 취소날짜포맷 변경		V
+#추가  폭 조절			V
+#crontab (0830,평일,대리님만)	V
+
