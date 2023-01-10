@@ -10614,9 +10614,17 @@ textarea {
 	text-align:center;
 }
 
+.ceo-sign{
+	width:200px;
+}
+
 @media (min-width: 1200px) {
 	.ceo-sign-area{
 		text-align:right;
+	}
+	
+	.ceo-sign{
+		width:300px;
 	}
 }
 
