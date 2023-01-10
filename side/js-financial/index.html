@@ -36,10 +36,9 @@
 		</div>
 		<div class="site-mobile-menu-body"></div>
 	</div>
-
-	<nav class="site-nav mt-3">
+	
+	<nav class="site-nav" id="nav">
 		<div class="container">
-
 			<div class="site-navigation">
 				<div class="row">
 					<div class="col-6 col-lg-3">
@@ -52,11 +51,11 @@
 					</div>
 					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
 						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li class="active"><a href="#ceo">CEO인사말</a></li>
-							<li class="active"><a href="#business">사업영역</a></li>
-							<li class="active"><a href="#recrute">인재 채용</a></li>
-							<li class="active"><a href="#partner">협력사</a></li>
+							<li class="active"><a href="#">Home</a></li>
+							<li><a href="#ceo">CEO인사말</a></li>
+							<li><a href="#business">사업영역</a></li>
+							<li><a href="#recrute">인재 채용</a></li>
+							<li><a href="#partner">협력사</a></li>
 						</ul>
 					</div>
 					<div class="col-6 col-lg-3 text-lg-end">
@@ -70,10 +69,21 @@
 					</div>
 				</div>
 			</div>
-			
 		</div>
 	</nav>
+	<script>
+	window.addEventListener('scroll', function() {
+		var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+		if(scrollPosition >= 500) {
+			var nav = document.getElementById('nav')
+			nav.classList.add('inpage')
+		}else{
+			var nav = document.getElementById('nav')
+			nav.classList.remove('inpage')
+		}
+	});
 
+	</script>
 	
 
 	<div class="hero overlay">
@@ -179,7 +189,7 @@
 						<div class="col-lg-4 order-lg-1">
 							<div class="mt-5">
 								<div class="row row-center">
-									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0 " data-aos="fade-up"  data-aos-delay="200">
+									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0 mg-lr-4" data-aos="fade-up"  data-aos-delay="200">
 										<div class="service-1 round-contents">
 											<span class="icon">
 												<img src="images/img/icon/hand.png" alt="Image" class="img-fluid">
@@ -189,7 +199,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
+									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0 mg-lr-4" data-aos="fade-up"  data-aos-delay="200">
 										<div class="service-1 round-contents">
 											<span class="icon">
 												<img src="images/img/icon/budget.png" alt="Image" class="img-fluid">
@@ -199,7 +209,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
+									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0 mg-lr-4" data-aos="fade-up"  data-aos-delay="200">
 										<div class="service-1 round-contents">
 											<span class="icon">
 												<img src="images/img/icon/gavel.png" alt="Image" class="img-fluid">
@@ -209,7 +219,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
+									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0 mg-lr-4" data-aos="fade-up"  data-aos-delay="200">
 										<div class="service-1 round-contents">
 											<span class="icon">
 												<img src="images/img/icon/accounts.png" alt="Image" class="img-fluid">
@@ -227,7 +237,7 @@
 								</p>
 								
 								<div style="text-align:center" class="mt-6" data-aos="fade-up" data-aos-delay="200">
-									<p class="my-3" data-aos="fade-up"><a href="test.html" class="btn btn-secondary">사업영역 상세보기</a></p>
+									<p class="my-3"><a href="test.html" class="btn btn-secondary">사업영역 상세보기</a></p>
 								</div>
 							</div>
 						</div>
@@ -285,7 +295,7 @@
 
 						<div style="text-align:center" class="mt-6 mb-5" data-aos="fade-up">
 							<!-- <a href="#" class="btn btn-secondary">지원하기</a> -->
-							<p class="my-3"><a href="test.html" class="btn btn-secondary">지원하기</a></p>
+							<p class="my-3"><a href="http://pf.kakao.com/_ewArxj/chat" class="btn btn-secondary">지원하기</a></p>
 						</div>
 
 					</div>
@@ -371,6 +381,9 @@
 						<h3>Contact</h3>
 						<address>강남구 테헤란로 7길 11</address>
 						<a href="mailto:jsincorporated07@gmail.com">jsincorporated07@gmail.com</a>
+						<a href="https://www.instagram.com/js_financial__">
+							instagram
+						</a>
 					</div> <!-- /.widget -->
 				</div> <!-- /.col-lg-3 -->
 
