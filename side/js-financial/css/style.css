@@ -10597,7 +10597,7 @@ textarea {
 }
 
 @media (min-width: 1200px) {
-	.ceo-sign{
+	.ceo-sign-area{
 		text-align:right;
 	}
 }
