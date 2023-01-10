@@ -123,16 +123,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   line-height: 1.2; }
 
 h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw); }
+  font-size: calc(1.2rem + 1.5vw); }
   @media (min-width: 1200px) {
     h1, .h1 {
-      font-size: 2.5rem; } }
+      font-size: 2.2rem; } }
 
 h2, .h2 {
-  font-size: calc(1.325rem + 0.9vw); }
+  font-size: calc(1.2rem + 0.9vw); }
   @media (min-width: 1200px) {
     h2, .h2 {
-      font-size: 2rem; } }
+      font-size: 1.8rem; } }
 
 h3, .h3 {
   font-size: calc(1.3rem + 0.6vw); }
@@ -9817,11 +9817,20 @@ textarea {
     color: #fff;
     font-weight: 700; }
     @media (max-width: 991.98px) {
-      .hero .heading {
-        font-size: 35px; } }
+		.hero p{
+			font-size: 14px;
+		}
+		.hero .heading {
+			font-size: 30px; } 
+	}
     @media (max-width: 767.98px) {
-      .hero .heading {
-        font-size: 27px; } }
+		.hero p{
+			font-size: 12px;
+		}
+      	.hero .heading {
+        	font-size: 22px; 
+		} 
+	}
   .hero .play-button {
     font-size: 20px;
     color: #fff;
@@ -9902,7 +9911,7 @@ textarea {
     font-weight: 700; }
     @media (max-width: 991.98px) {
       .section .heading {
-        font-size: 30px; } }
+        font-size: 26px; } }
 
 .destination {
   position: relative; }
