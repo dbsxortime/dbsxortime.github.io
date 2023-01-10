@@ -53,13 +53,10 @@
 					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
 						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
 							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="#ceo">CEO인사말</a></li>
-							<li><a href="#business">사업영역</a></li>
-							<li><a href="#recrute">인재 채용</a></li>
-							<li><a href="#partner">협력사</a></li>
-							
-
-
+							<li class="active"><a href="#ceo">CEO인사말</a></li>
+							<li class="active"><a href="#business">사업영역</a></li>
+							<li class="active"><a href="#recrute">인재 채용</a></li>
+							<li class="active"><a href="#partner">협력사</a></li>
 						</ul>
 					</div>
 					<div class="col-6 col-lg-3 text-lg-end">
@@ -82,24 +79,40 @@
 	<div class="hero overlay">
 
 		<div class="img-bg rellax">
-			<img src="./images/img/main1.jpg" alt="Image" class="img-fluid">
-		</div>
+			<img id="main1" src="./images/img/main1.jpg" alt="Image" class="img-main img-active">
+			<img id="main2" src="./images/img/main2.jpg" alt="Image" class="img-main ">
+			<script>
+				const main1 = document.getElementById('main1');
+				const main2 = document.getElementById('main2');
+				setInterval(() => {
+					if(main1.classList.contains('img-active')){
+						main1.classList.remove('img-active')
+					}else{
+						main1.classList.add('img-active')
+					}
 
+					if(main2.classList.contains('img-active')){
+						main2.classList.remove('img-active')
+					}else{
+						main2.classList.add('img-active')
+					}
+				}, 3500);
+			</script>
+		</div>
 		<div class="container" style="width:100%">
 			<div class="row align-items-center justify-content-center">
 				<div class="col-lg-7">
-					<img src="./images/img/logo-g.png" alt='logo'
+					<!-- <img src="./images/img/logo-g.png" alt='logo'
 						style="width:50%; display: block; position:relative; margin:auto;"
 						class="mb-5"
 						data-aos="fade-in"
-					/>
-					<h1 class="heading text-center" data-aos="fade-in" data-aos-delay="200">고객의 가치를 <br/> 
+					/> -->
+					<h1 class="heading text-center mt-4 title-shadow" data-aos="fade-in" data-aos-delay="200">
+						고객의 가치를 <br/> 
 						최우선으로 생각합니다.
 					</h1>
-					<p class="mb-5 text-center" data-aos="fade-in" data-aos-delay="200">We consider our customer's value first</p>
+					<p class="mb-5 text-center title-shadow" data-aos="fade-in" data-aos-delay="200">We consider our customer's value first</p>
 				</div>
-
-				
 			</div>
 		</div>
 
@@ -169,7 +182,7 @@
 									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0 " data-aos="fade-up"  data-aos-delay="200">
 										<div class="service-1 round-contents">
 											<span class="icon">
-												<img src="images/svg/01.svg" alt="Image" class="img-fluid">
+												<img src="images/img/icon/hand.png" alt="Image" class="img-fluid">
 											</span>
 											<div style="word-break: keep-all; text-align: center;">
 												<h3>정책자금</h3>
@@ -179,7 +192,7 @@
 									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
 										<div class="service-1 round-contents">
 											<span class="icon">
-												<img src="images/svg/02.svg" alt="Image" class="img-fluid">
+												<img src="images/img/icon/budget.png" alt="Image" class="img-fluid">
 											</span>
 											<div style="word-break: keep-all; text-align: center;">
 												<h3>보험</h3>
@@ -189,7 +202,7 @@
 									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
 										<div class="service-1 round-contents">
 											<span class="icon">
-												<img src="images/svg/03.svg" alt="Image" class="img-fluid">
+												<img src="images/img/icon/gavel.png" alt="Image" class="img-fluid">
 											</span>
 											<div style="word-break: keep-all; text-align: center;">
 												<h3>법무</h3>
@@ -199,7 +212,7 @@
 									<div class="col-2 col-md-2 col-lg-2 mb-4 mb-lg-0" data-aos="fade-up"  data-aos-delay="200">
 										<div class="service-1 round-contents">
 											<span class="icon">
-												<img src="images/svg/03.svg" alt="Image" class="img-fluid">
+												<img src="images/img/icon/accounts.png" alt="Image" class="img-fluid">
 											</span>
 											<div style="word-break: keep-all; text-align: center;">
 												<h3>세무</h3>

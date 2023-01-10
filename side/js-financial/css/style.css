@@ -507,9 +507,21 @@ progress {
   .blockquote-footer::before {
     content: "\2014\00A0"; }
 
+.img-main {
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	filter: brightness(50%);
+	/* 이미지 밝기, active 추가 */
+  max-width: 100%;
+  height: auto; }
+
 .img-fluid {
   max-width: 100%;
   height: auto; }
+
+.img-active{
+	opacity: 1;
+}
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -9246,6 +9258,7 @@ body {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .logo {
   font-family: 'js', sans-serif;
+  word-break: keep-all;
   /* font-family: "Brygada 1918", sans-serif; */
   color: #292a42; }
 
@@ -10301,12 +10314,14 @@ textarea {
       height: 70px;
       border-radius: 50%;
       z-index: -1;
-      background: #46475c;
-      opacity: .2; }
+      background: #fff;
+	  border: 4px solid #46475c;
+      opacity: .5; }
   .service-1.left-0 .icon, .service-2.left-0 .icon {
     left: 0; }
   .service-1 img, .service-2 img {
-    width: 50px; }
+	opacity:0.8;
+    width: 45px; }
   .service-1 h3, .service-1 .h3, .service-2 h3, .service-2 .h3 {
     font-size: 1em;
     font-weight: bold; }
@@ -10603,4 +10618,8 @@ textarea {
 	.ceo-sign-area{
 		text-align:right;
 	}
+}
+
+.title-shadow{
+	text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.75) !important;
 }
