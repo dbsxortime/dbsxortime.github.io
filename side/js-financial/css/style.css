@@ -618,12 +618,19 @@ progress {
 	content: "\2014\00A0";
 }
 
+.title-main{
+	opacity: 0;
+	transition: opacity 0.4s ease-in-out;
+	display:none !important;
+	height:420px;
+}
+
 .img-main {
 	opacity: 0;
 	transition: opacity 0.4s ease-in-out;
 	filter: brightness(50%);
 	/* 이미지 밝기, active 추가 */
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 }
 
@@ -632,8 +639,9 @@ progress {
 	height: auto;
 }
 
-.img-active{
+.main-active{
 	opacity: 1;
+	display:flex !important;
 }
 
 .img-thumbnail {

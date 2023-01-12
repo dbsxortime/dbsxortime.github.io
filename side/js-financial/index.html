@@ -134,28 +134,12 @@
 
 	<div class="hero overlay">
 		<div class="img-bg rellax">
-			<img id="main1" src="./images/img/main1.jpg" alt="Image" class="img-main img-active">
+			<img id="main1" src="./images/img/main1.jpg" alt="Image" class="img-main main-active">
 			<img id="main2" src="./images/img/main2.jpg" alt="Image" class="img-main ">
-			<script>
-				const main1 = document.getElementById('main1');
-				const main2 = document.getElementById('main2');
-				setInterval(() => {
-					if(main1.classList.contains('img-active')){
-						main1.classList.remove('img-active')
-					}else{
-						main1.classList.add('img-active')
-					}
-
-					if(main2.classList.contains('img-active')){
-						main2.classList.remove('img-active')
-					}else{
-						main2.classList.add('img-active')
-					}
-				}, 4000);
-			</script>
+			<img id="main3" src="./images/img/main3.jpg" alt="Image" class="img-main ">
 		</div>
 		<div class="container" style="width:100%">
-			<div class="row align-items-center justify-content-center">
+			<div id="title1" class="row align-items-center justify-content-center title-main main-active">
 				<div class="col-lg-7">
 					<h1 class="heading text-center mt-3 title-shadow" data-aos="fade-in" data-aos-delay="200">
 						고객의 가치를 <br/> 
@@ -164,7 +148,54 @@
 					<p class="mb-5 text-center title-shadow" data-aos="fade-in" data-aos-delay="200">We consider our customer's value first</p>
 				</div>
 			</div>
+			<div id="title2" class="row align-items-center justify-content-center title-main">
+				<div class="col-lg-7">
+					<h1 class="heading text-center mt-3 title-shadow" data-aos="fade-in" data-aos-delay="200">
+						'Excellence In Service'<br/>
+						최고의 고객 중심 서비스로 보답합니다.
+					</h1>
+					<p class="mb-5 text-center title-shadow" data-aos="fade-in" data-aos-delay="200">We always provide the best service</p>
+				</div>
+			</div>
+			<div id="title3" class="row align-items-center justify-content-center title-main">
+				<div class="col-lg-7">
+					<h1 class="heading text-center mt-3 title-shadow" data-aos="fade-in" data-aos-delay="200">
+						체계적인 교육 시스템으로<br/>
+						전문적인 인력을 육성합니다.
+					</h1>
+					<p class="mb-5 text-center title-shadow" data-aos="fade-in" data-aos-delay="200">We nurture you to be the best member</p>
+				</div>
+			</div>
 		</div>
+		<script>
+			const main1 = document.getElementById('main1');
+			const main2 = document.getElementById('main2');
+			const main3 = document.getElementById('main3');
+			const title1 = document.getElementById('title1');
+			const title2 = document.getElementById('title2');
+			const title3 = document.getElementById('title3');
+
+			let no = 2
+			const imgList = document.getElementsByClassName('img-main')
+			const titleList = document.getElementsByClassName('title-main')
+			setInterval(() => {
+				for(data of imgList){
+					data.classList.remove('main-active')
+				}
+				for(data of titleList){
+					data.classList.remove('main-active')
+				}
+				document.getElementById('main'+no).classList.add('main-active')
+				document.getElementById('title'+no).classList.add('main-active')
+				
+				if(no === 3){
+					no = 1
+				}else{
+					no ++
+				}
+
+			}, 4000);
+		</script>
 	</div>
 
 
