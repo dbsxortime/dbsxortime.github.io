@@ -11880,6 +11880,10 @@ margin-bottom: 0;
 	color: rgba(255, 255, 255, 0.7);
 }
 
+.has-children:hover > .collapse{
+	display:block;
+}
+
 .site-nav .site-navigation .site-menu > li > a:hover {
 	color: #fff;
 }
