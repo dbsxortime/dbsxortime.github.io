@@ -620,14 +620,14 @@ progress {
 
 .title-main{
 	opacity: 0;
-	transition: opacity 0.4s ease-in-out;
+	transition: opacity 0.8s ease-in-out;
 	display:none !important;
 	height:420px;
 }
 
 .img-main {
-	/* opacity: 0;
-	transition: opacity 0.8s ease-in-out; */
+	opacity: 0;
+	transition: opacity 0.8s ease-in-out;
 	filter: brightness(50%);
 	/* 이미지 밝기, active 추가 */
 	width: 100%;
@@ -13456,4 +13456,8 @@ margin-bottom: 0;
 	.partner-icon{
 		width:33%;
 	}
+}
+
+.recrute-icon{
+	width:20%;
 }
