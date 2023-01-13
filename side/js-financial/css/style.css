@@ -626,12 +626,14 @@ progress {
 }
 
 .img-main {
-	opacity: 0;
-	transition: opacity 0.4s ease-in-out;
+	/* opacity: 0;
+	transition: opacity 0.8s ease-in-out; */
 	filter: brightness(50%);
 	/* 이미지 밝기, active 추가 */
 	width: 100%;
 	height: auto;
+
+	position:absolute;
 }
 
 .img-fluid {
@@ -1507,7 +1509,7 @@ progress {
 	flex: 0 0 auto;
 	width: 50%;
 }
-	.col-lg-7 {
+.col-lg-7 {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
@@ -11846,7 +11848,7 @@ textarea {
 .site-nav {
 	position: fixed;
 	top: 0;
-	z-index: 9;
+	z-index: 200;
 	width: 100%;
 	transition: padding 0.2s ease-in-out;
 }
@@ -12399,12 +12401,12 @@ margin-bottom: 0;
 	z-index: 2;
 }
 	.hero, .hero > .container > .row {
-	padding-top: 7rem;
-	padding-bottom: 7rem;
+	padding-top: 5rem;
+	padding-bottom: 4rem;
 }
 @media (max-width: 767.98px) {
 		.hero, .hero > .container > .row {
-		padding-top: 4rem;
+		padding-top: 5rem;
 		padding-bottom: 2rem;
 	}
 }
@@ -12429,21 +12431,21 @@ margin-bottom: 0;
 	font-weight: 700;
 }
 @media (max-width: 991.98px) {
-		.hero p{
-			font-size: 14px;
-		}
-		.hero .heading {
-			font-size: 30px;
+	.hero p{
+		font-size: 14px;
+	}
+	.hero .heading {
+		font-size: 30px;
+	}
 }
-	}
 @media (max-width: 767.98px) {
-		.hero p{
-			font-size: 12px;
-		}
-			.hero .heading {
-			font-size: 22px;
-		}
+	.hero p{
+		font-size: 12px;
 	}
+		.hero .heading {
+		font-size: 22px;
+	}
+}
 	.hero .play-button {
 	font-size: 20px;
 	color: #fff;
@@ -13416,4 +13418,42 @@ margin-bottom: 0;
 .footer-icon img{
 	width:20px;
 	height:20px;
+}
+
+.main-text-area{
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.introduce-map-area{
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.introduce-map-area img{
+	width:80%;
+	height:auto;
+}
+
+.partner-icon{
+	width:20%;
+}
+
+@media (max-width: 991.98px) {
+	.partner-icon{
+		width:33%;
+	}
+}
+@media (max-width: 767.98px) {
+	.partner-icon{
+		width:33%;
+	}
 }

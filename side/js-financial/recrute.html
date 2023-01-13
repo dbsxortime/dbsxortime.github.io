@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<meta name="author" content="dbsxortime">
+	<link rel="shortcut icon" href="./images/img/logo-b.jpg">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap5" />
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="fonts/icomoon/style.css">
+	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+	<link rel="stylesheet" href="css/tiny-slider.css">
+	<link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/flatpickr.min.css">
+	<link rel="stylesheet" href="css/glightbox.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/slide.css">
+
+
+	<title>JS financial</title>
+</head>
+<body>
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+	
+	<nav class="site-nav" id="nav">
+		<div class="container">
+			<div class="site-navigation">
+				<div class="row">
+					<div class="col-6 col-lg-3">
+						<a href="index.html" class="logo m-0 float-start">
+							<img 
+								alt='JSFinancial' src='./images/img/logo.png' 
+								style='width:85px;'
+							/>
+						</a>
+					</div>
+
+					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
+						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
+							<li class="has-children">
+								<a href="introduce.html">회사소개</a>
+								<ul class="dropdown">
+									<li><a href="introduce.html#sec1">회사 소개</a></li>
+									<li><a href="introduce.html#sec2">CEO 인사말</a></li>
+									<li><a href="introduce.html#sec3">오시는 길</a></li>
+								</ul>
+							</li>
+
+							<li class="has-children">
+								<a href="business.html">사업 영역</a>
+								<ul class="dropdown">
+									<li><a href="business.html#sec1">사업 영역</a></li>
+									<li class="has-children">
+										<a href="business.html#detail1">사업 세부</a>
+										<ul class="dropdown">
+											<li><a href="business.html#detail1">정책자금</a></li>
+											<li><a href="business.html#detail2">보험/컨설팅</a></li>
+											<li><a href="business.html#detail3">세무</a></li>
+											<li><a href="business.html#detail4">법무</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li class="has-children active">
+								<a href="recrute.html">인재채용</a>
+								<ul class="dropdown">
+									<li>
+										<a href="recrute.html#sec1">입사문의</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="has-children">
+								<a href="partner.html">협력사</a>
+								<ul class="dropdown">
+									<li>
+										<a href="partner.html#sec1">제휴 보험사</a>
+									</li>
+									<li>
+										<a href="partner.html#sec2">제휴 금융사</a>
+									</li>
+								</ul>
+							</li>
+							
+
+							<li><a href="question.html">고객 문의</a></li>
+							
+						</ul>
+					</div>
+					<div class="col-6 col-lg-3 text-lg-end">
+						<ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
+							<!-- <li class="cta-button"><a href="#">Contact Us</a></li> -->
+						</ul>
+
+						<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+							<span></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<script>
+		window.addEventListener('scroll', function() {
+			var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+			if(scrollPosition >= 200) {
+				var nav = document.getElementById('nav')
+				nav.classList.add('inpage')
+			}else{
+				var nav = document.getElementById('nav')
+				nav.classList.remove('inpage')
+			}
+		});
+	</script>
+	
+
+	<div class="hero overlay">
+		<div class="img-bg rellax">
+			<img id="main1" src="./images/img/main3.jpg" alt="Image" class="img-main img-active">
+			<img id="main2" src="./images/img/main4.jpg" alt="Image" class="img-main ">
+		</div>
+		<div class="container" style="width:100%">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-lg-7">
+					<h1 class="heading text-center mt-3 title-shadow" data-aos="fade-in" data-aos-delay="200">
+						인재 채용
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section service-section-1" id="sec1">
+		<div class="container mt-1">
+			<div class="row">
+				<div class="col-lg-9">
+					<div class="row">
+						<div class="col-lg-4 order-lg-1">
+							<div class="mt-6">
+								<div class="heading-content text-center" data-aos="fade-up">
+									<h2>인재 채용</h2>
+								</div>
+								<div style="text-align:center" class="mt-5" data-aos="fade-up" data-aos-delay="200">
+									<img src="images/img/recrute.png" alt="Image" class="img-fluid">
+								</div>
+								<p class="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
+									(주)제이에스 인재경영실에서는 (주)제이에스의 정신
+									<span style="color:#343661"><strong>신용, 창의, 협동</strong></span>
+									의 모토 아래<br/>
+									신입 분들을 위한 체계적인 
+									<span style="color:#343661"><strong>인재개발 교육 시스템, 회사 지원, 업무 교육 시스템 </strong></span>
+									및<br/>
+									전문 담당자와의 업무적 
+									<span style="color:#343661"><strong>1:1피드백 </strong></span>
+									을 통해 개인의 
+									<span style="color:#343661"><strong>계약성사율 </strong></span>
+									과 <span style="color:#343661"><strong>업무효율 </strong></span>을 높이고<br/>
+									다방면의 능력을 갖춘 
+									<span style="color:#343661"><strong>사회적 인력 </strong></span>
+									으로 만들어드리고 있습니다.<br/>
+									특별한 업무능력과 경력이 없더라도 회사 경영방침을 두고 전 임직원이 동반자로써 함께 나아가기 위해<br/><br/>
+									<span style="color:#343661; font-size:1.3em;"><strong>신입 여러분들과 함께 하겠습니다.</strong></span>
+								</p>
+								<div class="heading-content text-center mt-5" data-aos="fade-up" data-aos-delay="200">
+									<h2>
+										" 열정만 있다면 누구든 지원해주세요! "<br/>
+									</h2>
+								</div>
+								<div style="text-align:center" class="mt-4 mb-5" data-aos="fade-up">
+									<!-- <a href="#" class="btn btn-secondary">지원하기</a> -->
+									<p class="my-3"><a href="http://pf.kakao.com/_ewArxj/chat" class="btn btn-secondary">지원하기</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="site-footer">
+		<div class="container">
+			<div class="row-center-top">
+				<div class="col-lg-3">
+					<div class="widget text-center">
+						<h3>Contact</h3>
+						<address>Addr :강남구 테헤란로 7길 11</address>
+						<a class="footer-icon" href="mailto:jsincorporated07@gmail.com">
+							<img src="images/img/icon/gmail.png" alt="mail" />
+						</a>
+						<a class="footer-icon" href="https://www.instagram.com/js_financial__">
+							<img src="images/img/icon/instagram.png" alt="insta" />
+						</a>
+						<a class="footer-icon" href="http://pf.kakao.com/_ewArxj/chat">
+							<img src="images/img/icon/kakao-talk.png" alt="kakao" />
+						</a>
+					</div>
+				</div> 
+			</div>
+
+			<div class="row">
+				<div class="col-12 text-center">
+					<p class="mb-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed by <a href="https://dbsxortime.github.io">YTWeb</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="overlayer"></div>
+		<div class="loader">
+			<div class="spinner-border text-primary" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/counter.js"></script>
+	<script src="js/rellax.js"></script>
+	<script src="js/flatpickr.js"></script>
+	<script src="js/glightbox.min.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/slide.js"></script>
+	</body>
+	</html>
