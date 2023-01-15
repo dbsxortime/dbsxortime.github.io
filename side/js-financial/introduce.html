@@ -53,14 +53,6 @@
 
 					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
 						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
-							<!-- <li class="has-children active">
-								<a href="introduce.html">회사소개</a>
-								<ul class="dropdown">
-									<li><a href="introduce.html#sec1">회사 소개</a></li>
-									<li><a href="introduce.html#sec2">CEO 인사말</a></li>
-									<li><a href="introduce.html#sec3">오시는 길</a></li>
-								</ul>
-							</li> -->
 							<li class="active"><a href="introduce.html">회사소개</a></li>
 							<li><a href="business.html">사업 영역</a></li>
 
@@ -81,7 +73,6 @@
 					</div>
 					<div class="col-6 col-lg-3 text-lg-end">
 						<ul class="js-clone-nav d-none d-lg-inline-block text-end site-menu ">
-							<!-- <li class="cta-button"><a href="#">Contact Us</a></li> -->
 						</ul>
 
 						<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
@@ -108,7 +99,7 @@
 
 	<div class="hero overlay">
 		<div class="img-bg rellax">
-			<img id="main1" src="./images/img/main3.jpg" alt="Image" class="img-main img-active">
+			<img id="main1" src="./images/img/main4.jpg" alt="Image" class="img-main main-active">
 		</div>
 		<div class="container" style="width:100%">
 			<div class="row align-items-center justify-content-center">
@@ -129,9 +120,9 @@
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="row">
+						<h2 class="heading mb-3 " data-aos="fade-up" data-aos-delay="200">CEO 인사말</h2>
 						<div class="col-lg-4 order-lg-1 introduce-ceo-area">
 							<div class="introduce-text-area">
-								<h2 class="heading mb-3 " data-aos="fade-up" data-aos-delay="200">CEO 인사말</h2>
 		
 								<p class="mt-5" data-aos="fade-up" data-aos-delay="200">
 									홈페이지를 방문해 주신 고객 여러분께 감사 드립니다.<br/>
@@ -150,7 +141,7 @@
 								
 							</div>
 							<div class="introduce-img-area" data-aos="fade-up" data-aos-delay="200">
-
+								<img class="ceo-img" src="./images/img/ceo.jpg" alt="ceo"/>
 							</div>
 						</div>
 					</div>
@@ -177,7 +168,25 @@
 							<h2>오시는 길</h2>
 						</div>
 						<div class="text-center introduce-map-area">
-							
+							<!-- * 카카오맵 - 지도퍼가기 -->
+<!-- 1. 지도 노드 -->
+<div id="daumRoughmapContainer1673760987634" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+<!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1673760987634",
+		"key" : "2dfgg",
+		//"mapWidth" : "350",
+		//"mapHeight" : "360"
+	}).render();
+</script>
 						</div>
 					</div>
 				</div>
