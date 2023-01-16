@@ -13533,3 +13533,13 @@ margin-bottom: 0;
 	color:#292a42; 
 	font-weight: bold;
 }
+
+@media (max-width: 576px) {
+	.widget-bar{
+		display:none
+	}
+	.widget-text{
+		font-size:1em; 
+		display:block !important;
+	}
+}
