@@ -13528,6 +13528,13 @@ margin-bottom: 0;
     top: 0%;
 }
 
+.widget-addr{
+	font-size:1em;
+	color:#999;
+	margin:3px 1em;
+	display:inline-block;
+}
+
 .widget-text{
 	font-size:1.2em; 
 	color:#292a42; 
@@ -13540,6 +13547,9 @@ margin-bottom: 0;
 	}
 	.widget-text{
 		font-size:1em; 
+		display:block !important;
+	}
+	.widget-addr{
 		display:block !important;
 	}
 }
