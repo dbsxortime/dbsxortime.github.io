@@ -13303,7 +13303,7 @@ margin-bottom: 0;
 	padding: 30px 0;
 }
 .site-footer a {
-	color: #f17945;
+	/* color: #f17945; */
 	position: relative;
 	display: inline-block;
 }
@@ -13526,4 +13526,10 @@ margin-bottom: 0;
 	width: 100%;
     position: absolute;
     top: 0%;
+}
+
+.widget-text{
+	font-size:1.2em; 
+	color:#292a42; 
+	font-weight: bold;
 }
