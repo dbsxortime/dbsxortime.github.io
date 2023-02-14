@@ -145,11 +145,12 @@ a{
 }
 
 .result_content_1{
-    background-color:blue;
+    text-align:center;
 }
 
 .result_content_2{
-    background-color:salmon;
+    /* background-color:salmon; */
+	text-align:center;
 }
 @media screen and (max-width: 768px) {
     *{
