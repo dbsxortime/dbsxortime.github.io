@@ -2,15 +2,54 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>석진님 타로</title>
+<title>타로</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 <style>
+	body{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.intro{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		width:500px;
+		height:300px;
+		position:absolute;
+		top:20%;
+		background-color: rgba(255, 255, 255, 0.9);
+		box-shadow: 10px 10px 10px #999;
+		flex-direction: column;
+	}
+	.title{
+		width:100%;
+		text-align: center;
+	}
+	button{
+		width:100px;
+		height:100px;
+		background-color:#fefefe;
+		border:1px solid #999;
+		font-size:18px;
+	}
+	button:hover{
+		cursor:pointer;
+		background-color:aliceblue;
+		border:1px solid #333;
+		font-weight:bold;
+	}
+	.paper{
+		width:500px;
+	}
 	.back_card{
 		width:70px;
 		height:95px;
 		margin:5px;
+		border: 5px solid rgba(255, 255, 255, 0);
 	}
 	.back_card:hover{
+		cursor:pointer;
 		border:5px solid red;
 	}
 	.clicked{
@@ -21,7 +60,15 @@
 	}
 </style>
 <script>
+	var name = '';
+	
 	var clickedCnt = 0;
+
+	function setName(t){
+		name = t.value;
+		document.getElementById('intro').style.display = 'none';
+	}
+
 	function clicker(t){
 		if(t.classList.contains('clicked')) {
 			t.classList.remove('clicked');
@@ -37,15 +84,25 @@
 	function checkDone(){
 		if(clickedCnt==3){
 			setTimeout(function(){
-				location.href="test3.html";
+				location.href="/loading?name="+name;
 			},500);
 		}
 	}
+	
 </script>
 </head>
 <body>
 <div class="paper">
-	<h1>
+	<div class="intro" id="intro">
+		<h4>어떤 운세를 보시겠습니까?</h4>
+		<div>
+			<button onclick="setName(this)" value="1">연애운</button>
+			<button onclick="setName(this)" value="2">사업운</button>
+			<button onclick="setName(this)" value="3">금전운</button>
+			<button onclick="setName(this)" value="4">시험운</button>
+		</div>
+	</div>
+	<h1 class="title">
 		3장을 고르세요!
 	</h1>
 	<img class="back_card" src="image/back.jpg" onclick="clicker(this);"/>

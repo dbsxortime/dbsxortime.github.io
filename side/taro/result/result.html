@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>석진님 타로</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+<style>
+	.back_card{
+		width:150px;
+		height:240px;
+		margin:5px;
+		border:5px solid rgba(255, 255, 255, 0);
+	}
+	.back_card:hover{
+		border:5px solid red;
+	}
+	.clicked{
+		border:5px solid red;
+	}
+	.wait{
+		visibility:hidden;
+	}
+</style>
+
+</head>
+<body>
+<div class="paper" style="text-align:center">
+	<h1 style="text-align:center" id="title"></h1>
+	<img class="back_card" src="image/death.jpg"/>
+	<img class="back_card" src="image/death.jpg"/>
+	<img class="back_card" src="image/death.jpg"/>
+	<p style="text-align:center; border:1px solid #333; width:100%; height:300px;" id="content"></p>
+	<button onclick="goback()">다시하기</button>
+</div>
+
+<script>
+	function goback(){
+		location.href='test2.html'
+	}
+
+	function getParam(sname) {
+		var params = location.search.substr(location.search.indexOf("?") + 1);
+		var sval = "";
+		params = params.split("&");
+			for (var i = 0; i < params.length; i++) {
+				temp = params[i].split("=");
+				if ([temp[0]] == sname) { sval = temp[1]; }
+			}
+		return sval;
+	}
+
+	function getResult(nameCode){
+		if(nameCode==='1'){
+			return '연애운'
+		}
+		if(nameCode==='2'){
+			return '사업운'
+		}
+		if(nameCode==='3'){
+			return '금전운'
+		}
+		if(nameCode==='4'){
+			return '시험운'
+		}
+	}
+	
+	document.getElementById('title').innerHTML = `타로 ${getResult(getParam('name'))} 결과임미다.`
+	document.getElementById('content').innerHTML = `
+		신기하네요... 원래 Death 카드는 한 장씩 박에 업는데... <br/>
+		이 카드는 이번 생에는 망했따는 뜻임미다.<br/>
+		앞으로 3생애 동안 ${getResult(getParam('name'))}은 박살나있을 예정입니다.<br/>
+		수고하세요.<br/>
+		복채: 우리 1002-559-043244
+	`
+</script>
+</body>
+</html>

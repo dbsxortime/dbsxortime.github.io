@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타로</title>
+<script>
+	function getParam(sname) {
+		var params = location.search.substr(location.search.indexOf("?") + 1);
+		var sval = "";
+		params = params.split("&");
+			for (var i = 0; i < params.length; i++) {
+				temp = params[i].split("=");
+				if ([temp[0]] == sname) { sval = temp[1]; }
+			}
+		return sval;
+	}
+
+	window.onload=function gopage(){
+		setTimeout(function(){
+			location.href="/result?name="+getParam('name');
+		},800);
+	}
+</script>
+</head>
+<body>
+<div class="paper">
+	<div id="waiter" style="text-align:center">
+		<h1>잠시만 기다려주세요..</h1>
+	</div>
+</div>
+
+
+</body>
+</html>
