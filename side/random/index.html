@@ -125,13 +125,16 @@
 	window.onload=function(){
 		
 		param = param.split("?")[0];
-		if(param != '' && param != null && param != 'null')cnt = param;
-		
+		if(param != '' && param != null && param != 'null' && param != undefined){
+			cnt = param;
+		}else{
+			cnt = 7
+		}
 		
 		makeRow();
 		document.getElementById(0).focus();
 		
-		cnt = param;
+		// cnt = param;
 		
 		checkWrongCnt()
 		makeAnswer();
@@ -175,9 +178,10 @@
 		if(value>=37 && value <=40){
 			var val = value-36;
 			// ans.push(val);
+			
 			if(arr[idx]==val){
 				ans.push(val);
-				checkAnswer(value,index);
+				checkAnswer(value,index+1);
 				inputValue(value,index);
 			}else{
 				failed();
@@ -223,6 +227,8 @@
 	}
 	
 	function checkAnswer(value,index){
+		console.log(index)
+		console.log(cnt-1)
 		if(index == cnt-1 && arr[index]==ans[index]){
 			alert('정답');
 			location.href=location.href;

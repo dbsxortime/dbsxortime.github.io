@@ -7,7 +7,6 @@
 	*{
 		margin:0;
 		padding:0;
-		
 	}
 	.paper{
 		margin:20px auto;
@@ -97,13 +96,46 @@
 		padding-left:10px;
 		font-size:9pt;
 	}
+	
+	
+	@media (max-width:450px) {
+		.paper{
+			/* transform: scale(1.4); */
+			background-color:#a3344f;
+		}
+	}
 </style>
+	
 <script>
 	var idx=1;
 	var arr = ['ACTOR','ABOVE','ADMIN','AVOID','ADOVE','ABOUT','ACORN','ADULT','AFTER','AIMER','ALIEN','ALIGN','ALIVE','ALTER','ANGEL',
 			   'BASIC','BEACH','BEGIN','BELOW','BENCH','BLACK','BLIND','BRAIN','BREAK','BRING','BROWN','BUILD','BRICK','BUMPY','BURLY',
 			   'CROCK','CRONE','CROWD','CRUSH','CRUST','CURVE','CURSE','CURVY','CLIME','CHILE','CABIN','CRUDE',
-			   'DAILY','DAIRY','DANCE','DEATH','DEBTS','DEBUG','DECAF','DEBUT','DEPOT','DEPTH'
+			   'DAILY','DAIRY','DANCE','DEATH','DEBTS','DEBUG','DECAF','DEBUT','DEPOT','DEPTH','ABUSE','ADULT','AGENT','ANGER','APPLE','AWARD','BASIS','BEACH','BIRTH','BLOCK','BLOOD','BOARD',
+			   'BRAIN','BREAD','BREAK','BROWN','BUYER','CAUSE','CHAIN','CHAIR','CHEST','CHIEF','CHILD','CHINA','CLAIM','CLASS','CLOCK','COACH','COAST','COURT','COVER','CREAM','CRIME','CROSS',
+			   'CROWD','CROWN','CYCLE','DANCE','DEATH','DEPTH','DOUBT','DRAFT','DRAMA','DREAM','DRESS','DRINK','DRIVE','EARTH','ENEMY','ENTRY','ERROR','EVENT','FAITH','FAULT','FIELD','FIGHT',
+			   'FINAL','FLOOR','FOCUS','FORCE','FRAME','FRANK','FRONT','FRUIT','GLASS','GRANT','GRASS','GREEN','GROUP','GUIDE','HEART','HENRY','HORSE','HOTEL','HOUSE','IMAGE','INDEX','INPUT',
+			   'ISSUE','JAPAN','JONES','JUDGE','KNIFE','LAURA','LAYER','LEVEL','LEWIS','LIGHT','LIMIT','LUNCH','MAJOR','MARCH','MATCH','METAL','MODEL','MONEY','MONTH','MOTOR','MOUTH','MUSIC',
+			   'NIGHT','NOISE','NORTH','NOVEL','NURSE','OFFER','ORDER','OTHER','OWNER','PANEL','PAPER','PARTY','PEACE','PETER','PHASE','PHONE','PIECE','PILOT','PITCH','PLACE','PLANE','PLANT',
+			   'PLATE','POINT','POUND','POWER','PRESS','PRICE','PRIDE','PRIZE','PROOF','QUEEN','RADIO','RANGE','RATIO','REPLY','RIGHT','RIVER','ROUND','ROUTE','RUGBY','SCALE','SCENE','SCOPE',
+			   'SCORE','SENSE','SHAPE','SHARE','SHEEP','SHEET','SHIFT','SHIRT','SHOCK','SIGHT','SIMON','SKILL','SLEEP','SMILE','SMITH','SMOKE','SOUND','SOUTH','SPACE','SPEED','SPITE','SPORT',
+			   'SQUAD','STAFF','STAGE','START','STATE','STEAM','STEEL','STOCK','STONE','STORE','STUDY','STUFF','STYLE','SUGAR','TABLE','TASTE','TERRY','THEME','THING','TITLE','TOTAL','TOUCH',
+			   'TOWER','TRACK','TRADE','TRAIN','TREND','TRIAL','TRUST','TRUTH','UNCLE','UNION','UNITY',
+'VALUE','VIDEO','VISIT','VOICE','WASTE','WATCH','WATER','WHILE','WHITE','WHOLE','WOMAN','WORLD','YOUTH','ALCON','AUGHT','HELLA','ONE’S','OUGHT','THAME','THERE','THINE','THINE','WHERE','WHICH','WHOSE','WHOSO','YOURS','YOURS','ADMIT','ADOPT','AGREE','ALLOW','ALTER','APPLY','ARGUE','ARISE','AVOID','BEGIN','BLAME','BREAK','BRING','BUILD','BURST','CARRY','CATCH','CAUSE','CHECK','CLAIM','CLEAN',
+'CLEAR','CLIMB','CLOSE','COUNT','COVER','CROSS','DANCE','DOUBT','DRINK','DRIVE','ENJOY','ENTER','EXIST','FIGHT','FOCUS','FORCE','GUESS','IMPLY','ISSUE','JUDGE','LAUGH','LEARN','LEAVE','LET’S','LIMIT',
+'MARRY','MATCH','OCCUR','OFFER','ORDER','PHONE','PLACE','POINT','PRESS','PROVE','RAISE','REACH','REFER','RELAX','SERVE','SHALL','SHARE','SHIFT','SHOOT','SLEEP','SOLVE','SOUND','SPEAK','SPEND','SPLIT',
+'STAND','START','STATE','STICK','STUDY','TEACH','THANK','THINK','THROW','TOUCH','TRAIN','TREAT','TRUST','VISIT','VOICE','WASTE','WATCH','WORRY','WOULD','WRITE','ABOVE','ACUTE','ALIVE','ALONE',
+'ANGRY','AWARE','AWFUL','BASIC','BLACK','BLIND','BRAVE','BRIEF','BROAD','BROWN','CHEAP','CHIEF','CIVIL','CLEAN','CLEAR','CLOSE','CRAZY','DAILY','DIRTY','EARLY','EMPTY','EQUAL','EXACT','EXTRA','FAINT',
+'FALSE','FIFTH','FINAL','FIRST','FRESH','FRONT','FUNNY','GIANT','GRAND','GREAT','GREEN','GROSS','HAPPY','HARSH','HEAVY','HUMAN','IDEAL','INNER','JOINT','LARGE','LEGAL','LEVEL','LIGHT','LOCAL','LOOSE',
+'LUCKY','MAGIC','MAJOR','MINOR','MORAL','NAKED','NASTY','NAVAL','OTHER','OUTER','PLAIN','PRIME','PRIOR','PROUD','QUICK','QUIET','RAPID','READY','RIGHT','ROMAN','ROUGH','ROUND','ROYAL','RURAL',
+'SHARP','SHEER','SHORT','SILLY','SIXTH','SMALL','SMART','SOLID','SORRY','SPARE','STEEP','STILL','SUPER','SWEET','THICK','THIRD','TIGHT','TOTAL','TOUGH','UPPER','UPSET','URBAN','USUAL','VAGUE','VALID',
+'VITAL','WHITE','WHOLE','WRONG','YOUNG','AFORE','AFTER','BOTHE','OTHER','SINCE','SLASH','UNTIL','WHERE','WHILE','ABACK','ABAFT','ABOON','ABOUT','ABOVE','ACCEL','ADOWN','AFOOT','AFORE','AFOUL',
+'AFTER','AGAIN','AGAPE','AGOGO','AGONE','AHEAD','AHULL','ALIFE','ALIKE','ALINE','ALOFT','ALONE','ALONG','ALOOF','ALOUD','AMISS','AMPLY','AMUCK','APACE','APART','APTLY','AREAR','ASIDE','ASKEW','AWFUL','BADLY','BALLY','BELOW',
+'CANNY','CHEAP','CLEAN','CLEAR','COYLY','DAILY','DIMLY','DIRTY','DITTO','DRILY','DRYLY','DULLY','EARLY','EXTRA','FALSE','FATLY','FEYLY','FIRST','FITLY','FORTE','FORTH','FRESH','FULLY','FUNNY','GAILY','GAYLY','GODLY','GREAT','HAPLY','HEAVY',
+'HELLA','HENCE','HOTLY','ICILY','INFRA','JILDI','JOLLY','LAXLY','LENTO','LIGHT','LOWLY','MADLY','MAYBE','NEVER','NEWLY','NOBLY','ODDLY','OFTEN','OTHER','OUGHT','PARTY','PIANO','PLAIN','PLONK','PLUMB','PRIOR','QUEER','QUICK',
+'QUITE','RAMEN','RAPID','REDLY','RIGHT','ROUGH','ROUND','SADLY','SECUS','SELLY','SHARP','SHEER','SHILY','SHORT','SHYLY','SILLY','SINCE','SLEEK','SLYLY','SMALL','SOUND','SPANG','SRSLY','STARK','STILL','STONE','STOUR','SUPER',
+'TALLY','TANTO','THERE','THICK','TIGHT','TODAY','TOMOZ','TRULY','TWICE','UNDER','UTTER','VERRY','WANLY','WETLY','WHERE','WRONG','WRYLY','ABAFT','ABOON','ABOUT','ABOVE','ADOWN','AFORE','AFTER','ALONG','ALOOF','AMONG',
+'BELOW','CIRCA','CROSS','FURTH','MINUS','NEATH','ROUND','SINCE','SPITE','UNDER','UNTIL'
 			  ];
 	var ans = '';
 	var cnt = 6;
@@ -188,7 +220,6 @@
 		for(var i=0; i<5; i++){
 			input[i].classList.remove('now_input');
 			input[i].readOnly = true;
-			input[i].value='';
 		}
 		
 		submitCnt++;
@@ -254,7 +285,7 @@
 	function set_on(){
 		var input = prompt('몇 번의 기회로 설정하시겠습니까? 현재 : ' + cnt + '(최대:7)', '');
 		cnt = input;
-		if(!(input>=1&&input<=6))cnt=6;
+		if(!(input>=1&&input<=7))cnt=7;
 		
 		var url = location.href.split('?')[0];
 		location.href = url+'?set='+cnt;
@@ -284,7 +315,7 @@
 <div class="paper">
 	<div class="title">
 		<h1>
-			
+			WORDLE!
 		</h1>
 		<a class="how_to_span" href="javascript:how_to_on();">how to</a><br/>
 		<a class="how_to_span" href="javascript:set_on();">set</a><br/>
@@ -302,7 +333,7 @@
 	<span class="how_to">알파벳 + 위치 둘 다 맞으면 초록</span><br/>
 	<span class="how_to">알파벳만 맞으면 노랑</span><br/>
 	<span class="how_to">가지고 있지 않으면 회색입니다.</span><br/>
-	<span class="how_to">##중복은 없습니다##</span><br/>
+	<span class="how_to">##스펠링 중복단어가 추가되었습니다##</span><br/>
 	<span class="how_to">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	<span class="how_to">[현재
 		<span class="how_to" style="color:#ee6271" name="remain"></span>&nbsp;
